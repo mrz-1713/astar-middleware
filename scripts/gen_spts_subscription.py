@@ -25,22 +25,23 @@ numbers - the manual is revised (Rev B through Rev D are in its own history)
 and line numbers move. Counts are asserted so a revision that adds or removes
 rows fails loudly here instead of shipping a half-parsed table.
 
-Requires poppler's `pdftotext` on PATH (macOS: `brew install poppler`).
+Reads the reviewed text extract under `docs/vendor/`; poppler's `pdftotext`
+is needed only to regenerate that extract from a new PDF revision.
 """
 
 from __future__ import annotations
 
 import json
 import re
-import shutil
-import subprocess
 import sys
-import tempfile
 from pathlib import Path
 from typing import Dict, List
 
+from scripts.vendor_text import vendor_lines
+
 ROOT = Path(__file__).resolve().parent.parent
 PDF = ROOT / "docs" / "vendor" / "Omega_SECSII_SPTS fxP 200mm SECSII Manual (Cimetrix).pdf"
+EXTRACT = ROOT / "docs" / "vendor" / "omega_secs_extracted.txt"
 OUTPUT = ROOT / "output" / "spts_fxp_omega" / "EventSubscription.full.json"
 ACTIVE_OUTPUT = ROOT / "output" / "spts_fxp_omega" / "EventSubscription.json"
 
@@ -111,15 +112,7 @@ def _band_for(ceid: int, dvids: List[int]) -> str:
 
 
 def _text() -> List[str]:
-    if not shutil.which("pdftotext"):
-        sys.exit("pdftotext not found. Install poppler (brew install poppler).")
-    with tempfile.TemporaryDirectory() as tmp:
-        out = Path(tmp) / "omega.txt"
-        subprocess.run(
-            ["pdftotext", "-layout", str(PDF), str(out)],
-            check=True, capture_output=True,
-        )
-        return out.read_text(encoding="utf-8", errors="replace").splitlines()
+    return vendor_lines(PDF, EXTRACT)
 
 
 def _find(lines: List[str], pattern: str, after: int = 0) -> int:

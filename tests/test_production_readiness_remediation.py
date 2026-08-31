@@ -269,3 +269,30 @@ def test_release_tooling_and_upgrade_are_wired_into_distribution() -> None:
     service = (root / "scripts" / "install_service.ps1").read_text(encoding="utf-8")
     assert '"AppExit", "Default", "Restart"' in service
     assert '"AppRestartDelay", "5000"' in service
+
+
+def test_status_size_sampling_survives_a_vanishing_wal_sidecar(tmp_path, monkeypatch):
+    """SQLite deletes -wal/-shm when the last connection closes.
+
+    The status writer samples database sizes from a different thread than the
+    one closing connections, so an ``exists()`` guard followed by ``stat()``
+    raises FileNotFoundError and takes down the whole status write - which is
+    reached from ``reconcile()``, so a config reload can fail on it.
+    """
+    from eap_middleware.journal import IngressJournal
+    from eap_middleware.outbox import SQLiteOutbox
+
+    real_stat = Path.stat
+
+    def stat_racing_sqlite(self, *args, **kwargs):
+        if str(self).endswith(("-wal", "-shm")):
+            raise FileNotFoundError(2, "No such file or directory", str(self))
+        return real_stat(self, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "stat", stat_racing_sqlite)
+
+    for store in (
+        SQLiteOutbox(tmp_path / "outbox.sqlite3"),
+        IngressJournal(tmp_path / "journal.sqlite3"),
+    ):
+        assert store.database_size_bytes() > 0

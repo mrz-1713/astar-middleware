@@ -60,7 +60,12 @@ class SvidAdminConfig:
         result: Dict[str, float] = {}
         for filename in (self.SWITCH_FILE, self.RECIPE_FILE, self.SVID_FILE):
             path = self.directory / filename
-            result[filename] = path.stat().st_mtime if path.exists() else -1
+            # exists()-then-stat() is a race against an operator replacing the
+            # file; -1 means "absent", which reloads on the next real mtime.
+            try:
+                result[filename] = path.stat().st_mtime
+            except OSError:
+                result[filename] = -1
         return result
 
     def _read_json(self, filename: str, default: Mapping[str, Any]) -> Mapping[str, Any]:

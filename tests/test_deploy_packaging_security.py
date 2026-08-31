@@ -25,8 +25,13 @@ def test_build_requires_reviewed_public_config_and_emits_hashes():
 
     assert 'diff --quiet HEAD -- config/production.yaml' in script
     assert "RELEASE_MANIFEST.sha256" in script
-    assert 'shasum -a 256 "${MANIFEST_FILES[@]}"' in script
-    assert 'shasum -a 256 "${PKG_NAME}.zip"' in script
+    # Hashing goes through the sha256 shim so the same script runs under
+    # git-bash (sha256sum, no shasum) and macOS (shasum, no sha256sum); -b on
+    # both keeps Windows text mode from hashing a CR-stripped copy.
+    assert 'sha256sum -b "$@"' in script
+    assert 'shasum -a 256 -b "$@"' in script
+    assert 'sha256 "${MANIFEST_FILES[@]}"' in script
+    assert 'sha256 "${PKG_NAME}.zip"' in script
 
 
 def test_bash_manifest_covers_every_wheel_and_source_file():
@@ -43,14 +48,11 @@ def test_bash_manifest_covers_every_wheel_and_source_file():
     manifest_section = script[script.index("Writing release hash manifest"):]
     assert 'find wheels -type f -print0' in manifest_section
     assert 'find source -type f -print0' in manifest_section
-    # Both loops must feed the same array the final shasum call hashes.
+    # Both loops must feed the same array the final hash call reads.
     assert 'MANIFEST_FILES+=("${f#./}")' in manifest_section
-    assert manifest_section.index("find wheels") < manifest_section.index(
-        'shasum -a 256 "${MANIFEST_FILES[@]}"'
-    )
-    assert manifest_section.index("find source") < manifest_section.index(
-        'shasum -a 256 "${MANIFEST_FILES[@]}"'
-    )
+    hash_call = 'sha256 "${MANIFEST_FILES[@]}"'
+    assert manifest_section.index("find wheels") < manifest_section.index(hash_call)
+    assert manifest_section.index("find source") < manifest_section.index(hash_call)
 
 
 def test_powershell_manifest_covers_every_wheel_and_source_file():
@@ -152,8 +154,8 @@ def test_installer_runs_offline_setup_and_reports_its_exit_code():
 
 def test_installer_stages_locally_in_one_command():
     """Packaging is local-only: one PowerShell script on the Windows machine
-    stages the payload and wraps it. It must not depend on the bash stager,
-    which needs python3/shasum/zip under names git-bash does not provide."""
+    stages the payload and wraps it. The bash stager runs under git-bash too,
+    but an operator's Windows box is not required to have bash at all."""
     script = (
         ROOT / "packaging" / "installer" / "build_installer.ps1"
     ).read_text(encoding="utf-8")

@@ -20,8 +20,9 @@ param(
 # is not); everything else comes from this checkout.
 #
 # Staging is done here in PowerShell rather than by calling
-# scripts/build_deploy_package.sh, because that script needs python3, shasum and
-# zip under those exact names and git-bash on Windows provides none of them.
+# scripts/build_deploy_package.sh so that an operator's Windows machine needs no
+# bash at all. (That script does run under git-bash - CI builds the release with
+# it - but requiring bash here would put a second toolchain on the fab server.)
 # The two stagings are deliberately not identical: this one skips the ZIP (Inno
 # compresses the payload itself) and never downloads wheels (it reuses the
 # vetted, version-matched set already tracked under deploy\).

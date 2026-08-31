@@ -424,3 +424,27 @@ def test_every_shipped_variable_name_appears_in_the_vendor_manual(extract, table
             "name is mistyped, or it is a deliberate rename that belongs in "
             "DOCUMENTED_RENAMES with the reason recorded at its definition."
         )
+
+
+def test_generators_read_the_reviewed_extract_not_the_pdf(tmp_path, monkeypatch):
+    """CI has no poppler, and the generated-table drift gate runs there.
+
+    The reviewed extract is byte-identical to ``pdftotext -layout`` output, so
+    reading it keeps the generators deterministic on a machine with no poppler
+    installed. Re-extraction stays available for a new PDF revision, and must
+    fail loudly rather than silently produce a half-parsed table.
+    """
+    import shutil as _shutil
+
+    from scripts.vendor_text import vendor_lines
+
+    extract = ROOT / "docs" / "vendor" / "omega_secs_extracted.txt"
+    pdf = tmp_path / "absent.pdf"  # never opened while the extract is present
+    monkeypatch.setattr(_shutil, "which", lambda _name: None)
+
+    assert vendor_lines(pdf, extract)[:5] == extract.read_text(
+        encoding="utf-8", errors="replace"
+    ).splitlines()[:5]
+
+    with pytest.raises(SystemExit, match="poppler"):
+        vendor_lines(pdf, tmp_path / "missing_extract.txt")

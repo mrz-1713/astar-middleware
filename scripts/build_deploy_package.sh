@@ -5,7 +5,7 @@
 #
 # Run from the repo root. Needs:
 #   - python3 with pip (any 3.10+)
-#   - zip and unzip (macOS provides both)
+#   - sha256sum or shasum, and zip or Windows PowerShell (see the shims below)
 #
 # The wheels are built for whatever Python is installed on the Windows server.
 # Default: auto-detect from the python3 running this script.
@@ -15,6 +15,41 @@
 # is always in sync with what was actually downloaded - no hardcoded versions.
 
 set -euo pipefail
+
+# The Windows installer job builds this package on the Windows runner, whose
+# Git-Bash carries sha256sum but neither shasum nor zip/unzip; macOS carries
+# shasum and zip but no sha256sum. Resolve each tool once, up front, so a
+# missing one fails here instead of after several minutes of wheel downloads.
+# -b forces binary reads. Git-Bash's text mode would strip CR from the CRLF
+# files in config/, hashing something Get-FileHash never sees; both the
+# installer and CI already accept the `*` binary marker -b adds to each line.
+if command -v sha256sum >/dev/null 2>&1; then
+    sha256() { sha256sum -b "$@"; }
+elif command -v shasum >/dev/null 2>&1; then
+    sha256() { shasum -a 256 -b "$@"; }
+else
+    echo "    [ERROR] Need sha256sum or shasum to write the release manifest."
+    exit 1
+fi
+
+if command -v zip >/dev/null 2>&1; then
+    archive() { rm -f "$2"; zip -qr "$2" "$1"; }
+elif command -v powershell.exe >/dev/null 2>&1; then
+    # Relative names only: PowerShell cannot resolve a /d/a/... Git-Bash path.
+    archive() {
+        rm -f "$2"
+        powershell.exe -NoProfile -NonInteractive -Command \
+            "Compress-Archive -Path '$1' -DestinationPath '$2' -Force" || return 1
+    }
+else
+    echo "    [ERROR] Need zip or Windows PowerShell to produce the release archive."
+    exit 1
+fi
+
+command -v python3 >/dev/null 2>&1 || {
+    echo "    [ERROR] python3 is required to resolve the target Python version."
+    exit 1
+}
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_STAMP=$(date +%Y-%m-%d-%H%M%S)
@@ -221,27 +256,25 @@ step "Writing release hash manifest"
             MANIFEST_FILES+=("${f#./}")
         done < <(find source -type f -print0)
     fi
-    shasum -a 256 "${MANIFEST_FILES[@]}" > RELEASE_MANIFEST.sha256
+    sha256 "${MANIFEST_FILES[@]}" > RELEASE_MANIFEST.sha256
 )
 ok "Release manifest covers installer inputs, wheels and source"
 
 step "Producing ZIP"
 cd "${OUT_ROOT}"
 ZIP_PATH="${OUT_ROOT}/${PKG_NAME}.zip"
-rm -f "${ZIP_PATH}"
-zip -qr "${ZIP_PATH}" "${PKG_NAME}"
-(
-    cd "${OUT_ROOT}"
-    shasum -a 256 "${PKG_NAME}.zip" > "${PKG_NAME}.zip.sha256"
-)
+archive "${PKG_NAME}" "${PKG_NAME}.zip"
+sha256 "${PKG_NAME}.zip" > "${PKG_NAME}.zip.sha256"
 ok "Wrote ${ZIP_PATH}"
 
 step "Package summary"
 echo "    Path:  ${ZIP_PATH}"
 echo "    Hash:  ${ZIP_PATH}.sha256"
 echo "    Size:  $(du -h "${ZIP_PATH}" | cut -f1)"
-echo "    Contents:"
-unzip -l "${ZIP_PATH}" | tail -20
+if command -v unzip >/dev/null 2>&1; then
+    echo "    Contents:"
+    unzip -l "${ZIP_PATH}" | tail -20
+fi
 
 echo
 echo -e "\033[1;32mDone.\033[0m ${ZIP_PATH}"

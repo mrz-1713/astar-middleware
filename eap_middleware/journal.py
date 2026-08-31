@@ -425,15 +425,20 @@ class IngressJournal:
 
     def database_size_bytes(self) -> int:
         """On-disk size including WAL/SHM sidecars when present."""
-        return sum(
-            path.stat().st_size
-            for path in (
-                self.db_path,
-                Path(f"{self.db_path}-wal"),
-                Path(f"{self.db_path}-shm"),
-            )
-            if path.exists()
-        )
+        # SQLite removes the -wal and -shm sidecars when the last connection
+        # closes, so exists()-then-stat() is a race the status writer loses
+        # under load. Treat a vanished sidecar as zero bytes.
+        total = 0
+        for path in (
+            self.db_path,
+            Path(f"{self.db_path}-wal"),
+            Path(f"{self.db_path}-shm"),
+        ):
+            try:
+                total += path.stat().st_size
+            except OSError:
+                continue
+        return total
 
     def latest_generation(self, endpoint_id: str) -> int:
         """Highest persisted connection generation for one endpoint."""

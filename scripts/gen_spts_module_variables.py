@@ -14,23 +14,24 @@ without 880 hand-copied table rows.
 
     python -m scripts.gen_spts_module_variables
 
-Requires poppler's `pdftotext` on PATH (macOS: `brew install poppler`).
+Reads the reviewed text extract under `docs/vendor/`; poppler's `pdftotext`
+is needed only to regenerate that extract from a new PDF revision.
 """
 
 from __future__ import annotations
 
 import json
 import re
-import shutil
-import subprocess
 import sys
-import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict
 
+from scripts.vendor_text import vendor_lines
+
 ROOT = Path(__file__).resolve().parent.parent
 PDF = ROOT / "docs" / "vendor" / "Omega_SECSII_SPTS fxP 200mm SECSII Manual (Cimetrix).pdf"
+EXTRACT = ROOT / "docs" / "vendor" / "omega_secs_extracted.txt"
 OUTPUT = ROOT / "output" / "spts_fxp_omega" / "ModuleVariables.json"
 
 # Manual Appendix E, "Station Number" list.
@@ -71,17 +72,7 @@ UNMAPPED_FAMILIES = ("DeltaAPM", "VCE", "PreHeat")
 
 
 def extract_text() -> list[str]:
-    if not shutil.which("pdftotext"):
-        sys.exit("pdftotext not found. Install poppler (brew install poppler).")
-    with tempfile.TemporaryDirectory() as tmp:
-        out = Path(tmp) / "omega.txt"
-        subprocess.run(
-            ["pdftotext", "-layout", str(PDF), str(out)],
-            check=True, capture_output=True,
-        )
-        # splitlines() also splits pdftotext's form-feed page breaks, which is
-        # what we want: every table row lands on its own entry either way.
-        return out.read_text(encoding="utf-8", errors="replace").splitlines()
+    return vendor_lines(PDF, EXTRACT)
 
 
 def build() -> Dict[str, object]:
