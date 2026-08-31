@@ -1,0 +1,94 @@
+name: Signed release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: SemVer release-candidate version
+        required: true
+  push:
+    tags: ["v*-rc.*"]
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Reproducibility and quality gates
+        run: |
+          test -z "$(git status --porcelain)"
+          python -m scripts.gen_mg_subscription
+          python -m scripts.gen_davinci_full_subscription
+          python -m scripts.gen_spts_subscription
+          python -m scripts.gen_spts_module_variables
+          git diff --exit-code -- output/
+          ruff check eap_middleware gateway gui simulator simulator_gui scripts tests
+          pyright eap_middleware gateway gui simulator simulator_gui
+          python -m compileall -q eap_middleware gateway gui simulator simulator_gui
+          python -m pytest -q tests
+          python -m pytest -q -m slow tests/test_twenty_two_machines.py
+          pip-audit --no-deps --disable-pip -r requirements.txt \
+            --format cyclonedx-json --output sbom.cdx.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-source-${{ github.sha }}
+          path: sbom.cdx.json
+
+  sign-windows:
+    needs: verify
+    # The signing runner must expose the approved HSM-backed certificate in
+    # the machine certificate store and set ASTAR_SIGN_CERT_THUMBPRINT.
+    runs-on: [self-hosted, windows, x64, astar-signing]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-source-${{ github.sha }}
+      - name: Build and require Authenticode
+        shell: pwsh
+        run: |
+          if (-not $env:ASTAR_SIGN_CERT_THUMBPRINT) {
+            throw "approved HSM-backed signing identity is unavailable"
+          }
+          $version = if ("${{ inputs.version }}") { "${{ inputs.version }}" } else { "${{ github.ref_name }}" }
+          & .\packaging\installer\build_installer.ps1 `
+            -Version $version -BuildId "${{ github.sha }}" -RequireSignature
+          $setup = Get-ChildItem artifacts\installer\*.exe | Select-Object -First 1
+          $signature = Get-AuthenticodeSignature $setup.FullName
+          if ($signature.Status -ne "Valid") { throw "release signature is invalid" }
+          Get-FileHash $setup.FullName -Algorithm SHA256 |
+            Select-Object Path, Hash | ConvertTo-Json |
+            Set-Content artifacts\installer\published-hashes.json -Encoding UTF8
+      - uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: artifacts/installer/*.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signed-release-candidate-${{ github.sha }}
+          path: |
+            artifacts/installer/*.exe
+            artifacts/installer/*.sha256
+            artifacts/installer/published-hashes.json
+            sbom.cdx.json
+          if-no-files-found: error
+
+  approval-gate:
+    needs: sign-windows
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Do not equate a built candidate with production approval
+        run: |
+          echo "Signed candidate built. Production publication requires a completed"
+          echo "release-evidence.json for this exact commit/artifact and:"
+          echo "python -m scripts.release_evidence validate release-evidence.json"

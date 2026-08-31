@@ -1,0 +1,5124 @@
+{
+  "_source": "/Users/nrzngr/Downloads/SECS-Items_MueTec DaVinci 200 MC4_HC1.xlsx",
+  "_note": "All events from Events sheet, including events with no valid variables.",
+  "events": [
+    {
+      "ceid": 3010001,
+      "name": "Equipment OFF-LINE",
+      "description": "Control state of the equipment has changes to OFF-LINE",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "ONLINE",
+      "current_state": "OFFLINE",
+      "enabled": true
+    },
+    {
+      "ceid": 3010002,
+      "name": "Control State LOCAL",
+      "description": "Control state of the equipment has changes to ONLINE / LOCAL",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "Any",
+      "current_state": "LOCAL",
+      "enabled": true
+    },
+    {
+      "ceid": 3010003,
+      "name": "Control State REMOTE",
+      "description": "Control state of the equipment has changes to ONLINE / REMOTE",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "Any",
+      "current_state": "REMOTE",
+      "enabled": true
+    },
+    {
+      "ceid": 3010004,
+      "name": "OperatorCommandIssued",
+      "description": "Operator issued a command while in remote control mode",
+      "valid_variables": [
+        "OperatorCommand"
+      ],
+      "dvids": [
+        2010002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3020001,
+      "name": "AlarmNDetected",
+      "description": "An alarm was set",
+      "valid_variables": [
+        "AlarmID",
+        "AlarmCode",
+        "AlarmText"
+      ],
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3020002,
+      "name": "AlarmNCleared",
+      "description": "An alarm was cleared",
+      "valid_variables": [
+        "AlarmID",
+        "AlarmCode",
+        "AlarmText"
+      ],
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3030001,
+      "name": "SpoolTransmitFailure",
+      "description": "Failure while transmitting spool messages",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3030002,
+      "name": "SpoolingActivated",
+      "description": "Spooling was activated",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "Spool Inactive",
+      "current_state": "Spool Active",
+      "enabled": true
+    },
+    {
+      "ceid": 3030003,
+      "name": "SpoolingDeactivated",
+      "description": "Spooling was deactivated",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "Spool Active",
+      "current_state": "Spool Inactive",
+      "enabled": true
+    },
+    {
+      "ceid": 3040001,
+      "name": "ConstantChanged",
+      "description": "An equipment constant was changed by the operator",
+      "valid_variables": [
+        "ECID",
+        "CurrentValueOfLastChangedEC",
+        "PreviousValueOfLastChangedEC"
+      ],
+      "dvids": [
+        2040001,
+        2040002,
+        2040003
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3050001,
+      "name": "MaterialReceived",
+      "description": "Material received at the equipment",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3050002,
+      "name": "MaterialRemoved",
+      "description": "Material removed from the equipment",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3060001,
+      "name": "PM1/ReceivedMaterial",
+      "description": "PM1 has received a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3060002,
+      "name": "PM1/SentMaterial",
+      "description": "PM1 has sent a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3070001,
+      "name": "TM1/ReceivedMaterial",
+      "description": "TM Robot has received a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3070002,
+      "name": "TM1/SentMaterial",
+      "description": "TM Robot has sent a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3080001,
+      "name": "LP1/ReceivedMaterial",
+      "description": "Loadport has received a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3080002,
+      "name": "LP1/SentMaterial",
+      "description": "Loadport has sent a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3090001,
+      "name": "LP2/ReceivedMaterial",
+      "description": "Loadport has received a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3090002,
+      "name": "LP2/SentMaterial",
+      "description": "Loadport has sent a substrate",
+      "valid_variables": [
+        "SubstID",
+        "SubstLocID"
+      ],
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3100001,
+      "name": "RemoteCommandSuccess",
+      "description": "Remote command has been performed successfully",
+      "valid_variables": [
+        "RemoteCommandName"
+      ],
+      "dvids": [
+        2050001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3100002,
+      "name": "RemoteCommandFailure",
+      "description": "Remote command has failed",
+      "valid_variables": [
+        "RemoteCommandName"
+      ],
+      "dvids": [
+        2050001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3110001,
+      "name": "Message Recognition",
+      "description": "Signals the acknowledge of receiving a terminal message by the operator",
+      "valid_variables": [
+        "TID"
+      ],
+      "dvids": [
+        2070001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3120001,
+      "name": "PPChangeEvent",
+      "description": "A process program was changed",
+      "valid_variables": [
+        "PPChangeName",
+        "PPChangeState",
+        "PPChangeOwner"
+      ],
+      "dvids": [
+        2060001,
+        2060002,
+        2060003
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3130001,
+      "name": "ProcessStateChanged",
+      "description": "SEMI E30 process state has changed.",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "Any",
+      "current_state": "Any",
+      "enabled": true
+    },
+    {
+      "ceid": 3140001,
+      "name": "PM1/OperationModeChanged",
+      "description": "Operation mode of process module has changed",
+      "valid_variables": [
+        "OperationMode"
+      ],
+      "dvids": [
+        2010001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140002,
+      "name": "PM1/ProcessingStarted",
+      "description": "Processing has started.",
+      "valid_variables": [
+        "WaferID",
+        "LotID",
+        "RecipeName"
+      ],
+      "dvids": [
+        2080002,
+        2080003,
+        2080001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140003,
+      "name": "PM1/ProcessingFinished",
+      "description": "Processing has successfully finished.",
+      "valid_variables": [
+        "WaferID",
+        "LotID",
+        "RecipeName",
+        "ResultFile",
+        "ResultPath",
+        "PathOfImages",
+        "TestResults"
+      ],
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080005,
+        2080006,
+        2090008,
+        2090009
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140004,
+      "name": "PM1/ProcessingAborted",
+      "description": "Processing was aborted.",
+      "valid_variables": [
+        "WaferID",
+        "LotID",
+        "RecipeName",
+        "AbortReason"
+      ],
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080007
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140005,
+      "name": "PM1/RecipeSelected",
+      "description": "Recipe has been selected",
+      "valid_variables": [
+        "RecipeName"
+      ],
+      "dvids": [
+        2080001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140006,
+      "name": "PM1/RecipeSelectFailed",
+      "description": "Selecting the recipe has been failed.",
+      "valid_variables": [
+        "RecipeName"
+      ],
+      "dvids": [
+        2080001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3140007,
+      "name": "PM1/ProcessingResultArrived",
+      "description": "Processing Result has been Arrived.",
+      "valid_variables": [
+        "WaferID",
+        "LotID",
+        "SlotID",
+        "UnitFoupID",
+        "Results"
+      ],
+      "dvids": [
+        2080002,
+        2080003,
+        2090012,
+        2090013,
+        2090014
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3150001,
+      "name": "TM1/MotionStarted",
+      "description": "Motion for end effector has been started",
+      "valid_variables": [
+        "EndEffector",
+        "Action"
+      ],
+      "dvids": [
+        2100001,
+        2100002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3150002,
+      "name": "TM1/MotionFinished",
+      "description": "Motion for end effector has been finished",
+      "valid_variables": [
+        "EndEffector",
+        "Action"
+      ],
+      "dvids": [
+        2100001,
+        2100002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3150003,
+      "name": "TM1/OperationModeChanged",
+      "description": "Transfer Module Operation Mode has changed.",
+      "valid_variables": [
+        "OperationMode"
+      ],
+      "dvids": [
+        2010001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160001,
+      "name": "LP1/CarrierArrived",
+      "description": "Carrier has arrived at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160002,
+      "name": "LP1/CarrierDeparted",
+      "description": "Carrier has departed from Loadport",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160003,
+      "name": "LP1/CarrierMapped",
+      "description": "Carrier map completed at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160004,
+      "name": "LP1/CarrierMapStarted",
+      "description": "Carrier mapping has been started at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160005,
+      "name": "LP1/LoadComplete",
+      "description": "Done performing load at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160006,
+      "name": "LP1/UnloadComplete",
+      "description": "Done performing unload at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160007,
+      "name": "LP1/CarrierTagRead",
+      "description": "Carrier tag has been read at Loadport",
+      "valid_variables": [
+        "CarrierTag",
+        "PageNumber"
+      ],
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160008,
+      "name": "LP1/CarrierTagWritten",
+      "description": "Carrier tag has been written at Loadport",
+      "valid_variables": [
+        "CarrierTag",
+        "PageNumber"
+      ],
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160009,
+      "name": "LP1/CarrierLocationChanged",
+      "description": "Same as E87 CLC",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID"
+      ],
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160010,
+      "name": "LP1/MoveToDocked",
+      "description": "Carrier begin docking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160011,
+      "name": "LP1/AtDocked",
+      "description": "Carrier completed docking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160012,
+      "name": "LP1/MoveToDelivery",
+      "description": "Carrier begin undocking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160013,
+      "name": "LP1/AtDelivery",
+      "description": "Carrier completed undocking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160015,
+      "name": "LP1/E84TP1Timeout",
+      "description": "TP1 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160016,
+      "name": "LP1/E84TP2Timeout",
+      "description": "TP2 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160017,
+      "name": "LP1/E84TP3Timeout",
+      "description": "TP3 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160018,
+      "name": "LP1/E84TP4Timeout",
+      "description": "TP4 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160019,
+      "name": "LP1/E84TP5Timeout",
+      "description": "TP5 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160020,
+      "name": "LP1/E84TP6Timeout",
+      "description": "TP6 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160021,
+      "name": "LP1/E84ValidOn",
+      "description": "E84 valid is ON at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160022,
+      "name": "LP1/E84LReqSubmitted",
+      "description": "L_REQ submitted at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160023,
+      "name": "LP1/E84UReqSubmitted",
+      "description": "U_REQ submitted at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160024,
+      "name": "LP1/E84CarrierStatusError",
+      "description": "Carrier status error (Loadport status changed prior to busy ON)",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160025,
+      "name": "LP1/E87AccessModeViolation",
+      "description": "Same as E87 Access Mode Violation event but for Pod only",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160026,
+      "name": "LP1/E84LoadStarted",
+      "description": "Load started (ready ON during load) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160027,
+      "name": "LP1/E84LoadCompleted",
+      "description": "Load completed (compt OFF during load) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160028,
+      "name": "LP1/E84UnloadStarted",
+      "description": "Unload started (ready ON during unload) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160029,
+      "name": "LP1/E84UnloadCompleted",
+      "description": "Unload completed (compt OFF during unload) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160030,
+      "name": "LP1/E84TransferCompleted",
+      "description": "Transfer is complete at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160031,
+      "name": "LP1/E84LReqCompleted",
+      "description": "L_REQ completed at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160032,
+      "name": "LP1/E84UReqCompleted",
+      "description": "U_REQ completed at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160033,
+      "name": "LP1/E84WrongCS0orCS1",
+      "description": "Wrong CS_0 or CS_1 (CS change) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160034,
+      "name": "LP1/E84InputSignalLost",
+      "description": "Lost signal (input signals turned off too soon) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160035,
+      "name": "LP1/E84InputSignalUnexpected",
+      "description": "Unexpected signal (input signals turned on to soon) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160036,
+      "name": "LP1/PIOE84Failure",
+      "description": "An E84 handoff on Pod has failed",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3160037,
+      "name": "LP1/InvalidCarrierType",
+      "description": "Carrier type can not be handled from host",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170001,
+      "name": "LP2/CarrierArrived",
+      "description": "Carrier has arrived at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170002,
+      "name": "LP2/CarrierDeparted",
+      "description": "Carrier has departed from Loadport",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170003,
+      "name": "LP2/CarrierMapped",
+      "description": "Carrier map completed at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170004,
+      "name": "LP2/CarrierMapStarted",
+      "description": "Carrier mapping has been started at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170005,
+      "name": "LP2/LoadComplete",
+      "description": "Done performing load at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170006,
+      "name": "LP2/UnloadComplete",
+      "description": "Done performing unload at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170007,
+      "name": "LP2/CarrierTagRead",
+      "description": "Carrier tag has been read at Loadport",
+      "valid_variables": [
+        "CarrierTag",
+        "PageNumber"
+      ],
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170008,
+      "name": "LP2/CarrierTagWritten",
+      "description": "Carrier tag has been written at Loadport",
+      "valid_variables": [
+        "CarrierTag",
+        "PageNumber"
+      ],
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170009,
+      "name": "LP2/CarrierLocationChanged",
+      "description": "Same as E87 CLC",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID"
+      ],
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170010,
+      "name": "LP2/MoveToDocked",
+      "description": "Carrier begin docking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170011,
+      "name": "LP2/AtDocked",
+      "description": "Carrier completed docking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170012,
+      "name": "LP2/MoveToDelivery",
+      "description": "Carrier begin undocking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170013,
+      "name": "LP2/AtDelivery",
+      "description": "Carrier completed undocking at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170015,
+      "name": "LP2/E84TP1Timeout",
+      "description": "TP1 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170016,
+      "name": "LP2/E84TP2Timeout",
+      "description": "TP2 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170017,
+      "name": "LP2/E84TP3Timeout",
+      "description": "TP3 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170018,
+      "name": "LP2/E84TP4Timeout",
+      "description": "TP4 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170019,
+      "name": "LP2/E84TP5Timeout",
+      "description": "TP5 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170020,
+      "name": "LP2/E84TP6Timeout",
+      "description": "TP6 timeout at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170021,
+      "name": "LP2/E84ValidOn",
+      "description": "E84 valid is ON at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170022,
+      "name": "LP2/E84LReqSubmitted",
+      "description": "L_REQ submitted at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170023,
+      "name": "LP2/E84UReqSubmitted",
+      "description": "U_REQ submitted at Loadport",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170024,
+      "name": "LP2/E84CarrierStatusError",
+      "description": "Carrier status error (Loadport status changed prior to busy ON)",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170025,
+      "name": "LP2/E87AccessModeViolation",
+      "description": "Same as E87 Access Mode Violation event but for Pod only",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170026,
+      "name": "LP2/E84LoadStarted",
+      "description": "Load started (ready ON during load) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170027,
+      "name": "LP2/E84LoadCompleted",
+      "description": "Load completed (compt OFF during load) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170028,
+      "name": "LP2/E84UnloadStarted",
+      "description": "Unload started (ready ON during unload) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170029,
+      "name": "LP2/E84UnloadCompleted",
+      "description": "Unload completed (compt OFF during unload) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170030,
+      "name": "LP2/E84TransferCompleted",
+      "description": "Transfer is complete at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170031,
+      "name": "LP2/E84LReqCompleted",
+      "description": "L_REQ completed at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170032,
+      "name": "LP2/E84UReqCompleted",
+      "description": "U_REQ completed at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170033,
+      "name": "LP2/E84WrongCS0orCS1",
+      "description": "Wrong CS_0 or CS_1 (CS change) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170034,
+      "name": "LP2/E84InputSignalLost",
+      "description": "Lost signal (input signals turned off too soon) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170035,
+      "name": "LP2/E84InputSignalUnexpected",
+      "description": "Unexpected signal (input signals turned on to soon) at Pod",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170036,
+      "name": "LP2/PIOE84Failure",
+      "description": "An E84 handoff on Pod has failed",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3170037,
+      "name": "LP2/InvalidCarrierType",
+      "description": "Carrier type can not be handled from host",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3180001,
+      "name": "IDReader/SubstrateIdRead",
+      "description": "Substrate ID was successfully read.",
+      "valid_variables": [
+        "AcquiredID",
+        "SubstID"
+      ],
+      "dvids": [
+        2160013,
+        2160001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3180002,
+      "name": "IDReader/SubstrateIdReadFailed",
+      "description": "Substrate ID could not get read.",
+      "valid_variables": [
+        "SubstID"
+      ],
+      "dvids": [
+        2160001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190001,
+      "name": "NoState2QueuedPooled",
+      "description": "Process job has been created with state QUEUED/POOLED",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "QUEUED/POOLED",
+      "enabled": true
+    },
+    {
+      "ceid": 3190002,
+      "name": "QueuedPooled2SettingUp",
+      "description": "Process job state has changed from POOLED/QUEUED to SETTING UP",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "QUEUED/POOLED",
+      "current_state": "SETTING UP",
+      "enabled": true
+    },
+    {
+      "ceid": 3190003,
+      "name": "SettingUp2WaitingForStart",
+      "description": "Process job state has changed from SETTING UP to WAITING FOR START",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "SETTING UP",
+      "current_state": "WAITING FOR START",
+      "enabled": true
+    },
+    {
+      "ceid": 3190004,
+      "name": "SettingUp2Processing",
+      "description": "Process job state has changed from SETTING UP to PROCESSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "SETTING UP",
+      "current_state": "PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190005,
+      "name": "WaitingForStart2Processing",
+      "description": "Process job state has changed from WAITING FOR START to PROCESSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190006,
+      "name": "Processing2ProcessComplete",
+      "description": "Process job state has changed from PROCESSING to PROCESS COMPLETE",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PROCESSING",
+      "current_state": "PROCESS COMPLETE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190007,
+      "name": "PostActive2NoState",
+      "description": "Process job was in POST ACTIVE state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "POST ACTIVE",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190008,
+      "name": "ProcessComplete2NoState",
+      "description": "Process job was in PROCESS COMPLETE state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "PROCESS COMPLETE",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190009,
+      "name": "Stopped2NoState",
+      "description": "Process job was in STOPPED state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "STOPPED",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190010,
+      "name": "Aborted2NoState",
+      "description": "Process job was in ABORTED state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "ABORTED",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190011,
+      "name": "Executing2Pausing",
+      "description": "Process job state has changed from EXECUTING to PAUSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "PAUSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190012,
+      "name": "SettingUp2Pausing",
+      "description": "Process job state has changed from SETTING UP to PAUSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "SETTING UP",
+      "current_state": "PAUSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190013,
+      "name": "WaitingForStart2Pausing",
+      "description": "Process job state has changed from WAITING FOR START to PAUSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "PAUSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190014,
+      "name": "Processing2Pausing",
+      "description": "Process job state has changed from PROCESSING to PAUSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PROCESSING",
+      "current_state": "PAUSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190015,
+      "name": "Pausing2Paused",
+      "description": "Process job state has changed from PAUSING to PAUSED",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "PAUSED",
+      "enabled": true
+    },
+    {
+      "ceid": 3190016,
+      "name": "Pause2Executing",
+      "description": "Process job state has changed from PAUSE to EXECUTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "EXECUTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190017,
+      "name": "Pausing2SettingUp",
+      "description": "Process job state has changed from PAUSING to SETTING UP",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "SETTING UP",
+      "enabled": true
+    },
+    {
+      "ceid": 3190018,
+      "name": "Pausing2WaitingForStart",
+      "description": "Process job state has changed from PAUSING to WAITING FOR START",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "WAITING FOR START",
+      "enabled": true
+    },
+    {
+      "ceid": 3190019,
+      "name": "Pausing2Processing",
+      "description": "Process job state has changed from PAUSING to PROCESSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190020,
+      "name": "Paused2SettingUp",
+      "description": "Process job state has changed from PAUSED to SETTING UP",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "SETTING UP",
+      "enabled": true
+    },
+    {
+      "ceid": 3190021,
+      "name": "Paused2WaitingForStart",
+      "description": "Process job state has changed from PAUSED to WAITING FOR START",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "WAITING FOR START",
+      "enabled": true
+    },
+    {
+      "ceid": 3190022,
+      "name": "Paused2Processing",
+      "description": "Process job state has changed from PAUSED to PROCESSING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190023,
+      "name": "Executing2Stopping",
+      "description": "Process job state has changed from EXECUTING to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190024,
+      "name": "SettingUp2Stopping",
+      "description": "Process job state has changed from SETTING UP to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "SETTING UP",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190025,
+      "name": "WaitingForStart2Stopping",
+      "description": "Process job state has changed from WAITING FOR START to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190026,
+      "name": "Processing2Stopping",
+      "description": "Process job state has changed from PROCESSING to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PROCESSING",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190027,
+      "name": "Pause2Stopping",
+      "description": "Process job state has changed from PAUSE to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190028,
+      "name": "Pausing2Stopping",
+      "description": "Process job state has changed from PAUSING to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190029,
+      "name": "Paused2Stopping",
+      "description": "Process job state has changed from PAUSED to STOPPING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "STOPPING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190030,
+      "name": "Executing2Aborting",
+      "description": "Process job state has changed from EXECUTING to ABORTIN",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190031,
+      "name": "SettingUp2Aborting",
+      "description": "Process job state has changed from SETTING UP to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "SETTING UP",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190032,
+      "name": "WaitingForStart2Aborting",
+      "description": "Process job state has changed from WAITING FOR START to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190033,
+      "name": "Processing2Aborting",
+      "description": "Process job state has changed from PROCESSING to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PROCESSING",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190034,
+      "name": "Stopping2Aborting",
+      "description": "Process job state has changed from STOPPING to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "STOPPING",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190035,
+      "name": "Pause2Aborting",
+      "description": "Process job state has changed from PAUSE to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190036,
+      "name": "Pausing2Aborting",
+      "description": "Process job state has changed from PAUSING to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSING",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190037,
+      "name": "Paused2Aborting",
+      "description": "Process job state has changed from PAUSED to ABORTING",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "ABORTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190038,
+      "name": "Aborting2Aborted",
+      "description": "Process job state has changed from ABORTING to ABORTED",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "ABORTING",
+      "current_state": "ABORTED",
+      "enabled": true
+    },
+    {
+      "ceid": 3190039,
+      "name": "Stopping2Stopped",
+      "description": "Process job state has changed from STOPPING to STOPPED",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "STOPPING",
+      "current_state": "STOPPED",
+      "enabled": true
+    },
+    {
+      "ceid": 3190040,
+      "name": "Pause2WaitingForStart",
+      "description": "The processing resource resumed the job and the job was being waiting for start prior to the pause",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "WAITING FOR START",
+      "enabled": true
+    },
+    {
+      "ceid": 3190041,
+      "name": "Pause2Processing",
+      "description": "The processing resource resumed the job and the job was being processing prior to the pause",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3190042,
+      "name": "Pause2SettingUp",
+      "description": "The processing resource resumed the job and the job was being setup prior to the pause",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState",
+        "PRProcessStart",
+        "PRRecipeMethod",
+        "RecVariableList",
+        "PRMtlNameList",
+        "PRMtlType",
+        "RecID"
+      ],
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "previous_state": "PAUSE",
+      "current_state": "SETTING UP",
+      "enabled": true
+    },
+    {
+      "ceid": 3190043,
+      "name": "QueuedPooled2NoState",
+      "description": "Process job was in POOLED/QUEUED state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "QUEUED/POOLED",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3190044,
+      "name": "PRJobMS_Complete",
+      "description": "Process job doesn\u2019t exist anymore",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190045,
+      "name": "PRJobMS_Processing",
+      "description": "Process job state has changed to PROCESSING",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190046,
+      "name": "PRJobMS_ProcessingComplete",
+      "description": "Process job state has changed to PROCESS COMPLETE",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190047,
+      "name": "PRJobMS_Setup",
+      "description": "Process job state has changed to SETTING UP",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190048,
+      "name": "PRJobStateChange",
+      "description": "The state of a process job has changed",
+      "valid_variables": [
+        "PRJobID",
+        "PRJobState"
+      ],
+      "dvids": [
+        2130001,
+        2130002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190049,
+      "name": "WaitingForMaterial",
+      "description": "A process job is waiting for assigned material to proceed",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3190050,
+      "name": "PRJobMS_WaitingForStart",
+      "description": "Process job state has changed to WAITING FOR START",
+      "valid_variables": [
+        "PRJobID"
+      ],
+      "dvids": [
+        2130001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3200001,
+      "name": "ControlJob:1:NoState-Queued",
+      "description": "Control job has been created with state QUEUED",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "QUEUED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200002,
+      "name": "ControlJob:10:Executing-Completed",
+      "description": "Control job state has changed from EXECUTING to COMPLETED",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200003,
+      "name": "ControlJob:11:Active-Completed",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to a stopping action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "ACTIVE",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200004,
+      "name": "Selected2CompletedByCJStop",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to a stopping action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "SELECTED",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200005,
+      "name": "WaitingForStart2CompletedByCJStop",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to a stopping action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200006,
+      "name": "Executing2CompletedByCJStop",
+      "description": "Control job state has changed from EXECUTING to COMPLETED due to a stopping action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200007,
+      "name": "Paused2CompletedByCJStop",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to a stopping action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200008,
+      "name": "ControlJob:12:Active-Completed",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to an aborting action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "ACTIVE",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200009,
+      "name": "Selected2CompletedByCJAbort",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to an aborting action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "SELECTED",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200010,
+      "name": "WaitingForStart2CompletedByCJAbort",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to an aborting action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200011,
+      "name": "Executing2CompletedByCJAbort",
+      "description": "Control job state has changed from EXECUTING  to COMPLETED due to an aborting action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200012,
+      "name": "Paused2CompletedByCJAbort",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to an aborting action",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "COMPLETED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200013,
+      "name": "ControlJob:13:Completed-NoState",
+      "description": "Control job was in COMPLETED state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "COMPLETED",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3200014,
+      "name": "ControlJob:2:Queued-NoState",
+      "description": "Control job was in QUEUED state and doesn\u2019t exist anymore by now",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "QUEUED",
+      "current_state": "NO STATE",
+      "enabled": true
+    },
+    {
+      "ceid": 3200015,
+      "name": "ControlJob:3:Queued-Selected",
+      "description": "Control job state has changed from QUEUED to SELECTED",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "QUEUED",
+      "current_state": "SELECTED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200016,
+      "name": "ControlJob:4:Selected-Queued",
+      "description": "Control job was deselected and its state has changed from SELECTED back to QUEUED",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "SELECTED",
+      "current_state": "QUEUED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200017,
+      "name": "ControlJob:5:Selected-Executing",
+      "description": "Control job has been started and its state has changed from SELECTED to EXECUTING",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "SELECTED",
+      "current_state": "EXECUTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3200018,
+      "name": "ControlJob:6:Selected-WaitingForStart",
+      "description": "Control job state has changed from SELECTED to WAITING FOR START",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "SELECTED",
+      "current_state": "WAITING FOR START",
+      "enabled": true
+    },
+    {
+      "ceid": 3200019,
+      "name": "ControlJob:7:WaitingForStart-Executing",
+      "description": "Control job has been started and its state has changed from WAITING FOR START to EXECUTING",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "WAITING FOR START",
+      "current_state": "EXECUTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3200020,
+      "name": "ControlJob:8:Executing-Paused",
+      "description": "Control job state has changed from EXECUTING to PAUSED",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "EXECUTING",
+      "current_state": "PAUSED",
+      "enabled": true
+    },
+    {
+      "ceid": 3200021,
+      "name": "ControlJob:9:Paused-Executing",
+      "description": "Control job state has changed from PAUSED to EXECUTING",
+      "valid_variables": [
+        "CtrlJobID"
+      ],
+      "dvids": [
+        2140001
+      ],
+      "previous_state": "PAUSED",
+      "current_state": "EXECUTING",
+      "enabled": true
+    },
+    {
+      "ceid": 3210001,
+      "name": "CarrierApproachingComplete",
+      "description": "Carrier is about to approach completing",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210002,
+      "name": "CarrierClamped",
+      "description": "Carrier has been clamped at a load port",
+      "valid_variables": [
+        "LocationID",
+        "PortID"
+      ],
+      "dvids": [
+        2150012,
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210003,
+      "name": "CarrierClosed",
+      "description": "Carrier has been closed",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210004,
+      "name": "IDReaderAvailable",
+      "description": "ID reader of a load port is available",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210005,
+      "name": "IDReaderUnavailable",
+      "description": "ID reader of a load port is not available",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210006,
+      "name": "CarrierIDRead",
+      "description": "Carrier ID has been read",
+      "valid_variables": [
+        "CarrierID",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210007,
+      "name": "CarrierIDReadFail",
+      "description": "Carrier ID reading has failed",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210008,
+      "name": "CarrierLocationChange",
+      "description": "Carrier has changed its location",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID"
+      ],
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210009,
+      "name": "CarrierOpened",
+      "description": "Carrier has been opened",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210010,
+      "name": "CarrierUnclamped",
+      "description": "Carrier has been unclamped at a load port",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210011,
+      "name": "NoState2Carrier",
+      "description": "Carrier has been created",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "CARRIER",
+      "enabled": true
+    },
+    {
+      "ceid": 3210012,
+      "name": "NoState2IDNotRead",
+      "description": "Carrier has been created with state ID NOT READ",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150003
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "ID NOT READ",
+      "enabled": true
+    },
+    {
+      "ceid": 3210013,
+      "name": "NoState2WaitingForHost",
+      "description": "Carrier has been created with ID status WAITING FOR HOST",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3210014,
+      "name": "NoState2IDVerificationOk",
+      "description": "Carrier has been created with ID status ID VERIFICATION OK",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "ID VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210015,
+      "name": "NoState2IDVerificationFailed",
+      "description": "Carrier has been created with ID status ID VERIFICATION FAILED",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "ID VERIFICATION FAILED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210016,
+      "name": "WaitingForHost2IDVerificationOk",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION OK",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "ID VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210017,
+      "name": "WaitingForHost2IDVerificationFailed",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION FAILED",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "ID VERIFICATION FAILED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210018,
+      "name": "IDNotRead2WaitingForHost",
+      "description": "Carrier ID status has changed from ID NOT READ to WAITING FOR HOST due to an unsuccessful ID reading",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "ID NOT READ",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3210019,
+      "name": "IDNotRead2WaitingForHost_NotBypassed",
+      "description": "Carrier ID status has changed from IN NOT READ to WAITING FOR HOST due to not bypassing the ID reading",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "ID NOT READ",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3210020,
+      "name": "IDNotRead2IDVerificationOk",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to successful equipment based ID verification",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "ID NOT READ",
+      "current_state": "ID VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210021,
+      "name": "IDNotRead2IDVerificationOk_Bypassed",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to bypassing the ID reading",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierIDStatus",
+        "PortID"
+      ],
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "previous_state": "ID NOT READ",
+      "current_state": "ID VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210022,
+      "name": "NoState2SlotMapNotRead",
+      "description": "Carrier has been created with state SLOTMAP NOT READ",
+      "valid_variables": [
+        "CarrierID",
+        "SlotMapStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150004
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "SLOT MAP NOT READ",
+      "enabled": true
+    },
+    {
+      "ceid": 3210023,
+      "name": "SlotMapNotRead2SlotMapVerificationOk",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to SLOTMAP VERIFICATION OK",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus",
+        "LocationID",
+        "PortID",
+        "SlotMapStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "previous_state": "SLOT MAP NOT READ",
+      "current_state": "SLOT MAP VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210024,
+      "name": "SlotMapNotRead2WaitingForHost",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to WAITING FOR HOST",
+      "valid_variables": [
+        "CarrierID",
+        "LocationID",
+        "PortID",
+        "Reason",
+        "SlotMapStatus",
+        "SlotMap"
+      ],
+      "dvids": [
+        2150001,
+        2150012,
+        2150002,
+        2150013,
+        2150004,
+        2150011
+      ],
+      "previous_state": "SLOT MAP NOT READ",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3210025,
+      "name": "WaitingForHost2SlotMapVerificationOk",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION OK",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus",
+        "LocationID",
+        "PortID",
+        "SlotMapStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "SLOT MAP VERIFICATION OK",
+      "enabled": true
+    },
+    {
+      "ceid": 3210026,
+      "name": "WaitingForHost2SlotMapVerificationFail",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION FAI",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus",
+        "LocationID",
+        "PortID",
+        "SlotMapStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "SLOT MAP VERIFICATION FAIL",
+      "enabled": true
+    },
+    {
+      "ceid": 3210027,
+      "name": "NoState2NotAccessed",
+      "description": "Carrier has been created with state NOT ACCESSED",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "NOT ACCESSED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210028,
+      "name": "NotAccessed2InAccess",
+      "description": "Carrier accessing status has changed from NOT ACCESSED to IN ACCESS",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "previous_state": "NOT ACCESSED",
+      "current_state": "IN ACCESS",
+      "enabled": true
+    },
+    {
+      "ceid": 3210029,
+      "name": "InAccess2CarrierComplete",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER COMPLETE",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "previous_state": "IN ACCESS",
+      "current_state": "CARRIER COMPLETE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210030,
+      "name": "InAccess2CarrierStopped",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER STOPPED",
+      "valid_variables": [
+        "CarrierID",
+        "CarrierAccessingStatus"
+      ],
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "previous_state": "IN ACCESS",
+      "current_state": "CARRIER STOPPED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210031,
+      "name": "CarrierDeleted",
+      "description": "Carrier doesn\u2019t exist anymore",
+      "valid_variables": [
+        "CarrierID"
+      ],
+      "dvids": [
+        2150001
+      ],
+      "previous_state": "CARRIER",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210032,
+      "name": "NoState2ManualOrAuto",
+      "description": "Load port access mode restored after system restart",
+      "valid_variables": [
+        "PortID",
+        "AccessMode"
+      ],
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "MANUAL / AUTO",
+      "enabled": true
+    },
+    {
+      "ceid": 3210033,
+      "name": "NoState2Manual",
+      "description": "Load port access mode restored after system restart in state MANUAL",
+      "valid_variables": [
+        "PortID",
+        "AccessMode"
+      ],
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "MANUAL",
+      "enabled": true
+    },
+    {
+      "ceid": 3210034,
+      "name": "NoState2Auto",
+      "description": "Load port access mode restored after system restart in state AUTO",
+      "valid_variables": [
+        "PortID",
+        "AccessMode"
+      ],
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "AUTO",
+      "enabled": true
+    },
+    {
+      "ceid": 3210035,
+      "name": "Manual2Auto",
+      "description": "Load port access mode has changed from MANUAL to AUTO",
+      "valid_variables": [
+        "PortID",
+        "AccessMode"
+      ],
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "previous_state": "MANUAL",
+      "current_state": "AUTO",
+      "enabled": true
+    },
+    {
+      "ceid": 3210036,
+      "name": "Auto2Manual",
+      "description": "Load port access mode has changed from AUTO to MANUAL",
+      "valid_variables": [
+        "PortID",
+        "AccessMode"
+      ],
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "previous_state": "AUTO",
+      "current_state": "MANUAL",
+      "enabled": true
+    },
+    {
+      "ceid": 3210037,
+      "name": "NoState2NotAssociated",
+      "description": "Load port/carrier association state has changed to NOT ASSOCIATED initially",
+      "valid_variables": [
+        "PortID",
+        "PortAssociationState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150007,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "NOT ASSOCIATED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210038,
+      "name": "NotAssociated2Associated",
+      "description": "Load port/carrier association state has changed to from NOT ASSOCIATED to ASSOCIATED",
+      "valid_variables": [
+        "CarrierID",
+        "PortID",
+        "PortAssociationState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150001,
+        2150002,
+        2150007,
+        2150008
+      ],
+      "previous_state": "NOT ASSOCIATED",
+      "current_state": "ASSOCIATED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210039,
+      "name": "Associated2NotAssociated",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to NOT ASSOCIATED",
+      "valid_variables": [
+        "PortID",
+        "PortAssociationState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150007,
+        2150008
+      ],
+      "previous_state": "ASSOCIATED",
+      "current_state": "NOT ASSOCIATED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210040,
+      "name": "Associated2Associated",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to ASSOCIATED",
+      "valid_variables": [
+        "CarrierID",
+        "PortID",
+        "PortAssociationState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150001,
+        2150002,
+        2150007,
+        2150008
+      ],
+      "previous_state": "ASSOCIATED",
+      "current_state": "ASSOCIATED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210041,
+      "name": "NoState2NotReserved",
+      "description": "Load port reservation state has changed to NOT RESERVED initially",
+      "valid_variables": [
+        "PortID",
+        "LoadPortReservationState"
+      ],
+      "dvids": [
+        2150002,
+        2150009
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "NOT RESERVED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210042,
+      "name": "NotReserved2Reserved",
+      "description": "Load port reservation state has changed from NOT RESERVED to RESERVED",
+      "valid_variables": [
+        "CarrierID",
+        "PortID",
+        "LoadPortReservationState"
+      ],
+      "dvids": [
+        2150001,
+        2150002,
+        2150009
+      ],
+      "previous_state": "NOT RESERVED",
+      "current_state": "RESERVED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210043,
+      "name": "Reserved2NotReserved",
+      "description": "Load port reservation state has changed from RESERVED to NOT RESERVED",
+      "valid_variables": [
+        "PortID",
+        "LoadPortReservationState"
+      ],
+      "dvids": [
+        2150002,
+        2150009
+      ],
+      "previous_state": "RESERVED",
+      "current_state": "NOT RESERVED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210044,
+      "name": "NoState2InService",
+      "description": "Load port transfer state has changed from no state to IN SERVICE (system reset)",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "IN SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210045,
+      "name": "NoState2OutOfService",
+      "description": "Load port transfer state has changed from no state to OUT OF SERVICE (system reset)",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "OUT OF SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210046,
+      "name": "NoState2TransferBlocked",
+      "description": "Load port transfer state has changed from no state to TRANSFER BLOCKED (system reset)",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "TRANSFER BLOCKED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210047,
+      "name": "NoState2ReadyToLoad",
+      "description": "Load port transfer state has changed from no state to READY TO LOAD (system reset)",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "READY TO LOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210048,
+      "name": "NoState2ReadyToUnload",
+      "description": "Load port transfer state has changed from no state to READY TO UNLOAD (system reset)",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "READY TO UNLOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210049,
+      "name": "OutOfService2InService",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to IN SERVICE",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "OUT OF SERVICE",
+      "current_state": "IN SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210050,
+      "name": "OutOfService2ReadyToLoad",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO LOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "OUT OF SERVICE",
+      "current_state": "READY TO LOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210051,
+      "name": "OutOfService2ReadyToUnload",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO UNLOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "OUT OF SERVICE",
+      "current_state": "READY TO UNLOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210052,
+      "name": "OutOfService2TransferBlocked",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to TRANSFER BLOCKED",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "OUT OF SERVICE",
+      "current_state": "TRANSFER BLOCKED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210053,
+      "name": "InService2OutOfService",
+      "description": "Load port transfer state has changed from IN SERVICE to OUT OF SERVICE",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "IN SERVICE",
+      "current_state": "OUT OF SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210054,
+      "name": "ReadyToLoad2OutOfService",
+      "description": "Load port transfer state has changed from READY TO LOAD to OUT OF SERVICE",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "READY TO LOAD",
+      "current_state": "OUT OF SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210055,
+      "name": "ReadyToUnload2OutOfService",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to OUT OF SERVICE",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "READY TO UNLOAD",
+      "current_state": "OUT OF SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210056,
+      "name": "TransferBlocked2OutOfService",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to OUT OF SERVICE",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "OUT OF SERVICE",
+      "enabled": true
+    },
+    {
+      "ceid": 3210057,
+      "name": "InService2TransferReady",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER READY",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "IN SERVICE",
+      "current_state": "TRANSFER READY",
+      "enabled": true
+    },
+    {
+      "ceid": 3210058,
+      "name": "InService2TransferBlocked",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER BLOCKED",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "IN SERVICE",
+      "current_state": "TRANSFER BLOCKED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210059,
+      "name": "TransferReady2ReadyToLoad",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO LOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER READY",
+      "current_state": "READY TO LOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210060,
+      "name": "TransferReady2ReadyToUnload",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO UNLOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER READY",
+      "current_state": "READY TO UNLOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210061,
+      "name": "ReadyToLoad2TransferBlocked",
+      "description": "Load port transfer state has changed from READY TO LOAD to TRANSFER BLOCKED",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "READY TO LOAD",
+      "current_state": "TRANSFER BLOCKED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210062,
+      "name": "ReadyToUnload2TransferBlocked",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to TRANSFER BLOCKED",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "READY TO UNLOAD",
+      "current_state": "TRANSFER BLOCKED",
+      "enabled": true
+    },
+    {
+      "ceid": 3210063,
+      "name": "TransferBlocked2ReadyToLoad",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "READY TO LOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210064,
+      "name": "TransferBlocked2ReadyToUnload",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "READY TO UNLOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210065,
+      "name": "TransferBlocked2TransferReady",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to TRANSFER READY",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "TRANSFER READY",
+      "enabled": true
+    },
+    {
+      "ceid": 3210066,
+      "name": "UnknownCarrierID",
+      "description": "Carrier has arrived on a load port with unavailable ID reader",
+      "valid_variables": [
+        "PortID"
+      ],
+      "dvids": [
+        2150002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3210067,
+      "name": "TransferBlocked2ReadyToLoad_Failed",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD due to an unsuccessful load action",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "READY TO LOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3210068,
+      "name": "TransferBlocked2ReadyToUnload_Failed",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD due to an unsuccessful unload action",
+      "valid_variables": [
+        "PortID",
+        "PortTransferState",
+        "PortStateInfo"
+      ],
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "previous_state": "TRANSFER BLOCKED",
+      "current_state": "READY TO UNLOAD",
+      "enabled": true
+    },
+    {
+      "ceid": 3220001,
+      "name": "SubstLoc_Unoccupied2Occupied",
+      "description": "Substrate location state has changed from UNOCCUPIED to OCCUPIED",
+      "valid_variables": [
+        "SubstLocID",
+        "SubstLocSubstID",
+        "SubstLocState"
+      ],
+      "dvids": [
+        2160002,
+        2160029,
+        2160028
+      ],
+      "previous_state": "UNOCCUPIED",
+      "current_state": "OCCUPIED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220002,
+      "name": "SubstLoc_Occupied2Unoccupied",
+      "description": "Substrate location state has changed from OCCUPIED to UNOCCUPIED",
+      "valid_variables": [
+        "SubstLocID",
+        "SubstLocSubstID",
+        "SubstLocState"
+      ],
+      "dvids": [
+        2160002,
+        2160029,
+        2160028
+      ],
+      "previous_state": "OCCUPIED",
+      "current_state": "UNOCCUPIED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220003,
+      "name": "NoState2AtSource",
+      "description": "Substrate has been created at a carrier slot with transport state AT SOURCE",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "AT SOURCE",
+      "enabled": true
+    },
+    {
+      "ceid": 3220004,
+      "name": "AtSource2AtWork",
+      "description": "Substrate transport state has changed from AT SOURCE to AT WORK",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "AT SOURCE",
+      "current_state": "AT WORK",
+      "enabled": true
+    },
+    {
+      "ceid": 3220005,
+      "name": "AtWork2AtSource",
+      "description": "Substrate was moved back to its source location without being processed",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "AT WORK",
+      "current_state": "AT SOURCE",
+      "enabled": true
+    },
+    {
+      "ceid": 3220006,
+      "name": "AtWork2AtWork",
+      "description": "Substrate was moved from one location to another within the equipment",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "AT WORK",
+      "current_state": "AT WORK",
+      "enabled": true
+    },
+    {
+      "ceid": 3220007,
+      "name": "AtWork2AtDestination",
+      "description": "Substrate transport state has changed from AT WORK to AT DESTINATION",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "AT WORK",
+      "current_state": "AT DESTINATION",
+      "enabled": true
+    },
+    {
+      "ceid": 3220008,
+      "name": "AtDestination2AtWork",
+      "description": "Substrate transport state has changed from AT DESTINATION to AT WORK",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "AT DESTINATION",
+      "current_state": "AT WORK",
+      "enabled": true
+    },
+    {
+      "ceid": 3220009,
+      "name": "AtDestination2AtSource",
+      "description": "Substrate transport state has changed from AT DESTINATION to AT SOURCE",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "AT DESTINATION",
+      "current_state": "AT SOURCE",
+      "enabled": true
+    },
+    {
+      "ceid": 3220010,
+      "name": "SubstRemovedFromDestination",
+      "description": "Substrate was removed from the equipment while it was at its destination location",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "AT DESTINATION",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3220011,
+      "name": "SubstRemoved",
+      "description": "Substrate doesn\u2019t exist anymore",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "All states beside AT DESTINATION",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3220012,
+      "name": "NoState2NeedsProcessing",
+      "description": "Substrate has been created with processing state NEEDS PROCESSING",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "NEEDS PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3220013,
+      "name": "NeedsProcessing2InProcess",
+      "description": "Substrate processing state has changed to IN PROCESS",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NEEDS PROCESSING",
+      "current_state": "IN PROCESS",
+      "enabled": true
+    },
+    {
+      "ceid": 3220014,
+      "name": "InProcess2ProcessingComplete",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSING COMPLETE",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "PROCESSING COMPLETE",
+      "enabled": true
+    },
+    {
+      "ceid": 3220015,
+      "name": "NeedsProcessing2ProcessingComplete",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to PROCESSING COMPLETE",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NEEDS PROCESSING",
+      "current_state": "PROCESSING COMPLETE",
+      "enabled": true
+    },
+    {
+      "ceid": 3220016,
+      "name": "InProcess2Processed",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "PROCESSED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220017,
+      "name": "InProcess2Aborted",
+      "description": "Substrate processing state has changed from IN PROCESS to ABORTED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "ABORTED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220018,
+      "name": "InProcess2Stopped",
+      "description": "Substrate processing state has changed from IN PROCESS to STOPPED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "STOPPED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220019,
+      "name": "InProcess2Rejected",
+      "description": "Substrate processing state has changed from IN PROCESS to REJECTED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "REJECTED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220020,
+      "name": "InProcess2Lost",
+      "description": "Substrate processing state has changed from IN PROCESS to LOST",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "LOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3220021,
+      "name": "InProcess2Skipped",
+      "description": "Substrate processing state has changed from IN PROCESS to SKIPPED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "IN PROCESS",
+      "current_state": "SKIPPED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220022,
+      "name": "NeedsProcessing2Lost",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to LOST",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NEEDS PROCESSING",
+      "current_state": "LOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3220023,
+      "name": "NeedsProcessing2Skipped",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to SKIPPED",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NEEDS PROCESSING",
+      "current_state": "SKIPPED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220024,
+      "name": "SubstrateObject:16:NoState-NotConfirmed",
+      "description": "Substrate object is created",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NO STATE",
+      "current_state": "NOT CONFIRMED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220025,
+      "name": "SubstrateObject:17:NotConfirmed-Confirmed",
+      "description": "Substrate was successfully read and SubstID provided in the ContentMap matched the AcquiredID read by the equipment",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NOT CONFIRMED",
+      "current_state": "CONFIRMED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220026,
+      "name": "SubstrateObject:18:NotConfirmed-WaitingForHost",
+      "description": "Substrate Id was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NOT CONFIRMED",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3220027,
+      "name": "SubstrateObject:19:NotConfirmed-WaitingForHost",
+      "description": "Substrate ID was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "NOT CONFIRMED",
+      "current_state": "WAITING FOR HOST",
+      "enabled": true
+    },
+    {
+      "ceid": 3220028,
+      "name": "SubstrateObject:20:WaitingForHost-Confirmed",
+      "description": "Equipment has received a ProceedWithSubstrate",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "CONFIRMED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220029,
+      "name": "SubstrateObject:21:WaitingForHost-ConfirmationFailed",
+      "description": "Equipment has received a CancelSubstrate",
+      "valid_variables": [
+        "SubstIDStatusList",
+        "SubstSubstLocIDList",
+        "SubstDestinationList",
+        "SubstSourceList",
+        "SubstHistoryList",
+        "SubstMtrlStatusList",
+        "AcquiredIDList",
+        "SubstIDList",
+        "SubstProcStateList",
+        "SubstStateList",
+        "SubstLotIDList",
+        "SubstTypeList",
+        "SubstUsageList"
+      ],
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "previous_state": "WAITING FOR HOST",
+      "current_state": "CONFIRMATION FAILED",
+      "enabled": true
+    },
+    {
+      "ceid": 3220030,
+      "name": "SubstrateIDReaderAvailable",
+      "description": "Informs that a substrate ID reader becomes available.",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3220031,
+      "name": "SubstrateIDReaderUnavailable",
+      "description": "Informs that a substrate ID reader becomes unavailable.",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3220032,
+      "name": "InProcess2NeedsProcessing",
+      "description": "Substrate processing state has changed from IN PROCESS to NEEDS PROCESSING",
+      "valid_variables": [],
+      "dvids": [],
+      "previous_state": "IN PROCESS",
+      "current_state": "NEEDS PROCESSING",
+      "enabled": true
+    },
+    {
+      "ceid": 3230001,
+      "name": "GeneralError",
+      "description": "A general error concerning an E39 object was recognized",
+      "valid_variables": [
+        "ErrorCode",
+        "ErrorText"
+      ],
+      "dvids": [
+        2170001,
+        2170002
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    },
+    {
+      "ceid": 3230002,
+      "name": "InvalidStateChange",
+      "description": "An invalid state change for an E39 state model was recognized",
+      "valid_variables": [
+        "ObjID",
+        "ObjType",
+        "ModelName",
+        "FromState",
+        "ToState"
+      ],
+      "dvids": [
+        2170003,
+        2170004,
+        2170005,
+        2170006,
+        2170007
+      ],
+      "previous_state": "None",
+      "current_state": "None",
+      "enabled": true
+    }
+  ]
+}

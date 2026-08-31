@@ -1,0 +1,71 @@
+{
+    "alarms": [
+        {
+            "alid": 1001,
+            "alcd": 1,
+            "altx": "Emergency Stop Activated",
+            "enabled": true,
+            "set_ceid": 2001,
+            "clear_ceid": 2002
+        },
+        {
+            "alid": 1002,
+            "alcd": 2,
+            "altx": "Temperature Out of Range",
+            "enabled": true,
+            "set_ceid": 2003,
+            "clear_ceid": 2004
+        },
+        {
+            "alid": 1003,
+            "alcd": 3,
+            "altx": "Pressure Limit Exceeded",
+            "enabled": true,
+            "set_ceid": 2005,
+            "clear_ceid": 2006
+        },
+        {
+            "alid": 1004,
+            "alcd": 4,
+            "altx": "Vacuum Loss",
+            "enabled": true,
+            "set_ceid": 2007,
+            "clear_ceid": 2008
+        },
+        {
+            "alid": 1005,
+            "alcd": 5,
+            "altx": "Wafer Misalignment",
+            "enabled": true,
+            "set_ceid": 2009,
+            "clear_ceid": 2010
+        },
+        {
+            "alid": 1006,
+            "alcd": 6,
+            "altx": "Robot Interlock",
+            "enabled": true,
+            "set_ceid": 2011,
+            "clear_ceid": 2012
+        },
+        {
+            "alid": 1007,
+            "alcd": 7,
+            "altx": "Gas Flow Anomaly",
+            "enabled": true,
+            "set_ceid": 2013,
+            "clear_ceid": 2014
+        },
+        {
+            "alid": 1008,
+            "alcd": 8,
+            "altx": "Process Chamber Door Open",
+            "enabled": true,
+            "set_ceid": 2015,
+            "clear_ceid": 2016
+        }
+    ],
+    "_comments": {
+        "alcd_values": "Alarm codes per SEMI E30: 1=Personal Safety, 2=Equipment Safety, 3=Parameter Warning, 4=Parameter Limit, 5=Irrecoverable Error, 6=Equipment Status, 7=Attention Flag, 8=Data Integrity"
+    }
+}

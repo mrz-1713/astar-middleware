@@ -1,0 +1,118 @@
+{
+  "description": "Event Subscription Configuration for SECS/GEM Gateway",
+  "dvid_names": {
+    "1": "CLOCK",
+    "10": "TEST_VALUE",
+    "11": "BIN_CODE",
+    "2": "EQID",
+    "3": "LOTID",
+    "4": "WAFERID",
+    "5": "RCPID",
+    "6": "PPSTATE",
+    "7": "SLOT",
+    "8": "DIE_X",
+    "9": "DIE_Y"
+  },
+  "events": [
+    {
+      "ceid": 1001,
+      "description": "FOUP/SMIF Pod: Ready to Load -> Loaded -> Mounted",
+      "enabled": true,
+      "name": "FOUP_POD_LOAD",
+      "rptids": [
+        1
+      ]
+    },
+    {
+      "ceid": 1002,
+      "description": "Tool Trigger Start by User (Lot Start Datetime, Recipe, WaferIDs)",
+      "enabled": true,
+      "name": "LOT_START",
+      "rptids": [
+        1
+      ]
+    },
+    {
+      "ceid": 1003,
+      "description": "Wafer enter Chamber (Wafer Start Datetime, Recipe, WaferIDs, Chamber)",
+      "enabled": true,
+      "name": "WAFER_ENTER_CHAMBER",
+      "rptids": [
+        1,
+        2
+      ]
+    },
+    {
+      "ceid": 1004,
+      "description": "Wafer leave Chamber (Wafer End Datetime, Recipe, WaferIDs, Chamber)",
+      "enabled": true,
+      "name": "WAFER_LEAVE_CHAMBER",
+      "rptids": [
+        1,
+        2
+      ]
+    },
+    {
+      "ceid": 1005,
+      "description": "Lot Process Completion (Lot End Datetime, Recipe, WaferIDs)",
+      "enabled": true,
+      "name": "LOT_END",
+      "rptids": [
+        1
+      ]
+    },
+    {
+      "ceid": 1006,
+      "description": "FOUP/SMIF Pod: Unmounted -> Ready to Unload -> Unloaded",
+      "enabled": true,
+      "name": "FOUP_POD_UNLOAD",
+      "rptids": [
+        1
+      ]
+    },
+    {
+      "ceid": 100,
+      "description": "Process started on a chamber (generic CEID used by the built-in simulator for profiles whose installation CEIDs are not known).",
+      "enabled": true,
+      "name": "ProcessingStarted",
+      "rptids": []
+    },
+    {
+      "ceid": 101,
+      "description": "Process completed on a chamber (generic CEID used by the built-in simulator for profiles whose installation CEIDs are not known).",
+      "enabled": true,
+      "name": "ProcessingCompleted",
+      "rptids": []
+    }
+  ],
+  "reports": [
+    {
+      "description": "Main process data report with all DVIDs",
+      "dvids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "name": "ProcessDataReport",
+      "rptid": 1
+    },
+    {
+      "description": "Wafer tracking data only",
+      "dvids": [
+        3,
+        4,
+        7
+      ],
+      "name": "WaferTrackingReport",
+      "rptid": 2
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+===============================================================================
+  PRE-INSTALL CHECKLIST  -  print this and tick boxes before you start
+===============================================================================
+
+ON THE PC:
+  [ ] Windows 11
+  [ ] ZIP SHA-256 matches the trusted release record or approved secure channel
+  [ ] Current PowerShell session = RemoteSigned; install.ps1 has been unblocked
+  NOTE: Read PYTHON_VERSION.txt. A matching python\ installer may be bundled;
+        otherwise install that exact version before running install.ps1.
+  [ ] D:\ drive exists and is writeable (used by per-lot CSV)
+  [ ] Network share \\FILESERVER\... is reachable and writeable
+      (or be ready to change network_csv_path in production.yaml)
+
+LINKSTUFFS:
+  [ ] Server host: __________________________
+  [ ] Server port: __________________________  (secure MQTT default 8883)
+  [ ] TLS enabled? Y (required unless an insecure test network is approved)
+  [ ] HTTPS device token recorded (one per tool): __________________________
+
+  Tokens are stored in machine environment variables. Reference each variable
+  under linkstuffs_http.device_tokens for the matching display_name. Then verify:
+     python -m eap_middleware validate-config --config config\production.yaml
+  [ ] HTTPS token environment variable set for each enabled tool
+  [ ] validate-config reports "valid": true
+
+PER MACHINE (fill one row per tool to monitor):
++-------------+----------------------------------+-----------------+--------+----------+
+| TOOL ID     | display_name                     | HSMS IP         | port   | dev_id   |
++-------------+----------------------------------+-----------------+--------+----------+
+| TOOL_01     | SPTS_fxP_OMEGA_01                | _______________ | _____  | _______  |
+| TOOL_02     | DAVINCI200_MC4_HC1_01            | _______________ | _____  | _______  |
+| TOOL_03     | PTIQ_01                          | _______________ | _____  | _______  |
++-------------+----------------------------------+-----------------+--------+----------+
+
+For each tool, confirm with the tool's vendor or operator:
+  [ ] Tool's HSMS is configured as PASSIVE (we are ACTIVE, we initiate connect)
+      ACTIVE/PASSIVE determines which side initiates the connection.
+  [ ] No other host/MES occupies this tool's HSMS-SS session. The single-peer
+      limit is the tool's single-session HSMS-SS constraint, not a consequence
+      of choosing ACTIVE or PASSIVE.
+  [ ] DaVinci/FabLink uses E30-style reports for full-detail collection.
+      E40 may still provide coarser lifecycle data. Confirm with the tool owner
+      before changing report style or restarting the Host Interface.
+  [ ] Alarms are enabled on the tool (typical default). If they are NOT, set
+      enable_alarms: true for that machine in production.yaml so the middleware
+      sends S5F3 (Enable All Alarms) on connect. enable_alarms defaults to
+      false because not every tool accepts a host "enable all" S5F3 - confirm
+      with the tool owner before enabling it.
+
+OPTIONAL:
+  [ ] NSSM (Non-Sucking Service Manager) - nssm.exe copied to e.g.
+      C:\Tools\nssm\nssm.exe (needed only if you want auto-start on boot)
+
+When all boxes above are ticked, proceed to README_DEPLOY.txt step 1.
+
+===============================================================================

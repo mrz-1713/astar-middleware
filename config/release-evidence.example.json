@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": {"commit": "REPLACE_WITH_FULL_COMMIT", "dirty": false},
+  "provenance": {
+    "commit": "REPLACE_WITH_FULL_COMMIT",
+    "builder": "REPLACE_WITH_WORKFLOW_OR_APPROVED_BUILDER",
+    "build_id": "REPLACE_WITH_IMMUTABLE_BUILD_ID"
+  },
+  "dependency_locks": [],
+  "artifacts": [],
+  "tests": [],
+  "sbom": {},
+  "external_gates": {
+    "tenant_https_mqtt": false,
+    "davinci_equipment": false,
+    "spts_equipment": false,
+    "ptiq_equipment": false,
+    "nexgen_equipment": false,
+    "windows_reboot_power_loss": false,
+    "disk_full_drill": false,
+    "backup_restore_drill": false,
+    "oem_safety_access_approval": false
+  }
+}

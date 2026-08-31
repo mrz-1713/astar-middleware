@@ -1,0 +1,16 @@
+# Pinned development/CI graph. Runtime and offline release installation use
+# requirements.txt / requirements-release.lock and intentionally do not ship
+# workbook generation, lint, audit, or SBOM tooling.
+-r requirements.txt
+colorama==0.4.6
+iniconfig==2.3.0
+packaging==26.2
+pluggy==1.6.0
+pygments==2.20.0
+pytest==9.1.1
+pytest-asyncio==1.4.0
+openpyxl==3.1.5
+ruff==0.12.11
+pyright==1.1.411
+pip-audit==2.10.1
+bandit==1.8.6

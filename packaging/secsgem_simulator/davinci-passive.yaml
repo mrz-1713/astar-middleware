@@ -1,0 +1,27 @@
+# Simulator acts as the EQUIPMENT and listens; the ASTAR middleware is the
+# host and connects to it (set hsms_mode: active in production.yaml).
+connection:
+  # equipment = pretend to be the tool. Independent of mode below.
+  role: equipment
+  mode: passive
+  address: "127.0.0.1"  # Use the machine's LAN IP only for a controlled remote test.
+  port: 5050
+  device_id: 0
+
+simulation:
+  tool_id: "DAV_SIM_01"
+  wafer_count: 3
+  event_interval_sec: 0.5
+  repeat_lots: true
+  emit_alarm: true
+
+recovery:
+  initial_retry_sec: 1
+  maximum_retry_sec: 30
+  maximum_restart_attempts: 0  # 0 retries until the operator stops it.
+
+logging:
+  level: INFO
+  directory: logs
+  maximum_size_mb: 10
+  backup_count: 5

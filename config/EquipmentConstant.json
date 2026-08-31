@@ -1,0 +1,71 @@
+{
+    "equipment_constants": [
+        {
+            "ecid": 1,
+            "ecname": "ESTABLISH_COMMS_TIMEOUT",
+            "ecmin": 1,
+            "ecmax": 120,
+            "ecdef": 10,
+            "units": "sec"
+        },
+        {
+            "ecid": 2,
+            "ecname": "TIME_FORMAT",
+            "ecmin": 0,
+            "ecmax": 2,
+            "ecdef": 0,
+            "units": ""
+        },
+        {
+            "ecid": 3,
+            "ecname": "INIT_CONTROL_STATE",
+            "ecmin": 0,
+            "ecmax": 5,
+            "ecdef": 2,
+            "units": ""
+        },
+        {
+            "ecid": 4,
+            "ecname": "MAX_SPOOL_TRANSMIT",
+            "ecmin": 1,
+            "ecmax": 100,
+            "ecdef": 10,
+            "units": ""
+        },
+        {
+            "ecid": 100,
+            "ecname": "PROCESS_TEMPERATURE",
+            "ecmin": 0,
+            "ecmax": 1000,
+            "ecdef": 350,
+            "units": "degC"
+        },
+        {
+            "ecid": 101,
+            "ecname": "PROCESS_PRESSURE",
+            "ecmin": 0,
+            "ecmax": 1000,
+            "ecdef": 100,
+            "units": "mTorr"
+        },
+        {
+            "ecid": 102,
+            "ecname": "RF_POWER",
+            "ecmin": 0,
+            "ecmax": 5000,
+            "ecdef": 1000,
+            "units": "W"
+        },
+        {
+            "ecid": 103,
+            "ecname": "GAS_FLOW_RATE",
+            "ecmin": 0,
+            "ecmax": 1000,
+            "ecdef": 50,
+            "units": "sccm"
+        }
+    ],
+    "_comments": {
+        "standard_ecids": "ECIDs 1-4 are GEM standard per SEMI E30, ECIDs 100+ are equipment-specific"
+    }
+}

@@ -1,0 +1,1077 @@
+{
+  "_manual_note": "Manual says FabLink creates standard report definitions at startup; this file defines additional runtime reports.",
+  "_source": "/Users/nrzngr/Downloads/SECS-Items_MueTec DaVinci 200 MC4_HC1.xlsx",
+  "description": "DaVinci 200 MC4 HC1 curated event subscription. Every collection event the canonical mapper categorizes (lot/wafer/carrier/process/job/alarm/material lifecycle) is subscribed, so no 'unknown' telemetry is published. Events without valid variables are enabled with no report link (an empty RPTID list would delete the link). Full superset kept in EventSubscription.full.json; to capture more, add aliases in profiles.py:DAVINCI_CEID_ALIASES and re-curate, or point the profile at EventSubscription.full.json.",
+  "events": [
+    {
+      "ceid": 3010001,
+      "enabled": true,
+      "name": "Equipment OFF-LINE",
+      "rptids": [],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010002,
+      "enabled": true,
+      "name": "Control State LOCAL",
+      "rptids": [],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010003,
+      "enabled": true,
+      "name": "Control State REMOTE",
+      "rptids": [],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010004,
+      "description": "Operator issued a command while in remote control mode",
+      "enabled": true,
+      "name": "OperatorCommandIssued",
+      "rptids": [
+        1003010004
+      ],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3020001,
+      "description": "An alarm was set",
+      "enabled": true,
+      "name": "AlarmNDetected",
+      "rptids": [
+        1003020001
+      ],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3020002,
+      "description": "An alarm was cleared",
+      "enabled": true,
+      "name": "AlarmNCleared",
+      "rptids": [
+        1003020002
+      ],
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3050001,
+      "description": "Material received at the equipment",
+      "enabled": true,
+      "name": "MaterialReceived",
+      "rptids": [
+        1003050001
+      ],
+      "band": "material"
+    },
+    {
+      "ceid": 3050002,
+      "description": "Material removed from the equipment",
+      "enabled": true,
+      "name": "MaterialRemoved",
+      "rptids": [
+        1003050002
+      ],
+      "band": "material"
+    },
+    {
+      "ceid": 3080001,
+      "description": "Loadport has received a substrate",
+      "enabled": true,
+      "name": "LP1/ReceivedMaterial",
+      "rptids": [
+        1003080001
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3080002,
+      "description": "Loadport has sent a substrate",
+      "enabled": true,
+      "name": "LP1/SentMaterial",
+      "rptids": [
+        1003080002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3090001,
+      "description": "Loadport has received a substrate",
+      "enabled": true,
+      "name": "LP2/ReceivedMaterial",
+      "rptids": [
+        1003090001
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3090002,
+      "description": "Loadport has sent a substrate",
+      "enabled": true,
+      "name": "LP2/SentMaterial",
+      "rptids": [
+        1003090002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3140002,
+      "description": "Processing has started.",
+      "enabled": true,
+      "name": "PM1/ProcessingStarted",
+      "rptids": [
+        1003140002
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140003,
+      "description": "Processing has successfully finished.",
+      "enabled": true,
+      "name": "PM1/ProcessingFinished",
+      "rptids": [
+        1003140003
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140004,
+      "description": "Processing was aborted.",
+      "enabled": true,
+      "name": "PM1/ProcessingAborted",
+      "rptids": [
+        1003140004
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140005,
+      "description": "Recipe has been selected",
+      "enabled": true,
+      "name": "PM1/RecipeSelected",
+      "rptids": [
+        1003140005
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140006,
+      "description": "Selecting the recipe has been failed.",
+      "enabled": true,
+      "name": "PM1/RecipeSelectFailed",
+      "rptids": [
+        1003140006
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140007,
+      "description": "Processing Result has been Arrived.",
+      "enabled": true,
+      "name": "PM1/ProcessingResultArrived",
+      "rptids": [
+        1003140007
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3160001,
+      "enabled": true,
+      "name": "LP1/CarrierArrived",
+      "rptids": [],
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160002,
+      "description": "Carrier has departed from Loadport",
+      "enabled": true,
+      "name": "LP1/CarrierDeparted",
+      "rptids": [
+        1003160002
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160005,
+      "enabled": true,
+      "name": "LP1/LoadComplete",
+      "rptids": [],
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160006,
+      "enabled": true,
+      "name": "LP1/UnloadComplete",
+      "rptids": [],
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3170001,
+      "enabled": true,
+      "name": "LP2/CarrierArrived",
+      "rptids": [],
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170002,
+      "description": "Carrier has departed from Loadport",
+      "enabled": true,
+      "name": "LP2/CarrierDeparted",
+      "rptids": [
+        1003170002
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170005,
+      "enabled": true,
+      "name": "LP2/LoadComplete",
+      "rptids": [],
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170006,
+      "enabled": true,
+      "name": "LP2/UnloadComplete",
+      "rptids": [],
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3190044,
+      "description": "Process job doesn\u2019t exist anymore",
+      "enabled": true,
+      "name": "PRJobMS_Complete",
+      "rptids": [
+        1003190044
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190045,
+      "description": "Process job state has changed to PROCESSING",
+      "enabled": true,
+      "name": "PRJobMS_Processing",
+      "rptids": [
+        1003190045
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190046,
+      "description": "Process job state has changed to PROCESS COMPLETE",
+      "enabled": true,
+      "name": "PRJobMS_ProcessingComplete",
+      "rptids": [
+        1003190046
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190047,
+      "description": "Process job state has changed to SETTING UP",
+      "enabled": true,
+      "name": "PRJobMS_Setup",
+      "rptids": [
+        1003190047
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190048,
+      "description": "The state of a process job has changed",
+      "enabled": true,
+      "name": "PRJobStateChange",
+      "rptids": [
+        1003190048
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190050,
+      "description": "Process job state has changed to WAITING FOR START",
+      "enabled": true,
+      "name": "PRJobMS_WaitingForStart",
+      "rptids": [
+        1003190050
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3200001,
+      "description": "Control job has been created with state QUEUED",
+      "enabled": true,
+      "name": "ControlJob:1:NoState-Queued",
+      "rptids": [
+        1003200001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200002,
+      "description": "Control job state has changed from EXECUTING to COMPLETED",
+      "enabled": true,
+      "name": "ControlJob:10:Executing-Completed",
+      "rptids": [
+        1003200002
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200003,
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to a stopping action",
+      "enabled": true,
+      "name": "ControlJob:11:Active-Completed",
+      "rptids": [
+        1003200003
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200008,
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to an aborting action",
+      "enabled": true,
+      "name": "ControlJob:12:Active-Completed",
+      "rptids": [
+        1003200008
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200013,
+      "description": "Control job was in COMPLETED state and doesn\u2019t exist anymore by now",
+      "enabled": true,
+      "name": "ControlJob:13:Completed-NoState",
+      "rptids": [
+        1003200013
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200017,
+      "description": "Control job has been started and its state has changed from SELECTED to EXECUTING",
+      "enabled": true,
+      "name": "ControlJob:5:Selected-Executing",
+      "rptids": [
+        1003200017
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3210001,
+      "description": "Carrier is about to approach completing",
+      "enabled": true,
+      "name": "CarrierApproachingComplete",
+      "rptids": [
+        1003210001
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210002,
+      "description": "Carrier has been clamped at a load port",
+      "enabled": true,
+      "name": "CarrierClamped",
+      "rptids": [
+        1003210002
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210003,
+      "description": "Carrier has been closed",
+      "enabled": true,
+      "name": "CarrierClosed",
+      "rptids": [
+        1003210003
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210006,
+      "description": "Carrier ID has been read",
+      "enabled": true,
+      "name": "CarrierIDRead",
+      "rptids": [
+        1003210006
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210007,
+      "description": "Carrier ID reading has failed",
+      "enabled": true,
+      "name": "CarrierIDReadFail",
+      "rptids": [
+        1003210007
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210009,
+      "description": "Carrier has been opened",
+      "enabled": true,
+      "name": "CarrierOpened",
+      "rptids": [
+        1003210009
+      ],
+      "band": "carrier"
+    },
+    {
+      "ceid": 3220013,
+      "description": "Substrate processing state has changed to IN PROCESS",
+      "enabled": true,
+      "name": "NeedsProcessing2InProcess",
+      "rptids": [
+        1003220013
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220014,
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSING COMPLETE",
+      "enabled": true,
+      "name": "InProcess2ProcessingComplete",
+      "rptids": [
+        1003220014
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220016,
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSED",
+      "enabled": true,
+      "name": "InProcess2Processed",
+      "rptids": [
+        1003220016
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220017,
+      "description": "Substrate processing state has changed from IN PROCESS to ABORTED",
+      "enabled": true,
+      "name": "InProcess2Aborted",
+      "rptids": [
+        1003220017
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220018,
+      "description": "Substrate processing state has changed from IN PROCESS to STOPPED",
+      "enabled": true,
+      "name": "InProcess2Stopped",
+      "rptids": [
+        1003220018
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220019,
+      "description": "Substrate processing state has changed from IN PROCESS to REJECTED",
+      "enabled": true,
+      "name": "InProcess2Rejected",
+      "rptids": [
+        1003220019
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220020,
+      "description": "Substrate processing state has changed from IN PROCESS to LOST",
+      "enabled": true,
+      "name": "InProcess2Lost",
+      "rptids": [
+        1003220020
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220021,
+      "description": "Substrate processing state has changed from IN PROCESS to SKIPPED",
+      "enabled": true,
+      "name": "InProcess2Skipped",
+      "rptids": [
+        1003220021
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220022,
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to LOST",
+      "enabled": true,
+      "name": "NeedsProcessing2Lost",
+      "rptids": [
+        1003220022
+      ],
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220023,
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to SKIPPED",
+      "enabled": true,
+      "name": "NeedsProcessing2Skipped",
+      "rptids": [
+        1003220023
+      ],
+      "band": "substrate"
+    }
+  ],
+  "reports": [
+    {
+      "description": "Operator issued a command while in remote control mode",
+      "dvids": [
+        2010002
+      ],
+      "name": "OperatorCommandIssuedReport",
+      "rptid": 1003010004,
+      "band": "gem_core"
+    },
+    {
+      "description": "An alarm was set",
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "name": "AlarmNDetectedReport",
+      "rptid": 1003020001,
+      "band": "gem_core"
+    },
+    {
+      "description": "An alarm was cleared",
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "name": "AlarmNClearedReport",
+      "rptid": 1003020002,
+      "band": "gem_core"
+    },
+    {
+      "description": "Material received at the equipment",
+      "dvids": [
+        2150002
+      ],
+      "name": "MaterialReceivedReport",
+      "rptid": 1003050001,
+      "band": "material"
+    },
+    {
+      "description": "Material removed from the equipment",
+      "dvids": [
+        2150002
+      ],
+      "name": "MaterialRemovedReport",
+      "rptid": 1003050002,
+      "band": "material"
+    },
+    {
+      "description": "Loadport has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "name": "LP1/ReceivedMaterialReport",
+      "rptid": 1003080001,
+      "band": "material_transfer"
+    },
+    {
+      "description": "Loadport has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "name": "LP1/SentMaterialReport",
+      "rptid": 1003080002,
+      "band": "material_transfer"
+    },
+    {
+      "description": "Loadport has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "name": "LP2/ReceivedMaterialReport",
+      "rptid": 1003090001,
+      "band": "material_transfer"
+    },
+    {
+      "description": "Loadport has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "name": "LP2/SentMaterialReport",
+      "rptid": 1003090002,
+      "band": "material_transfer"
+    },
+    {
+      "description": "Processing has started.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001
+      ],
+      "name": "PM1/ProcessingStartedReport",
+      "rptid": 1003140002,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Processing has successfully finished.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080005,
+        2080006,
+        2090008,
+        2090009
+      ],
+      "name": "PM1/ProcessingFinishedReport",
+      "rptid": 1003140003,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Processing was aborted.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080007
+      ],
+      "name": "PM1/ProcessingAbortedReport",
+      "rptid": 1003140004,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Recipe has been selected",
+      "dvids": [
+        2080001
+      ],
+      "name": "PM1/RecipeSelectedReport",
+      "rptid": 1003140005,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Selecting the recipe has been failed.",
+      "dvids": [
+        2080001
+      ],
+      "name": "PM1/RecipeSelectFailedReport",
+      "rptid": 1003140006,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Processing Result has been Arrived.",
+      "dvids": [
+        2080002,
+        2080003,
+        2090012,
+        2090013,
+        2090014
+      ],
+      "name": "PM1/ProcessingResultArrivedReport",
+      "rptid": 1003140007,
+      "band": "process_module_1"
+    },
+    {
+      "description": "Carrier has departed from Loadport",
+      "dvids": [
+        2150001
+      ],
+      "name": "LP1/CarrierDepartedReport",
+      "rptid": 1003160002,
+      "band": "load_port_1"
+    },
+    {
+      "description": "Carrier has departed from Loadport",
+      "dvids": [
+        2150001
+      ],
+      "name": "LP2/CarrierDepartedReport",
+      "rptid": 1003170002,
+      "band": "load_port_2"
+    },
+    {
+      "description": "Process job doesn\u2019t exist anymore",
+      "dvids": [
+        2130001
+      ],
+      "name": "PRJobMS_CompleteReport",
+      "rptid": 1003190044,
+      "band": "process_jobs"
+    },
+    {
+      "description": "Process job state has changed to PROCESSING",
+      "dvids": [
+        2130001
+      ],
+      "name": "PRJobMS_ProcessingReport",
+      "rptid": 1003190045,
+      "band": "process_jobs"
+    },
+    {
+      "description": "Process job state has changed to PROCESS COMPLETE",
+      "dvids": [
+        2130001
+      ],
+      "name": "PRJobMS_ProcessingCompleteReport",
+      "rptid": 1003190046,
+      "band": "process_jobs"
+    },
+    {
+      "description": "Process job state has changed to SETTING UP",
+      "dvids": [
+        2130001
+      ],
+      "name": "PRJobMS_SetupReport",
+      "rptid": 1003190047,
+      "band": "process_jobs"
+    },
+    {
+      "description": "The state of a process job has changed",
+      "dvids": [
+        2130001,
+        2130002
+      ],
+      "name": "PRJobStateChangeReport",
+      "rptid": 1003190048,
+      "band": "process_jobs"
+    },
+    {
+      "description": "Process job state has changed to WAITING FOR START",
+      "dvids": [
+        2130001
+      ],
+      "name": "PRJobMS_WaitingForStartReport",
+      "rptid": 1003190050,
+      "band": "process_jobs"
+    },
+    {
+      "description": "Control job has been created with state QUEUED",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:1:NoState-QueuedReport",
+      "rptid": 1003200001,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Control job state has changed from EXECUTING to COMPLETED",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:10:Executing-CompletedReport",
+      "rptid": 1003200002,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:11:Active-CompletedReport",
+      "rptid": 1003200003,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:12:Active-CompletedReport",
+      "rptid": 1003200008,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Control job was in COMPLETED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:13:Completed-NoStateReport",
+      "rptid": 1003200013,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Control job has been started and its state has changed from SELECTED to EXECUTING",
+      "dvids": [
+        2140001
+      ],
+      "name": "ControlJob:5:Selected-ExecutingReport",
+      "rptid": 1003200017,
+      "band": "control_jobs"
+    },
+    {
+      "description": "Carrier is about to approach completing",
+      "dvids": [
+        2150001
+      ],
+      "name": "CarrierApproachingCompleteReport",
+      "rptid": 1003210001,
+      "band": "carrier"
+    },
+    {
+      "description": "Carrier has been clamped at a load port",
+      "dvids": [
+        2150012,
+        2150002
+      ],
+      "name": "CarrierClampedReport",
+      "rptid": 1003210002,
+      "band": "carrier"
+    },
+    {
+      "description": "Carrier has been closed",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "name": "CarrierClosedReport",
+      "rptid": 1003210003,
+      "band": "carrier"
+    },
+    {
+      "description": "Carrier ID has been read",
+      "dvids": [
+        2150001,
+        2150002
+      ],
+      "name": "CarrierIDReadReport",
+      "rptid": 1003210006,
+      "band": "carrier"
+    },
+    {
+      "description": "Carrier ID reading has failed",
+      "dvids": [
+        2150002
+      ],
+      "name": "CarrierIDReadFailReport",
+      "rptid": 1003210007,
+      "band": "carrier"
+    },
+    {
+      "description": "Carrier has been opened",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "name": "CarrierOpenedReport",
+      "rptid": 1003210009,
+      "band": "carrier"
+    },
+    {
+      "description": "Substrate processing state has changed to IN PROCESS",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "NeedsProcessing2InProcessReport",
+      "rptid": 1003220013,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSING COMPLETE",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2ProcessingCompleteReport",
+      "rptid": 1003220014,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2ProcessedReport",
+      "rptid": 1003220016,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to ABORTED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2AbortedReport",
+      "rptid": 1003220017,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to STOPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2StoppedReport",
+      "rptid": 1003220018,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to REJECTED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2RejectedReport",
+      "rptid": 1003220019,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to LOST",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2LostReport",
+      "rptid": 1003220020,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from IN PROCESS to SKIPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "InProcess2SkippedReport",
+      "rptid": 1003220021,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to LOST",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "NeedsProcessing2LostReport",
+      "rptid": 1003220022,
+      "band": "substrate"
+    },
+    {
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to SKIPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "name": "NeedsProcessing2SkippedReport",
+      "rptid": 1003220023,
+      "band": "substrate"
+    }
+  ]
+}

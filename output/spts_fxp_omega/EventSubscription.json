@@ -1,0 +1,1923 @@
+{
+  "description": "SPTS fxP Omega active subscription: vendor-documented events the canonical profile maps. Generated from EventSubscription.full.json.",
+  "_source": "Omega_SECSII_SPTS fxP 200mm SECSII Manual (Cimetrix).pdf Table 5, sections 12.5, 12.10 and Appendix G",
+  "_generated_by": "scripts/gen_spts_subscription.py",
+  "reports": [
+    {
+      "rptid": 1000000003,
+      "name": "MaterialReceivedReport",
+      "description": "Material has arrived at a port on the equipment",
+      "dvids": [
+        6102
+      ],
+      "band": "misc"
+    },
+    {
+      "rptid": 1000000004,
+      "name": "MaterialRemovedReport",
+      "description": "Material has been removed from a port on the equipment",
+      "dvids": [
+        6102
+      ],
+      "band": "misc"
+    },
+    {
+      "rptid": 1000000006,
+      "name": "OperatorCommandIssuedReport",
+      "description": "Machine operator issued a control command",
+      "dvids": [
+        6102,
+        16
+      ],
+      "band": "misc"
+    },
+    {
+      "rptid": 1000000007,
+      "name": "PPChangeReport",
+      "description": "A process program (recipe) has been created changed or deleted",
+      "dvids": [
+        3,
+        4
+      ],
+      "band": "misc"
+    },
+    {
+      "rptid": 1000000024,
+      "name": "ECChangeReport",
+      "description": "An equipment constant value was changed locally by the operator.",
+      "dvids": [
+        7,
+        2052,
+        2053
+      ],
+      "band": "misc"
+    },
+    {
+      "rptid": 1000000422,
+      "name": "PM1RecipeStartReport",
+      "description": "PM1 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000423,
+      "name": "PM2RecipeStartReport",
+      "description": "PM2 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000424,
+      "name": "PM3RecipeStartReport",
+      "description": "PM3 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000425,
+      "name": "PM4RecipeStartReport",
+      "description": "PM4 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000426,
+      "name": "PM5RecipeStartReport",
+      "description": "PM5 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000427,
+      "name": "PM6RecipeStartReport",
+      "description": "PM6 Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000430,
+      "name": "CoolerRecipeStartReport",
+      "description": "Cool station Recipe started",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000442,
+      "name": "PM1RecipeEndReport",
+      "description": "PM1 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000443,
+      "name": "PM2RecipeEndReport",
+      "description": "PM2 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000444,
+      "name": "PM3RecipeEndReport",
+      "description": "PM3 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000445,
+      "name": "PM4RecipeEndReport",
+      "description": "PM4 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000446,
+      "name": "PM5RecipeEndReport",
+      "description": "PM5 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000447,
+      "name": "PM6RecipeEndReport",
+      "description": "PM6 Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000450,
+      "name": "CoolerRecipeEndReport",
+      "description": "Cool station Recipe ended",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "module_recipe"
+    },
+    {
+      "rptid": 1000000810,
+      "name": "WaferStatisticalDataAvailableReport",
+      "description": "Statistical data for last step of wafer process is available",
+      "dvids": [
+        6102,
+        6503,
+        5101,
+        5102,
+        5100,
+        5117,
+        5114
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000850,
+      "name": "SlotMapReadReport",
+      "description": "Slot Map Read",
+      "dvids": [
+        5112,
+        6102
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000851,
+      "name": "CassetteStartedReport",
+      "description": "Processing has started for a cassette",
+      "dvids": [
+        5110,
+        6102,
+        5114
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000852,
+      "name": "CassetteCompleteReport",
+      "description": "Processing has completed successfully for a cassette",
+      "dvids": [
+        5110,
+        6102,
+        5114
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000853,
+      "name": "PMWaferInReport",
+      "description": "A wafer has arrived in a process module",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000854,
+      "name": "PMWaferOutReport",
+      "description": "A wafer has been removed from a process module",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000855,
+      "name": "ProcessingStartedReport",
+      "description": "Processing has started in a process module",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000856,
+      "name": "ProcessingFinishedReport",
+      "description": "Processing has finished in a process module",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000857,
+      "name": "RecipeStepStartReport",
+      "description": "A new recipe step has started in a process module",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000858,
+      "name": "RecipeStepEndReport",
+      "description": "A new recipe step has finished in a process module",
+      "dvids": [
+        5111,
+        5113,
+        5114,
+        5115,
+        5116,
+        5117,
+        5118,
+        13400000,
+        13400001,
+        13400002,
+        13400003,
+        13400004,
+        13400010,
+        13400011,
+        13400012,
+        13400013,
+        13400014,
+        13400020,
+        13400021,
+        13400022,
+        13400023,
+        13400024,
+        13400030,
+        13400031,
+        13400032,
+        13400033,
+        13400034,
+        13400040,
+        13400041,
+        13400042,
+        13400043,
+        13400044,
+        13400050,
+        13400051,
+        13400052,
+        13400053,
+        13400054,
+        13400060,
+        13400061,
+        13400062,
+        13400063,
+        13400064,
+        13400070,
+        13400071,
+        13400072,
+        13400073,
+        13400074,
+        13400080,
+        13400081,
+        13400082,
+        13400083,
+        13400084,
+        13400090,
+        13400091,
+        13400092,
+        13400093,
+        13400094,
+        13400100,
+        13400101,
+        13400102,
+        13400103,
+        13400104,
+        13400110,
+        13400111,
+        13400112,
+        13400113,
+        13400114,
+        13400120,
+        13400121,
+        13400122,
+        13400123,
+        13400124,
+        13400130,
+        13400131,
+        13400132,
+        13400133,
+        13400134,
+        13400140,
+        13400141,
+        13400142,
+        13400143,
+        13400144,
+        13400150,
+        13400151,
+        13400152,
+        13400153,
+        13400154,
+        13400160,
+        13400161,
+        13400162,
+        13400163,
+        13400164,
+        13400170,
+        13400171,
+        13400172,
+        13400173,
+        13400174,
+        13400180,
+        13400181,
+        13400182,
+        13400183,
+        13400184,
+        13400190,
+        13400191,
+        13400192,
+        13400193,
+        13400194,
+        13400200,
+        13400201,
+        13400202,
+        13400203,
+        13400204,
+        13400210,
+        13400211,
+        13400212,
+        13400213,
+        13400214,
+        13400220,
+        13400221,
+        13400222,
+        13400223,
+        13400224,
+        13400230,
+        13400231,
+        13400232,
+        13400233,
+        13400234,
+        13400240,
+        13400241,
+        13400242,
+        13400243,
+        13400244,
+        13400250,
+        13400251,
+        13400252,
+        13400253,
+        13400254,
+        13400260,
+        13400261,
+        13400262,
+        13400263,
+        13400264,
+        13400270,
+        13400271,
+        13400272,
+        13400273,
+        13400274,
+        13400280,
+        13400281,
+        13400282,
+        13400283,
+        13400284,
+        13400290,
+        13400291,
+        13400292,
+        13400293,
+        13400294,
+        13400300,
+        13400301,
+        13400302,
+        13400303,
+        13400304,
+        13400310,
+        13400311,
+        13400312,
+        13400313,
+        13400314,
+        13400320,
+        13400321,
+        13400322,
+        13400323,
+        13400324
+      ],
+      "band": "cassette_statistics_ceid858"
+    },
+    {
+      "rptid": 1000000859,
+      "name": "WaferStartedReport",
+      "description": "A wafer has started processing",
+      "dvids": [
+        5111,
+        5114,
+        5118,
+        6102
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000860,
+      "name": "WaferCompleteReport",
+      "description": "A wafer has completed processing",
+      "dvids": [
+        5111,
+        5114,
+        5118,
+        6102
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000880,
+      "name": "PM1WaferInReport",
+      "description": "A wafer has arrived in PM1",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000881,
+      "name": "PM2WaferInReport",
+      "description": "A wafer has arrived in PM2",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000882,
+      "name": "PM3WaferInReport",
+      "description": "A wafer has arrived in PM3",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000883,
+      "name": "PM4WaferInReport",
+      "description": "A wafer has arrived in PM4",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000884,
+      "name": "PM5WaferInReport",
+      "description": "A wafer has arrived in PM5",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000885,
+      "name": "PM6WaferInReport",
+      "description": "A wafer has arrived in PM6",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000886,
+      "name": "PM1WaferOutReport",
+      "description": "A wafer has been removed from PM1",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000887,
+      "name": "PM2WaferOutReport",
+      "description": "A wafer has been removed from PM2",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000888,
+      "name": "PM3WaferOutReport",
+      "description": "A wafer has been removed from PM3",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000889,
+      "name": "PM4WaferOutReport",
+      "description": "A wafer has been removed from PM4",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000890,
+      "name": "PM5WaferOutReport",
+      "description": "A wafer has been removed from PM5",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    },
+    {
+      "rptid": 1000000891,
+      "name": "PM6WaferOutReport",
+      "description": "A wafer has been removed from PM6",
+      "dvids": [
+        5111,
+        5113,
+        5118
+      ],
+      "band": "cassette_statistics"
+    }
+  ],
+  "events": [
+    {
+      "ceid": 3,
+      "name": "MaterialReceived",
+      "description": "Material has arrived at a port on the equipment",
+      "rptids": [
+        1000000003
+      ],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 4,
+      "name": "MaterialRemoved",
+      "description": "Material has been removed from a port on the equipment",
+      "rptids": [
+        1000000004
+      ],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 6,
+      "name": "OperatorCommandIssued",
+      "description": "Machine operator issued a control command",
+      "rptids": [
+        1000000006
+      ],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 7,
+      "name": "PPChange",
+      "description": "A process program (recipe) has been created changed or deleted",
+      "rptids": [
+        1000000007
+      ],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 8,
+      "name": "EquipmentOffline",
+      "description": "Control state is about to change to Off-line",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 9,
+      "name": "ControlStateLocal",
+      "description": "Control state has changed to Local (from Remote or Off-line)",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 10,
+      "name": "ControlStateRemote",
+      "description": "Control state has changed to Remote (from Local or Off-line)",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 15,
+      "name": "MessageRecognition",
+      "description": "Operator confirmation of Terminal Services Message",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 16,
+      "name": "SpoolTransmitFailure",
+      "description": "Spool Transmit failure has occurred",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 17,
+      "name": "SpoolingActivated",
+      "description": "Spooling State Machine has entered the ACTIVE state.",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 18,
+      "name": "SpoolingDeactivated",
+      "description": "Spooling State Machine has entered the DE-ACTIVE state.",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 19,
+      "name": "HostECChange",
+      "description": "The Host changed an equipment constant",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 20,
+      "name": "HostPPChange",
+      "description": "The Host changed a Process Program",
+      "rptids": [],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 24,
+      "name": "ECChange",
+      "description": "An equipment constant value was changed locally by the operator.",
+      "rptids": [
+        1000000024
+      ],
+      "band": "misc",
+      "enabled": true
+    },
+    {
+      "ceid": 100,
+      "name": "ProcessStateChange1",
+      "description": "Process State Changed for VCE A",
+      "rptids": [],
+      "band": "process_state",
+      "enabled": true
+    },
+    {
+      "ceid": 101,
+      "name": "ProcessStateChange2",
+      "description": "Process State Changed for VCE B",
+      "rptids": [],
+      "band": "process_state",
+      "enabled": true
+    },
+    {
+      "ceid": 330,
+      "name": "MBCStart1",
+      "description": "A lot has started processing from VCE A \u2013 this will be sent when the process state changes from SELECTED to STARTING",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 331,
+      "name": "MBCStart2",
+      "description": "A lot has started processing from VCE B \u2013 this will be sent when the process state changes from SELECTED to STARTING",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 336,
+      "name": "MBCComplete1",
+      "description": "A lot has completed processing in VCE A \u2013 this will be sent when the process state changes from RUNNING to SELECTED",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 337,
+      "name": "MBCComplete2",
+      "description": "A lot has completed processing in VCE B \u2013 this will be sent when the process state changes from RUNNING to SELECTED",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 342,
+      "name": "MBStart1",
+      "description": "A wafer has started processing from VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 343,
+      "name": "MBStart2",
+      "description": "A wafer has started processing from VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 348,
+      "name": "MBComplete1",
+      "description": "A wafer has completed processing in VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 349,
+      "name": "MBComplete2",
+      "description": "A wafer has completed processing in VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 354,
+      "name": "OpSelect1",
+      "description": "The operator has pressed the SELECT button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 355,
+      "name": "OpSelect2",
+      "description": "The operator has pressed the SELECT button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 360,
+      "name": "OpStart1",
+      "description": "The operator has pressed the START button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 361,
+      "name": "OpStart2",
+      "description": "The operator has pressed the START button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 366,
+      "name": "OpStop1",
+      "description": "The operator has pressed the STOP button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 367,
+      "name": "OpStop2",
+      "description": "The operator has pressed the STOP button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 372,
+      "name": "OpPause1",
+      "description": "The operator has pressed the PAUSE button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 373,
+      "name": "OpPause2",
+      "description": "The operator has pressed the PAUSE button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 378,
+      "name": "OpResume1",
+      "description": "The operator has pressed the RESUME button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 379,
+      "name": "OpResume2",
+      "description": "The operator has pressed the RESUME button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 384,
+      "name": "OpCancel1",
+      "description": "The operator has pressed the CANCEL button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 385,
+      "name": "OpCancel2",
+      "description": "The operator has pressed the CANCEL button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 390,
+      "name": "OpAbandon1",
+      "description": "The operator has pressed the ABANDON button for VCE A",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 391,
+      "name": "OpAbandon2",
+      "description": "The operator has pressed the ABANDON button for VCE B",
+      "rptids": [],
+      "band": "lot_wafer",
+      "enabled": true
+    },
+    {
+      "ceid": 422,
+      "name": "PM1RecipeStart",
+      "description": "PM1 Recipe started",
+      "rptids": [
+        1000000422
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 423,
+      "name": "PM2RecipeStart",
+      "description": "PM2 Recipe started",
+      "rptids": [
+        1000000423
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 424,
+      "name": "PM3RecipeStart",
+      "description": "PM3 Recipe started",
+      "rptids": [
+        1000000424
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 425,
+      "name": "PM4RecipeStart",
+      "description": "PM4 Recipe started",
+      "rptids": [
+        1000000425
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 426,
+      "name": "PM5RecipeStart",
+      "description": "PM5 Recipe started",
+      "rptids": [
+        1000000426
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 427,
+      "name": "PM6RecipeStart",
+      "description": "PM6 Recipe started",
+      "rptids": [
+        1000000427
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 430,
+      "name": "CoolerRecipeStart",
+      "description": "Cool station Recipe started",
+      "rptids": [
+        1000000430
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 442,
+      "name": "PM1RecipeEnd",
+      "description": "PM1 Recipe ended",
+      "rptids": [
+        1000000442
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 443,
+      "name": "PM2RecipeEnd",
+      "description": "PM2 Recipe ended",
+      "rptids": [
+        1000000443
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 444,
+      "name": "PM3RecipeEnd",
+      "description": "PM3 Recipe ended",
+      "rptids": [
+        1000000444
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 445,
+      "name": "PM4RecipeEnd",
+      "description": "PM4 Recipe ended",
+      "rptids": [
+        1000000445
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 446,
+      "name": "PM5RecipeEnd",
+      "description": "PM5 Recipe ended",
+      "rptids": [
+        1000000446
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 447,
+      "name": "PM6RecipeEnd",
+      "description": "PM6 Recipe ended",
+      "rptids": [
+        1000000447
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 450,
+      "name": "CoolerRecipeEnd",
+      "description": "Cool station Recipe ended",
+      "rptids": [
+        1000000450
+      ],
+      "band": "module_recipe",
+      "enabled": true
+    },
+    {
+      "ceid": 520,
+      "name": "ReadyForProcessA",
+      "description": "The lot in VCE A is ready to start processing. This will be sent when the process state changes from SELECTING to SELECTED",
+      "rptids": [],
+      "band": "wafer_status",
+      "enabled": true
+    },
+    {
+      "ceid": 521,
+      "name": "ReadyForProcessB",
+      "description": "The lot in VCE B is ready to start processing. This will be sent when the process state changes from SELECTING to SELECTED",
+      "rptids": [],
+      "band": "wafer_status",
+      "enabled": true
+    },
+    {
+      "ceid": 721,
+      "name": "SMIFPodPresent1",
+      "description": "SMIF Pod for VCE A is present (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 722,
+      "name": "SMIFPodPresent2",
+      "description": "SMIF Pod for VCE B is present (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 731,
+      "name": "SMIFPodAbsent1",
+      "description": "SMIF Pod for VCE A is absent (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 732,
+      "name": "SMIFPodAbsent2",
+      "description": "SMIF Pod for VCE B is absent (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 741,
+      "name": "SMIFPodClamped1",
+      "description": "SMIF Pod for VCE A is clamped (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 742,
+      "name": "SMIFPodClamped2",
+      "description": "SMIF Pod for VCE B is clamped (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 751,
+      "name": "SMIFPodUnClamped1",
+      "description": "SMIF Pod for VCE A is unclamped (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 752,
+      "name": "SMIFPodUnClamped2",
+      "description": "SMIF Pod for VCE B is unclamped (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 761,
+      "name": "SMIFPodHomed1",
+      "description": "SMIF Pod for VCE A is homed (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 762,
+      "name": "SMIFPodHomed2",
+      "description": "SMIF Pod for VCE B is homed (LPI2200)",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 771,
+      "name": "VCEAMaterialPresent",
+      "description": "Material is Present on VCE A",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 772,
+      "name": "VCEBMaterialPresent",
+      "description": "Material is Present on VCE B",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 781,
+      "name": "VCEAMaterialAbsent",
+      "description": "Material is Absent on VCE A",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 782,
+      "name": "VCEBMaterialAbsent",
+      "description": "Material is Absent on VCE B",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 791,
+      "name": "VCEALoadComplete",
+      "description": "Load Completed on VCE A",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 792,
+      "name": "VCEBLoadComplete",
+      "description": "Load Completed on VCE B",
+      "rptids": [],
+      "band": "door_smif",
+      "enabled": true
+    },
+    {
+      "ceid": 801,
+      "name": "VCEAUnloadComplete",
+      "description": "Unload Completed on VCE A",
+      "rptids": [],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 802,
+      "name": "VCEBUnloadComplete",
+      "description": "Unload Completed on VCE B",
+      "rptids": [],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 810,
+      "name": "WaferStatisticalDataAvailable",
+      "description": "Statistical data for last step of wafer process is available",
+      "rptids": [
+        1000000810
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 850,
+      "name": "SlotMapRead",
+      "description": "Slot Map Read",
+      "rptids": [
+        1000000850
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 851,
+      "name": "CassetteStarted",
+      "description": "Processing has started for a cassette",
+      "rptids": [
+        1000000851
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 852,
+      "name": "CassetteComplete",
+      "description": "Processing has completed successfully for a cassette",
+      "rptids": [
+        1000000852
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 853,
+      "name": "PMWaferIn",
+      "description": "A wafer has arrived in a process module",
+      "rptids": [
+        1000000853
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 854,
+      "name": "PMWaferOut",
+      "description": "A wafer has been removed from a process module",
+      "rptids": [
+        1000000854
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 855,
+      "name": "ProcessingStarted",
+      "description": "Processing has started in a process module",
+      "rptids": [
+        1000000855
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 856,
+      "name": "ProcessingFinished",
+      "description": "Processing has finished in a process module",
+      "rptids": [
+        1000000856
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 857,
+      "name": "RecipeStepStart",
+      "description": "A new recipe step has started in a process module",
+      "rptids": [
+        1000000857
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 858,
+      "name": "RecipeStepEnd",
+      "description": "A new recipe step has finished in a process module",
+      "rptids": [
+        1000000858
+      ],
+      "band": "cassette_statistics_ceid858",
+      "enabled": true
+    },
+    {
+      "ceid": 859,
+      "name": "WaferStarted",
+      "description": "A wafer has started processing",
+      "rptids": [
+        1000000859
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 860,
+      "name": "WaferComplete",
+      "description": "A wafer has completed processing",
+      "rptids": [
+        1000000860
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 880,
+      "name": "PM1WaferIn",
+      "description": "A wafer has arrived in PM1",
+      "rptids": [
+        1000000880
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 881,
+      "name": "PM2WaferIn",
+      "description": "A wafer has arrived in PM2",
+      "rptids": [
+        1000000881
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 882,
+      "name": "PM3WaferIn",
+      "description": "A wafer has arrived in PM3",
+      "rptids": [
+        1000000882
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 883,
+      "name": "PM4WaferIn",
+      "description": "A wafer has arrived in PM4",
+      "rptids": [
+        1000000883
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 884,
+      "name": "PM5WaferIn",
+      "description": "A wafer has arrived in PM5",
+      "rptids": [
+        1000000884
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 885,
+      "name": "PM6WaferIn",
+      "description": "A wafer has arrived in PM6",
+      "rptids": [
+        1000000885
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 886,
+      "name": "PM1WaferOut",
+      "description": "A wafer has been removed from PM1",
+      "rptids": [
+        1000000886
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 887,
+      "name": "PM2WaferOut",
+      "description": "A wafer has been removed from PM2",
+      "rptids": [
+        1000000887
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 888,
+      "name": "PM3WaferOut",
+      "description": "A wafer has been removed from PM3",
+      "rptids": [
+        1000000888
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 889,
+      "name": "PM4WaferOut",
+      "description": "A wafer has been removed from PM4",
+      "rptids": [
+        1000000889
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 890,
+      "name": "PM5WaferOut",
+      "description": "A wafer has been removed from PM5",
+      "rptids": [
+        1000000890
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    },
+    {
+      "ceid": 891,
+      "name": "PM6WaferOut",
+      "description": "A wafer has been removed from PM6",
+      "rptids": [
+        1000000891
+      ],
+      "band": "cassette_statistics",
+      "enabled": true
+    }
+  ],
+  "dvid_names": {
+    "1": "EventLimit",
+    "2": "LimitVariable",
+    "3": "PPChangeName",
+    "4": "PPChangeStatus",
+    "5": "TransitionType",
+    "7": "ECID",
+    "15": "LastPPRequested",
+    "16": "OperatorCommand",
+    "22": "AlarmID",
+    "29": "DataID",
+    "34": "LastCEID",
+    "48": "HostECHostID",
+    "49": "HostECID",
+    "2052": "ECChangeName",
+    "2053": "ECChangeValue",
+    "5100": "WaferStatisticalDataDV",
+    "5101": "WaferRecipeDV",
+    "5102": "ModuleRecipeDV",
+    "5110": "CassetteID",
+    "5111": "WaferID",
+    "5112": "CassetteSlotMap",
+    "5113": "StationID",
+    "5114": "LotID",
+    "5115": "RecipeID",
+    "5116": "StepID",
+    "5117": "StepName",
+    "5118": "WaferNo",
+    "6102": "PortID",
+    "12400000": "Etch_DV_pressure_Min",
+    "12400001": "Etch_DV_pressure_Max",
+    "12400002": "Etch_DV_pressure_Avg",
+    "12400004": "Etch_DV_pressure_StdDeviation",
+    "12400010": "Etch_DV_platenHFPower_Min",
+    "12400011": "Etch_DV_platenHFPower_Max",
+    "12400012": "Etch_DV_platenHFPower_Avg",
+    "12400014": "Etch_DV_platenHFPower_StdDeviation",
+    "12400020": "Etch_DV_platenLFPower_Min",
+    "12400021": "Etch_DV_platenLFPower_Max",
+    "12400022": "Etch_DV_platenLFPower_Avg",
+    "12400024": "Etch_DV_platenLFPower_StdDeviation",
+    "12400030": "Etch_DV_heBPPressure_Min",
+    "12400031": "Etch_DV_heBPPressure_Max",
+    "12400032": "Etch_DV_heBPPressure_Avg",
+    "12400034": "Etch_DV_heBPPressure_StdDeviation",
+    "12400040": "Etch_DV_gasFlow1_Min",
+    "12400041": "Etch_DV_gasFlow1_Max",
+    "12400042": "Etch_DV_gasFlow1_Avg",
+    "12400044": "Etch_DV_gasFlow1_StdDeviation",
+    "12400050": "Etch_DV_gasFlow2_Min",
+    "12400051": "Etch_DV_gasFlow2_Max",
+    "12400052": "Etch_DV_gasFlow2_Avg",
+    "12400054": "Etch_DV_gasFlow2_StdDeviation",
+    "12400060": "Etch_DV_gasFlow3_Min",
+    "12400061": "Etch_DV_gasFlow3_Max",
+    "12400062": "Etch_DV_gasFlow3_Avg",
+    "12400064": "Etch_DV_gasFlow3_StdDeviation",
+    "12400070": "Etch_DV_gasFlow4_Min",
+    "12400071": "Etch_DV_gasFlow4_Max",
+    "12400072": "Etch_DV_gasFlow4_Avg",
+    "12400074": "Etch_DV_gasFlow4_StdDeviation",
+    "12400080": "Etch_DV_gasFlow5_Min",
+    "12400081": "Etch_DV_gasFlow5_Max",
+    "12400082": "Etch_DV_gasFlow5_Avg",
+    "12400084": "Etch_DV_gasFlow5_StdDeviation",
+    "12400090": "Etch_DV_gasFlow6_Min",
+    "12400091": "Etch_DV_gasFlow6_Max",
+    "12400092": "Etch_DV_gasFlow6_Avg",
+    "12400094": "Etch_DV_gasFlow6_StdDeviation",
+    "12400100": "Etch_DV_gasFlow7_Min",
+    "12400101": "Etch_DV_gasFlow7_Max",
+    "12400102": "Etch_DV_gasFlow7_Avg",
+    "12400104": "Etch_DV_gasFlow7_StdDeviation",
+    "12400110": "Etch_DV_gasFlow8_Min",
+    "12400111": "Etch_DV_gasFlow8_Max",
+    "12400112": "Etch_DV_gasFlow8_Avg",
+    "12400114": "Etch_DV_gasFlow8_StdDeviation",
+    "12400120": "Etch_DV_gasFlow9_Min",
+    "12400121": "Etch_DV_gasFlow9_Max",
+    "12400122": "Etch_DV_gasFlow9_Avg",
+    "12400124": "Etch_DV_gasFlow9_StdDeviation",
+    "12400130": "Etch_DV_APCPosition_Min",
+    "12400131": "Etch_DV_APCPosition_Max",
+    "12400132": "Etch_DV_APCPosition_Avg",
+    "12400134": "Etch_DV_APCPosition_StdDeviation",
+    "12400140": "Etch_DV_platenHFReflected_Min",
+    "12400141": "Etch_DV_platenHFReflected_Max",
+    "12400142": "Etch_DV_platenHFReflected_Avg",
+    "12400144": "Etch_DV_platenHFReflected_StdDeviation",
+    "12400150": "Etch_DV_platenHFVpp_Min",
+    "12400151": "Etch_DV_platenHFVpp_Max",
+    "12400152": "Etch_DV_platenHFVpp_Avg",
+    "12400154": "Etch_DV_platenHFVpp_StdDeviation",
+    "12400160": "Etch_DV_platenHFTunePos_Min",
+    "12400161": "Etch_DV_platenHFTunePos_Max",
+    "12400162": "Etch_DV_platenHFTunePos_Avg",
+    "12400164": "Etch_DV_platenHFTunePos_StdDeviation",
+    "12400170": "Etch_DV_platenHFLoadPos_Min",
+    "12400171": "Etch_DV_platenHFLoadPos_Max",
+    "12400172": "Etch_DV_platenHFLoadPos_Avg",
+    "12400174": "Etch_DV_platenHFLoadPos_StdDeviation",
+    "12400180": "Etch_DV_platenHFDCBias_Min",
+    "12400181": "Etch_DV_platenHFDCBias_Max",
+    "12400182": "Etch_DV_platenHFDCBias_Avg",
+    "12400184": "Etch_DV_platenHFDCBias_StdDeviation",
+    "12400190": "Etch_DV_platenLFReflected_Min",
+    "12400191": "Etch_DV_platenLFReflected_Max",
+    "12400192": "Etch_DV_platenLFReflected_Avg",
+    "12400194": "Etch_DV_platenLFReflected_StdDeviation",
+    "12400200": "Etch_DV_platenLFVpp_Min",
+    "12400201": "Etch_DV_platenLFVpp_Max",
+    "12400202": "Etch_DV_platenLFVpp_Avg",
+    "12400204": "Etch_DV_platenLFVpp_StdDeviation",
+    "12400210": "Etch_DV_platenLFDCBias_Min",
+    "12400211": "Etch_DV_platenLFDCBias_Max",
+    "12400212": "Etch_DV_platenLFDCBias_Avg",
+    "12400214": "Etch_DV_platenLFDCBias_StdDeviation",
+    "12400220": "Etch_DV_primaryPower_Min",
+    "12400221": "Etch_DV_primaryPower_Max",
+    "12400222": "Etch_DV_primaryPower_Avg",
+    "12400224": "Etch_DV_primaryPower_StdDeviation",
+    "12400230": "Etch_DV_primaryReflected_Min",
+    "12400231": "Etch_DV_primaryReflected_Max",
+    "12400232": "Etch_DV_primaryReflected_Avg",
+    "12400234": "Etch_DV_primaryReflected_StdDeviation",
+    "12400240": "Etch_DV_primaryVpp_Min",
+    "12400241": "Etch_DV_primaryVpp_Max",
+    "12400242": "Etch_DV_primaryVpp_Avg",
+    "12400244": "Etch_DV_primaryVpp_StdDeviation",
+    "12400250": "Etch_DV_secondaryPower_Min",
+    "12400251": "Etch_DV_secondaryPower_Max",
+    "12400252": "Etch_DV_secondaryPower_Avg",
+    "12400254": "Etch_DV_secondaryPower_StdDeviation",
+    "12400260": "Etch_DV_secondaryReflected_Min",
+    "12400261": "Etch_DV_secondaryReflected_Max",
+    "12400262": "Etch_DV_secondaryReflected_Avg",
+    "12400264": "Etch_DV_secondaryReflected_StdDeviation",
+    "12400270": "Etch_DV_secondaryVpp_Min",
+    "12400271": "Etch_DV_secondaryVpp_Max",
+    "12400272": "Etch_DV_secondaryVpp_Avg",
+    "12400274": "Etch_DV_secondaryVpp_StdDeviation",
+    "12400280": "Etch_DV_ClaritasPower_Min",
+    "12400281": "Etch_DV_ClaritasPower_Max",
+    "12400282": "Etch_DV_ClaritasPower_Avg",
+    "12400284": "Etch_DV_ClaritasPower_StdDeviation",
+    "12400290": "Etch_DV_ClartiasReflected_Min",
+    "12400291": "Etch_DV_ClartiasReflected_Max",
+    "12400292": "Etch_DV_ClartiasReflected_Avg",
+    "12400294": "Etch_DV_ClartiasReflected_StdDeviation",
+    "12400300": "Etch_DV_ClartiasVpp_Min",
+    "12400301": "Etch_DV_ClartiasVpp_Max",
+    "12400302": "Etch_DV_ClartiasVpp_Avg",
+    "12400304": "Etch_DV_ClartiasVpp_StdDeviation",
+    "12400310": "Etch_DV_HeBPFlow_Min",
+    "12400311": "Etch_DV_HeBPFlow_Max",
+    "12400312": "Etch_DV_HeBPFlow_Avg",
+    "12400314": "Etch_DV_HeBPFlow_StdDeviation",
+    "12400320": "Etch_DV_forelinePressure_Min",
+    "12400321": "Etch_DV_forelinePressure_Max",
+    "12400322": "Etch_DV_forelinePressure_Avg",
+    "12400324": "Etch_DV_forelinePressure_StdDeviation",
+    "12400330": "Etch_DV_endpointValue_Min",
+    "12400331": "Etch_DV_endpointValue_Max",
+    "12400332": "Etch_DV_endpointValue_Avg",
+    "12400334": "Etch_DV_endpointValue_StdDeviation",
+    "12400340": "Etch_DV_tempPlaten_Min",
+    "12400341": "Etch_DV_tempPlaten_Max",
+    "12400342": "Etch_DV_tempPlaten_Avg",
+    "12400344": "Etch_DV_tempPlaten_StdDeviation",
+    "12400350": "Etch_DV_tempPrimarySource_Min",
+    "12400351": "Etch_DV_tempPrimarySource_Max",
+    "12400352": "Etch_DV_tempPrimarySource_Avg",
+    "12400354": "Etch_DV_tempPrimarySource_StdDeviation",
+    "12400360": "Etch_DV_tempChamberWall_Min",
+    "12400361": "Etch_DV_tempChamberWall_Max",
+    "12400362": "Etch_DV_tempChamberWall_Avg",
+    "12400364": "Etch_DV_tempChamberWall_StdDeviation",
+    "12400370": "Etch_DV_tempGasBox_Min",
+    "12400371": "Etch_DV_tempGasBox_Max",
+    "12400372": "Etch_DV_tempGasBox_Avg",
+    "12400374": "Etch_DV_tempGasBox_StdDeviation",
+    "12400380": "Etch_DV_tempPumpMount_Min",
+    "12400381": "Etch_DV_tempPumpMount_Max",
+    "12400382": "Etch_DV_tempPumpMount_Avg",
+    "12400384": "Etch_DV_tempPumpMount_StdDeviation",
+    "13400000": "DeltaAPM_DV_HFLoadPower_Min",
+    "13400001": "DeltaAPM_DV_HFLoadPower_Max",
+    "13400002": "DeltaAPM_DV_HFLoadPower_Avg",
+    "13400003": "DeltaAPM_DV_HFLoadPower_Median",
+    "13400004": "DeltaAPM_DV_HFLoadPower_StdDeviaton",
+    "13400010": "DeltaAPM_DV_HFReflectedPower_Min",
+    "13400011": "DeltaAPM_DV_HFReflectedPower_Max",
+    "13400012": "DeltaAPM_DV_HFReflectedPower_Avg",
+    "13400013": "DeltaAPM_DV_HFReflectedPower_Median",
+    "13400014": "DeltaAPM_DV_HFReflectedPower_StdDeviation",
+    "13400020": "DeltaAPM_DV_HFPkToPk_Min",
+    "13400021": "DeltaAPM_DV_HFPkToPk_Max",
+    "13400022": "DeltaAPM_DV_HFPkToPk_Avg",
+    "13400023": "DeltaAPM_DV_HFPkToPk_Median",
+    "13400024": "DeltaAPM_DV_HFPkToPk_StdDeviation",
+    "13400030": "DeltaAPM_DV_HFDCBias_Min",
+    "13400031": "DeltaAPM_DV_HFDCBias_Max",
+    "13400032": "DeltaAPM_DV_HFDCBias_Avg",
+    "13400033": "DeltaAPM_DV_HFDCBias_Median",
+    "13400034": "DeltaAPM_DV_HFDCBias_StdDeviation",
+    "13400040": "DeltaAPM_DV_HFMURange_Min",
+    "13400041": "DeltaAPM_DV_HFMURange_Max",
+    "13400042": "DeltaAPM_DV_HFMURange_Avg",
+    "13400043": "DeltaAPM_DV_HFMURange_Median",
+    "13400044": "DeltaAPM_DV_HFMURange_StdDeviation",
+    "13400050": "DeltaAPM_DV_LFLoadPower_Min",
+    "13400051": "DeltaAPM_DV_LFLoadPower_Max",
+    "13400052": "DeltaAPM_DV_LFLoadPower_Avg",
+    "13400053": "DeltaAPM_DV_LFLoadPower_Median",
+    "13400054": "DeltaAPM_DV_LFLoadPower_StdDeviation",
+    "13400060": "DeltaAPM_DV_LFReflectedPower_Min",
+    "13400061": "DeltaAPM_DV_LFReflectedPower_Max",
+    "13400062": "DeltaAPM_DV_LFReflectedPower_Avg",
+    "13400063": "DeltaAPM_DV_LFReflectedPower_Median",
+    "13400064": "DeltaAPM_DV_LFReflectedPower_StdDeviation",
+    "13400070": "DeltaAPM_DV_LFPkToPk_Min",
+    "13400071": "DeltaAPM_DV_LFPkToPk_Max",
+    "13400072": "DeltaAPM_DV_LFPkToPk_Avg",
+    "13400073": "DeltaAPM_DV_LFPkToPk_Median",
+    "13400074": "DeltaAPM_DV_LFPkToPk_StdDeviation",
+    "13400080": "DeltaAPM_DV_LFDCBias_Min",
+    "13400081": "DeltaAPM_DV_LFDCBias_Max",
+    "13400082": "DeltaAPM_DV_LFDCBias_Avg",
+    "13400083": "DeltaAPM_DV_LFDCBias_Median",
+    "13400084": "DeltaAPM_DV_LFDCBias_StdDeviation",
+    "13400090": "DeltaAPM_DV_LFMURange_Min",
+    "13400091": "DeltaAPM_DV_LFMURange_Max",
+    "13400092": "DeltaAPM_DV_LFMURange_Avg",
+    "13400093": "DeltaAPM_DV_LFMURange_Median",
+    "13400094": "DeltaAPM_DV_LFMURange_StdDeviation",
+    "13400100": "DeltaAPM_DV_LeakupRate_Min",
+    "13400101": "DeltaAPM_DV_LeakupRate_Max",
+    "13400102": "DeltaAPM_DV_LeakupRate_Avg",
+    "13400103": "DeltaAPM_DV_LeakupRate_Median",
+    "13400104": "DeltaAPM_DV_LeakupRate_StdDeviation",
+    "13400110": "DeltaAPM_DV_FillRate_Min",
+    "13400111": "DeltaAPM_DV_FillRate_Max",
+    "13400112": "DeltaAPM_DV_FillRate_Avg",
+    "13400113": "DeltaAPM_DV_FillRate_Median",
+    "13400114": "DeltaAPM_DV_FillRate_StdDeviation",
+    "13400120": "DeltaAPM_DV_EndpointSourceSignal_Min",
+    "13400121": "DeltaAPM_DV_EndpointSourceSignal_Max",
+    "13400122": "DeltaAPM_DV_EndpointSourceSignal_Avg",
+    "13400123": "DeltaAPM_DV_EndpointSourceSignal_Median",
+    "13400124": "DeltaAPM_DV_EndpointSourceSignal_StdDeviation",
+    "13400130": "DeltaAPM_DV_EndpointStage_Min",
+    "13400131": "DeltaAPM_DV_EndpointStage_Max",
+    "13400132": "DeltaAPM_DV_EndpointStage_Avg",
+    "13400133": "DeltaAPM_DV_EndpointStage_Median",
+    "13400134": "DeltaAPM_DV_EndpointStage_StdDeviation",
+    "13400140": "DeltaAPM_DV_TotalDeposition_Min",
+    "13400141": "DeltaAPM_DV_TotalDeposition_Max",
+    "13400142": "DeltaAPM_DV_TotalDeposition_Avg",
+    "13400143": "DeltaAPM_DV_TotalDeposition_Median",
+    "13400144": "DeltaAPM_DV_TotalDeposition_StdDeviation",
+    "13400150": "DeltaAPM_DV_AccDeposition_Min",
+    "13400151": "DeltaAPM_DV_AccDeposition_Max",
+    "13400152": "DeltaAPM_DV_AccDeposition_Avg",
+    "13400153": "DeltaAPM_DV_AccDeposition_Median",
+    "13400154": "DeltaAPM_DV_AccDeposition_StdDeviation",
+    "13400160": "DeltaAPM_DV_ElectrodeSpacing_Min",
+    "13400161": "DeltaAPM_DV_ElectrodeSpacing_Max",
+    "13400162": "DeltaAPM_DV_ElectrodeSpacing_Avg",
+    "13400163": "DeltaAPM_DV_ElectrodeSpacing_Median",
+    "13400164": "DeltaAPM_DV_ElectrodeSpacing_StdDeviation",
+    "13400170": "DeltaAPM_DV_ShowerheadHeaterTemp_Min",
+    "13400171": "DeltaAPM_DV_ShowerheadHeaterTemp_Max",
+    "13400172": "DeltaAPM_DV_ShowerheadHeaterTemp_Avg",
+    "13400173": "DeltaAPM_DV_ShowerheadHeaterTemp_Median",
+    "13400174": "DeltaAPM_DV_ShowerheadHeaterTemp_StdDeviation",
+    "13400180": "DeltaAPM_DV_SCIFHeaterTemp_Min",
+    "13400181": "DeltaAPM_DV_SCIFHeaterTemp_Max",
+    "13400182": "DeltaAPM_DV_SCIFHeaterTemp_Avg",
+    "13400183": "DeltaAPM_DV_SCIFHeaterTemp_Median",
+    "13400184": "DeltaAPM_DV_SCIFHeaterTemp_StdDeviation",
+    "13400190": "DeltaAPM_DV_PlatenHeaterTemp_Min",
+    "13400191": "DeltaAPM_DV_PlatenHeaterTemp_Max",
+    "13400192": "DeltaAPM_DV_PlatenHeaterTemp_Avg",
+    "13400193": "DeltaAPM_DV_PlatenHeaterTemp_Median",
+    "13400194": "DeltaAPM_DV_PlatenHeaterTemp_StdDeviation",
+    "13400200": "DeltaAPM_DV_GasInletHeaterTemp_Min",
+    "13400201": "DeltaAPM_DV_GasInletHeaterTemp_Max",
+    "13400202": "DeltaAPM_DV_GasInletHeaterTemp_Avg",
+    "13400203": "DeltaAPM_DV_GasInletHeaterTemp_Median",
+    "13400204": "DeltaAPM_DV_GasInletHeaterTemp_StdDeviation",
+    "13400210": "DeltaAPM_DV_APC_Min",
+    "13400211": "DeltaAPM_DV_APC_Max",
+    "13400212": "DeltaAPM_DV_APC_Avg",
+    "13400213": "DeltaAPM_DV_APC_Median",
+    "13400214": "DeltaAPM_DV_APC_StdDeviation",
+    "13400220": "DeltaAPM_DV_Pressure_Min",
+    "13400221": "DeltaAPM_DV_Pressure_Max",
+    "13400222": "DeltaAPM_DV_Pressure_Avg",
+    "13400223": "DeltaAPM_DV_Pressure_Median",
+    "13400224": "DeltaAPM_DV_Pressure_StdDeviation",
+    "13400230": "DeltaAPM_DV_Gas1Flow_Min",
+    "13400231": "DeltaAPM_DV_Gas1Flow_Max",
+    "13400232": "DeltaAPM_DV_Gas1Flow_Avg",
+    "13400233": "DeltaAPM_DV_Gas1Flow_Median",
+    "13400234": "DeltaAPM_DV_Gas1Flow_StdDeviation",
+    "13400240": "DeltaAPM_DV_Gas2Flow_Min",
+    "13400241": "DeltaAPM_DV_Gas2Flow_Max",
+    "13400242": "DeltaAPM_DV_Gas2Flow_Avg",
+    "13400243": "DeltaAPM_DV_Gas2Flow_Median",
+    "13400244": "DeltaAPM_DV_Gas2Flow_StdDeviation",
+    "13400250": "DeltaAPM_DV_Gas3Flow_Min",
+    "13400251": "DeltaAPM_DV_Gas3Flow_Max",
+    "13400252": "DeltaAPM_DV_Gas3Flow_Avg",
+    "13400253": "DeltaAPM_DV_Gas3Flow_Median",
+    "13400254": "DeltaAPM_DV_Gas3Flow_StdDeviation",
+    "13400260": "DeltaAPM_DV_Gas4Flow_Min",
+    "13400261": "DeltaAPM_DV_Gas4Flow_Max",
+    "13400262": "DeltaAPM_DV_Gas4Flow_Avg",
+    "13400263": "DeltaAPM_DV_Gas4Flow_Median",
+    "13400264": "DeltaAPM_DV_Gas4Flow_StdDeviation",
+    "13400270": "DeltaAPM_DV_Gas5Flow_Min",
+    "13400271": "DeltaAPM_DV_Gas5Flow_Max",
+    "13400272": "DeltaAPM_DV_Gas5Flow_Avg",
+    "13400273": "DeltaAPM_DV_Gas5Flow_Median",
+    "13400274": "DeltaAPM_DV_Gas5Flow_StdDeviation",
+    "13400280": "DeltaAPM_DV_Gas6Flow_Min",
+    "13400281": "DeltaAPM_DV_Gas6Flow_Max",
+    "13400282": "DeltaAPM_DV_Gas6Flow_Avg",
+    "13400283": "DeltaAPM_DV_Gas6Flow_Median",
+    "13400284": "DeltaAPM_DV_Gas6Flow_StdDeviation",
+    "13400290": "DeltaAPM_DV_Gas7Flow_Min",
+    "13400291": "DeltaAPM_DV_Gas7Flow_Max",
+    "13400292": "DeltaAPM_DV_Gas7Flow_Avg",
+    "13400293": "DeltaAPM_DV_Gas7Flow_Median",
+    "13400294": "DeltaAPM_DV_Gas7Flow_StdDeviation",
+    "13400300": "DeltaAPM_DV_Gas8Flow_Min",
+    "13400301": "DeltaAPM_DV_Gas8Flow_Max",
+    "13400302": "DeltaAPM_DV_Gas8Flow_Avg",
+    "13400303": "DeltaAPM_DV_Gas8Flow_Median",
+    "13400304": "DeltaAPM_DV_Gas8Flow_StdDeviation",
+    "13400310": "DeltaAPM_DV_Gas9Flow_Min",
+    "13400311": "DeltaAPM_DV_Gas9Flow_Max",
+    "13400312": "DeltaAPM_DV_Gas9Flow_Avg",
+    "13400313": "DeltaAPM_DV_Gas9Flow_Median",
+    "13400314": "DeltaAPM_DV_Gas9Flow_StdDeviation",
+    "13400320": "DeltaAPM_DV_Gas10Flow_Min",
+    "13400321": "DeltaAPM_DV_Gas10Flow_Max",
+    "13400322": "DeltaAPM_DV_Gas10Flow_Avg",
+    "13400323": "DeltaAPM_DV_Gas10Flow_Median",
+    "13400324": "DeltaAPM_DV_Gas10Flow_StdDeviation"
+  }
+}

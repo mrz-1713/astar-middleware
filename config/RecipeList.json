@@ -1,0 +1,12 @@
+{
+    "Recipe_List": [
+        "Met_Etch_ANISO_Rcp1",
+        "Met_Etch_ANISO_Rcp2",
+        "Poly_Etch_Rcp1",
+        "Oxide_Etch_Rcp1",
+        "RCP1",
+        "RCP2",
+        "RCP3",
+        "RCP4"
+    ]
+}

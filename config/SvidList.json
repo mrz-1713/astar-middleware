@@ -1,0 +1,140 @@
+{
+    "RecipeSvidList": [
+        "RCP1",
+        "RCP2",
+        "RCP3",
+        "RCP4",
+        "Poly_Etch_Rcp1",
+        "Met_Etch_ANISO_Rcp2"
+    ],
+    "SvidList": [
+        {
+            "SVID": 1001,
+            "Name": "Stat3_Etch_MV_Heater1Temp"
+        },
+        {
+            "SVID": 1002,
+            "Name": "Stat3_Etch_MV_Heater2Temp"
+        },
+        {
+            "SVID": 1003,
+            "Name": "Stat3_Etch_MV_Thermocouple1Temp"
+        },
+        {
+            "SVID": 1004,
+            "Name": "Stat3_Etch_MV_Thermocouple2Temp"
+        },
+        {
+            "SVID": 1005,
+            "Name": "Stat3_Etch_MV_PressureLow"
+        },
+        {
+            "SVID": 1006,
+            "Name": "Stat3_Etch_MV_PressureHigh"
+        },
+        {
+            "SVID": 1007,
+            "Name": "Stat3_Etch_MV_Pressure"
+        },
+        {
+            "SVID": 1008,
+            "Name": "Stat3_Etch_MV_Gas_P1Flow"
+        },
+        {
+            "SVID": 1009,
+            "Name": "Stat3_Etch_MV_Gas_P2Flow"
+        },
+        {
+            "SVID": 1010,
+            "Name": "Stat3_Etch_MV_Gas_P3Flow"
+        },
+        {
+            "SVID": 1100,
+            "Name": "ArmAWaferStatus"
+        },
+        {
+            "SVID": 1101,
+            "Name": "ArmBWaferStatus"
+        },
+        {
+            "SVID": 1102,
+            "Name": "VCEAWaferStatus"
+        },
+        {
+            "SVID": 1103,
+            "Name": "PM1WaferStatus"
+        },
+        {
+            "SVID": 1104,
+            "Name": "PM2WaferStatus"
+        },
+        {
+            "SVID": 1105,
+            "Name": "PM3WaferStatus"
+        },
+        {
+            "SVID": 1107,
+            "Name": "PM5WaferStatus"
+        },
+        {
+            "SVID": 1109,
+            "Name": "VCEBWaferStatus"
+        },
+        {
+            "SVID": 1110,
+            "Name": "VACAlignerWaferStatus"
+        },
+        {
+            "SVID": 1114,
+            "Name": "InCoolerWaferStatus"
+        },
+        {
+            "SVID": 1115,
+            "Name": "BufferWaferStatus"
+        },
+        {
+            "SVID": 1120,
+            "Name": "ArmAWaferInfo"
+        },
+        {
+            "SVID": 1121,
+            "Name": "ArmBWaferInfo"
+        },
+        {
+            "SVID": 1122,
+            "Name": "VCEAWaferInfo"
+        },
+        {
+            "SVID": 1123,
+            "Name": "PM1WaferInfo"
+        },
+        {
+            "SVID": 1124,
+            "Name": "PM2WaferInfo"
+        },
+        {
+            "SVID": 1125,
+            "Name": "PM3WaferInfo"
+        },
+        {
+            "SVID": 1127,
+            "Name": "PM5WaferInfo"
+        },
+        {
+            "SVID": 1129,
+            "Name": "VCEBWaferInfo"
+        },
+        {
+            "SVID": 1130,
+            "Name": "VACAlignerWaferInfo"
+        },
+        {
+            "SVID": 1134,
+            "Name": "InCoolerWaferInfo"
+        },
+        {
+            "SVID": 1135,
+            "Name": "BufferWaferInfo"
+        }
+    ]
+}

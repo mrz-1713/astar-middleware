@@ -1,0 +1,821 @@
+{
+  "_source": "/Users/nrzngr/Downloads/SECS-Items_MueTec DaVinci 200 MC4_HC1.xlsx",
+  "DataVariables": [
+    {
+      "DVID": 2010001,
+      "Name": "OperationMode",
+      "Description": "New operation mode of module  ('Production', 'Maintenance', 'Disabled')",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2010002,
+      "Name": "OperatorCommand",
+      "Description": "Data for Event OperatorCommandIssued",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2020001,
+      "Name": "AlarmID",
+      "Description": "Identifier of an alarm",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2020002,
+      "Name": "AlarmCode",
+      "Description": "ALCD byte of the alarm (used for events AlarmNDetected and AlarmNCleared)",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2020003,
+      "Name": "AlarmText",
+      "Description": "Text of the alarm (used for events AlarmNDetected and AlarmNCleared)",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2030001,
+      "Name": "LimitVariable",
+      "Description": "ID of the Variable which crossed a limit (GEM)",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2030002,
+      "Name": "EventLimit",
+      "Description": "ID of the limit which was crossed by a variable value (GEM)",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2030003,
+      "Name": "TransitionType",
+      "Description": "Direction of a limits monitoring zone transition (GEM)",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2040001,
+      "Name": "ECID",
+      "Description": "The ID of the equipment constant which was changed by the operator (GEM)",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2040002,
+      "Name": "CurrentValueOfLastChangedEC",
+      "Description": "Contains the current value of the last changed equipment constant",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2040003,
+      "Name": "PreviousValueOfLastChangedEC",
+      "Description": "Contains the value of the last changed equipment constant before the change",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2050001,
+      "Name": "RemoteCommandName",
+      "Description": "Name of the processed remote command",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2060001,
+      "Name": "PPChangeName",
+      "Description": "PPID of the process program that was changed",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2060002,
+      "Name": "PPChangeState",
+      "Description": "Action taken on the process program (1 - Created, 2 - Modified, 3 - Deleted)",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2060003,
+      "Name": "PPChangeOwner",
+      "Description": "The name of the user or 'Host' having done the modification of a process program.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2070001,
+      "Name": "TID",
+      "Description": "Identifier of the terminal",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080001,
+      "Name": "RecipeName",
+      "Description": "Provides the recipe name which was used for the process",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080002,
+      "Name": "WaferID",
+      "Description": "Provides the substrate identification",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080003,
+      "Name": "LotID",
+      "Description": "Provides the lot identification",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080005,
+      "Name": "ResultFile",
+      "Description": "File name of the file with detailed information about the inspected substrate",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080006,
+      "Name": "ResultPath",
+      "Description": "Path of the file with detailed information about the inspected substrate",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2080007,
+      "Name": "AbortReason",
+      "Description": "The reason why the process was aborted",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090008,
+      "Name": "PathOfImages",
+      "Description": "Path of image files of the scan",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090009,
+      "Name": "TestResults",
+      "Description": "Generic List of results during scan",
+      "Format": "TestResultList",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090012,
+      "Name": "SlotID",
+      "Description": "Provides the slot identification",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090013,
+      "Name": "UnitFoupID",
+      "Description": "Provides the unit foup identification",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090014,
+      "Name": "Results",
+      "Description": "Generic List of results during scan",
+      "Format": "ResultList",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2090015,
+      "Name": "SubstrateID",
+      "Description": "Provides the substrate identification",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2100001,
+      "Name": "EndEffector",
+      "Description": "Enumerated  (1 - upper arm, 2 - lower arm)",
+      "Format": "I1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2100002,
+      "Name": "Action",
+      "Description": "Type of movement actually performed by the robot: 'Pick', 'Place'",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2110001,
+      "Name": "CarrierTag",
+      "Description": "Carrier tag which was read or written",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2110002,
+      "Name": "PageNumber",
+      "Description": "RF ID Page number",
+      "Format": "I2",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2120001,
+      "Name": "CarrierTag",
+      "Description": "Carrier tag which was read or written",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2120002,
+      "Name": "PageNumber",
+      "Description": "RF ID Page number",
+      "Format": "I2",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130001,
+      "Name": "PRJobID",
+      "Description": "The identifier of a ProcessJob.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130002,
+      "Name": "PRJobState",
+      "Description": "A unique sub-state of the job according to the ProcessJob state model",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130003,
+      "Name": "PRProcessStart",
+      "Description": "Indicates if the processing resource starts processing immediately when ready (true) or must be started manually (false)",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130004,
+      "Name": "PRRecipeMethod",
+      "Description": "Indication of recipe specification type",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130005,
+      "Name": "RecVariableList",
+      "Description": "List of variables supporting a recipe method",
+      "Format": "RecipeVariableArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130007,
+      "Name": "PRMtlNameList",
+      "Description": "List of identifiers of the material carrier being processed",
+      "Format": "StringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130008,
+      "Name": "PRMtlType",
+      "Description": "Identifies the type of material being processed",
+      "Format": "B",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130009,
+      "Name": "RecID",
+      "Description": "Identifier of the recipe applied",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2130010,
+      "Name": "PRPauseEvent",
+      "Description": "List of event identifiers that cause the equipment to automatically transition to the PAUSING/PAUSED states when one of the listed events is triggered.",
+      "Format": "PauseEventArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140001,
+      "Name": "CtrlJobID",
+      "Description": "The identifier of a ControlJob.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140002,
+      "Name": "CtrlJobState",
+      "Description": "The current state of a ControlJob.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140003,
+      "Name": "CarrierInputSpec",
+      "Description": "A list of carrierID for material that will be used during execution of the ControlJob.",
+      "Format": "CarrierInputSpecArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140004,
+      "Name": "MtrlOutSpec",
+      "Description": "List structure which maps locations or Carriers where processed material will be placed based on material status.",
+      "Format": "MtrlOutByStatusArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140005,
+      "Name": "CtrlJobPauseEvent",
+      "Description": "Identifier of a list of events on which the ControlJob shall PAUSE.",
+      "Format": "PauseEventArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140006,
+      "Name": "ProcessingCtrlSpec",
+      "Description": "A list of structures that defines the ProcessJobs and rules for running each that will be run within this ControlJob.",
+      "Format": "ProcessingCtrlSpecArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140007,
+      "Name": "ProcessOrderMgmt",
+      "Description": "Define the method for the order in which ProcessJobs are initiated.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140008,
+      "Name": "PRJobStatusList",
+      "Description": "A list of all ProcessJobs managed by the ControlJob and their associated status.",
+      "Format": "PRJobStatusArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2140009,
+      "Name": "CtrlJobStartMethod",
+      "Description": "A logical flag that determines if the ControlJob can start automatically (true) or must be started by the user (false).",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150001,
+      "Name": "CarrierID",
+      "Description": "Carrier identifier",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150002,
+      "Name": "PortID",
+      "Description": "Load port identifier",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150003,
+      "Name": "CarrierIDStatus",
+      "Description": "State of the ID verification for a carrier",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150004,
+      "Name": "SlotMapStatus",
+      "Description": "State of the slot map verification for a carrier",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150005,
+      "Name": "CarrierAccessingStatus",
+      "Description": "Accessing state of a carrier by the equipment",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150006,
+      "Name": "PortTransferState",
+      "Description": "Transfer state of a load port",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150007,
+      "Name": "PortAssociationState",
+      "Description": "Association state of a load port",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150008,
+      "Name": "PortStateInfo",
+      "Description": "PortAssociationState combined with the PortTransferState of a load port",
+      "Format": "PortStateInfo",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150009,
+      "Name": "LoadPortReservationState",
+      "Description": "Reservation state of a load port",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150010,
+      "Name": "AccessMode",
+      "Description": "Access mode of a load port",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150011,
+      "Name": "SlotMap",
+      "Description": "Ordered list of slot status corresponding to slot 1,2,3,...n",
+      "Format": "SlotMapArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150012,
+      "Name": "LocationID",
+      "Description": "Identifier of the location of a carrier",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2150013,
+      "Name": "Reason",
+      "Description": "The reason for transition 14, SlotMapNotRead to WaitingForHost",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160001,
+      "Name": "SubstID",
+      "Description": "Substrate identifier relevant to the location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160002,
+      "Name": "SubstLocID",
+      "Description": "Identifier for current equipment substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160003,
+      "Name": "SubstIDStatus",
+      "Description": "Status of the substrate ID read.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160004,
+      "Name": "SubstSubstLocID",
+      "Description": "Identifier for current equipment substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160005,
+      "Name": "SubstSource",
+      "Description": "Identifier of the substrate location on which the substrate has been initially registered.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160006,
+      "Name": "SubstDestination",
+      "Description": "Identifier of the substrate location on which the substrate shall be finally restored.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160007,
+      "Name": "SubstHistory",
+      "Description": "History of locations visited.",
+      "Format": "SubstHistoryEntryArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160008,
+      "Name": "SubstState",
+      "Description": "Transport state of the substrate.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160009,
+      "Name": "SubstProcState",
+      "Description": "Processing state of the substrate.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160010,
+      "Name": "SubstMtrlStatus",
+      "Description": "Current status of the substrate that represents criteria of the processing quality.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160011,
+      "Name": "SubstType",
+      "Description": "The type of the substrate.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160012,
+      "Name": "SubstUsage",
+      "Description": "How the substrate is used.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160013,
+      "Name": "AcquiredID",
+      "Description": "Contains the ID read from the substrate (Empty string before the substrate is read).",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160014,
+      "Name": "SubstLotID",
+      "Description": "Identifier of the lot associated with the substrate by the user.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160015,
+      "Name": "SubstIDList",
+      "Description": "A list of substrate identifiers related by the same Substrate Object State Model state transition that triggered a collection event with which this variable was associated.",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160016,
+      "Name": "SubstIDStatusList",
+      "Description": "A list of SubstIDStatuses related by the same Substrate Object State Model state transition that triggered a collection event",
+      "Format": "SubstIDStatusArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160017,
+      "Name": "SubstSubstLocIDList",
+      "Description": "A list of substrate location identifiers related by the same Substrate Object State Model state transition that triggered a collection event",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160018,
+      "Name": "SubstSourceList",
+      "Description": "A list of SubstSources related by the same Substrate Object Model state transition that triggered a collection event",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160019,
+      "Name": "SubstDestinationList",
+      "Description": "A list of SubstDestinations related by the same Substrate object State Model transition that triggered a collection event",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160020,
+      "Name": "SubstHistoryList",
+      "Description": "A list of SubstHistory's related by the same Substrate Object State Model state transition that triggered a collection event",
+      "Format": "SubstHistoryArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160021,
+      "Name": "SubstStateList",
+      "Description": "A list of substrate states related by the same Substrate Object Model state transition that triggered a collection event with which this variable was associated",
+      "Format": "SubstStateArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160022,
+      "Name": "SubstProcStateList",
+      "Description": "A list of substrate process states related by the same Substrate Object Model state transition that triggered a collection event with which this variable was associated",
+      "Format": "SubstProcStateArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160023,
+      "Name": "SubstMtrlStatusList",
+      "Description": "A list of MtrlStatus related by the same Substrate Object Model state transition that triggered a collection event",
+      "Format": "MaterialStatusArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160024,
+      "Name": "SubstTypeList",
+      "Description": "A list of SubstTypes related by the same Substrate Object Model state transition that triggered a collection event",
+      "Format": "SubstTypeArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160025,
+      "Name": "SubstUsageList",
+      "Description": "A list of SubstUsages related by the same Substrate Object Model state transition that triggered a collection event",
+      "Format": "SubstUsageArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160026,
+      "Name": "AcquiredIDList",
+      "Description": "A list of AcquiredIDs related by the same Substrate Object State Model state transition that triggered a collection event",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160027,
+      "Name": "SubstLotIDList",
+      "Description": "A list of substrate LotIDs related by the same Substrate Object Model state transition that triggered a collection event",
+      "Format": "SubstGroupStringArray",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160028,
+      "Name": "SubstLocState",
+      "Description": "The substrate location state.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160029,
+      "Name": "SubstLocSubstID",
+      "Description": "The substrate identifier of the substrate currently located at the substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2160030,
+      "Name": "SubstrateState",
+      "Description": "Provides the current state of substrate",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170001,
+      "Name": "ErrorCode",
+      "Description": "Code identifying an error",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170002,
+      "Name": "ErrorText",
+      "Description": "Text string describing the error noted in the corresponding ERRCODE",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170003,
+      "Name": "ObjID",
+      "Description": "Identifier for an E39 object",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170004,
+      "Name": "ObjType",
+      "Description": "Type of an E39 object",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170005,
+      "Name": "ModelName",
+      "Description": "Name of a state model",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170006,
+      "Name": "FromState",
+      "Description": "Source state of an invalid state model transition",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    },
+    {
+      "DVID": 2170007,
+      "Name": "ToState",
+      "Description": "Destination state of an invalid state model transition",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": ""
+    }
+  ]
+}

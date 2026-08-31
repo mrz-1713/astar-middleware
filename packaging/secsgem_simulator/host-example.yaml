@@ -1,0 +1,39 @@
+# Simulator acts as the HOST: it stands in for the EAP so a tool can be
+# proven on its own, with no middleware installed anywhere.
+#
+# The peer here is a piece of equipment (real, or another copy of this
+# simulator running with role: equipment) - NOT the middleware. Nothing in
+# production.yaml applies to this link.
+connection:
+  # host = pretend to be the EAP. Independent of mode below.
+  role: host
+  # active = dial out to the equipment at the address below.
+  # Use passive instead if the tool is configured to dial the host.
+  mode: active
+  address: "192.168.1.30"  # Replace with the equipment IP.
+  port: 5051
+  device_id: 0
+
+simulation:
+  # Which vendor's events to subscribe to and how to decode the reports.
+  profile: davinci_200_mc4_hc1
+  tool_id: "HOST_SIM_01"
+
+# The opening sequence this host performs once HSMS is communicating. Same
+# switches the production middleware exposes per machine.
+host:
+  request_online: true    # S1F17 - a tool left OFF-LINE reports nothing
+  enable_alarms: true     # S5F3 - without it S5F1 may never arrive
+  drain_spool: false      # S6F23 - recover what the tool spooled offline
+  read_identity: true     # S1F3 - read back the profile's identity SVs
+
+recovery:
+  initial_retry_sec: 1
+  maximum_retry_sec: 30
+  maximum_restart_attempts: 0  # 0 retries until the operator stops it.
+
+logging:
+  level: INFO
+  directory: logs
+  maximum_size_mb: 10
+  backup_count: 5

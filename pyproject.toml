@@ -1,0 +1,45 @@
+[tool.pytest.ini_options]
+addopts = "-m 'not live and not slow'"
+testpaths = ["tests"]
+markers = [
+    "live: performs explicit network I/O against the configured external tenant",
+    "slow: minutes-long full-scale run (22 concurrent HSMS machines)",
+]
+# secsgem's passive-mode server thread calls socket.shutdown(SHUT_RDWR)
+# after accepting a connection, but during test teardown the OS-level socket
+# may already be closed, raising OSError(57). This is an upstream secsgem bug.
+# Filter only the warning from that specific thread so real unhandled thread
+# exceptions still surface.
+filterwarnings = [
+    "ignore:Exception in thread secsgem_tcpServerConnection:pytest.PytestUnhandledThreadExceptionWarning",
+]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+reportUnknownMemberType = false
+reportUnknownArgumentType = false
+reportUnknownVariableType = false
+include = [
+    "eap_middleware", "gateway", "gui", "simulator", "simulator_gui", "tests"
+]
+exclude = ["**/__pycache__"]
+
+[tool.black]
+line-length = 79
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E9", "F"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "docs", "tmp"]
+# B101 is test-only assert usage (tests are excluded). B603/B607 are reviewed
+# at the individual fixed-native-command call sites; no blanket subprocess or
+# URL suppression is permitted here.
+skips = ["B101"]

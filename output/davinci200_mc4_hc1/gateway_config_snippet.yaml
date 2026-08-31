@@ -1,0 +1,18 @@
+# Merge this machine entry into config/production.yaml after confirming the IP.
+machines:
+  - endpoint_id: "DAVINCI200_MC4_HC1"
+    display_name: "DAVINCI200_MC4_HC1_01"
+    machine_profile: "davinci_200_mc4_hc1"
+    host: <equipment-ip>
+    port: 5000
+    secs_device_id: 0
+    hsms_mode: "active"
+    enabled: true
+    event_subscription_enabled: true
+    svid_collection_enabled: true
+    enable_alarms: false
+    request_online: false
+    drain_spool_on_connect: false
+    local_csv_path: "D:/MachineData/EAP_DAVINCI200_MC4_HC1_01/csv_in"
+    network_csv_path: "\\\\TD-DATASVR-F2C4\\TD_DAVINCI200_MC4_HC1_01.csv_in"
+    admin_config_path: "C:/SECSGEM_EAP/machines/DAVINCI200_MC4_HC1_01/config"

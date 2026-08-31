@@ -1,0 +1,11 @@
+MG Simulator third-party notices
+======================================
+
+This distribution contains secsgem 0.3.0, Copyright Benjamin Parzella and
+contributors, licensed under the GNU Lesser General Public License version
+2.1 or later. The complete license text is included as LICENSE-secsgem.txt in
+the built distribution. Source: https://github.com/bparzella/secsgem
+
+The distribution also contains Python packages installed from requirements.txt.
+Their respective metadata and licenses remain applicable. This simulator is a
+functional integration test tool and is not SEMI conformance certification.

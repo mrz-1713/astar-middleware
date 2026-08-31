@@ -1,0 +1,82 @@
+name: NexGen MG Simulator Windows Package
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "simulator/**"
+      - "gateway/**"
+      - "eap_middleware/profiles/**"
+      - "output/nexgen_mg_series/**"
+      - "packaging/mg_simulator/**"
+      - "tests/test_mg_*.py"
+      - "tests/test_subscription_bands.py"
+      - "requirements.txt"
+      - "requirements-dev.txt"
+      - "pyproject.toml"
+      - ".github/workflows/mg-simulator-windows.yml"
+
+jobs:
+  build-and-smoke:
+    runs-on: windows-2025
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install runtime and build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          python -m pip install -r packaging/mg_simulator/requirements-build.txt
+
+      - name: Run test suite
+        run: python -m pytest -q tests
+
+      - name: Fail if the event subscription is stale
+        # The profile's positional V[] layout and the report VID lists are two
+        # views of one table. If someone edits the table and forgets to
+        # regenerate, every value in the changed report decodes into the wrong
+        # column, so treat any diff here as a build failure.
+        shell: pwsh
+        run: |
+          python -m scripts.gen_mg_subscription
+          git diff --exit-code -- output/nexgen_mg_series/EventSubscription.json
+
+      - name: Install Inno Setup compiler
+        shell: pwsh
+        run: choco install innosetup --no-progress --yes
+
+      - name: Build Windows package
+        shell: pwsh
+        run: ./packaging/mg_simulator/build_windows.ps1 -SkipTests
+
+      - name: Smoke-test packaged executable in both HSMS directions
+        run: >-
+          python packaging/mg_simulator/smoke_packaged_exe.py
+          --exe .build/mg-simulator/dist/MGSimulator/MGSimulator.exe
+          --output-dir .build/mg-simulator/smoke-logs
+
+      - name: Upload packaged-executable smoke logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MGSimulator-1.0.0-smoke-logs
+          path: .build/mg-simulator/smoke-logs
+          if-no-files-found: warn
+
+      - name: Upload package and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: MGSimulator-1.0.0-win-x64
+          path: |
+            artifacts/mg-simulator/MGSimulator-1.0.0-win-x64.zip
+            artifacts/mg-simulator/MGSimulator-1.0.0-win-x64.zip.sha256
+            artifacts/mg-simulator/MGSimulator-Setup-1.0.0-win-x64.exe
+            artifacts/mg-simulator/MGSimulator-Setup-1.0.0-win-x64.exe.sha256
+          if-no-files-found: error

@@ -1,0 +1,1137 @@
+{
+  "_source": "/Users/nrzngr/Downloads/SECS-Items_MueTec DaVinci 200 MC4_HC1.xlsx",
+  "_note": "Generated from SV sheet. Existing SvidCollector uses SVID and Name; other fields are metadata.",
+  "RecipeSvidList": [],
+  "SvidList": [
+    {
+      "SVID": 1010001,
+      "Name": "ControlState",
+      "Description": "Current control state of the equipment (1 - Equipment Offline, 2 - Attempt Online, 3 - Host Offline, 4 - Online Local, 5 - Online Remote)",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1010002,
+      "Name": "PreviousControlState",
+      "Description": "Previous control state of the equipment (1 - Equipment Offline, 2 - Attempt Online, 3 - Host Offline, 4 - Online Local, 5 - Online Remote)",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1010003,
+      "Name": "EventsEnabled",
+      "Description": "List of events currently enabled for reporting",
+      "Format": "U4Array",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1010004,
+      "Name": "LastEventID",
+      "Description": "ID of the last triggered collection event",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1010005,
+      "Name": "Clock",
+      "Description": "Value of the equipments internal clock",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1020001,
+      "Name": "AlarmsEnabled",
+      "Description": "List of alarms currently enabled for reporting",
+      "Format": "U4Array",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1020002,
+      "Name": "AlarmsSet",
+      "Description": "List of alarms currently set",
+      "Format": "U4Array",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1030001,
+      "Name": "SpoolCountActual",
+      "Description": "Count of the messages currently contained in the spool buffer",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1030002,
+      "Name": "SpoolCountTotal",
+      "Description": "Count of the messages spooled in total",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1030003,
+      "Name": "SpoolStartTime",
+      "Description": "Contains the timestamp spool became active last time",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1030004,
+      "Name": "SpoolFullTime",
+      "Description": "Contains the timestamp the spool buffer became full last time",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1040001,
+      "Name": "PPError",
+      "Description": "A text data value with information about verification errors of a process program that failed verification.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1050001,
+      "Name": "ProcessState",
+      "Description": "E30 process state value (0 - None, 1 - Init, 2 - Idle, 3 - Setup, 4 - Ready, 5 - Executing, 6 - Pause, 7 - Error)",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1050002,
+      "Name": "PreviousProcessState",
+      "Description": "Previous E30 process state value (0 - None, 1 - Init, 2 - Idle, 3 - Setup, 4 - Ready, 5 - Executing, 6 - Pause)",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1060005,
+      "Name": "PM1/OperationMode",
+      "Description": "Current mode of operation for Process Module ('Production', 'Maintenance', 'Disabled')",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1060006,
+      "Name": "PM1/RecipeActive",
+      "Description": "Gets a value indicating whether the process module is executing a module recipe",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1060007,
+      "Name": "PM1/RecipeName",
+      "Description": "Gets the name of the module recipe that is currently active or ready to start",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1060008,
+      "Name": "PM1/ReadyForProcess",
+      "Description": "Gets a value indicating whether the process module is ready to execute a recipe",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1070001,
+      "Name": "TM1/OperationMode",
+      "Description": "Current mode of operation for Transport Module ('Production', 'Maintenance', 'Disabled')",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1070002,
+      "Name": "TM1/WaferID",
+      "Description": "Wafer ID currently contained in Transport Module",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080001,
+      "Name": "LP1/E84Busy",
+      "Description": "State of E84 \u201cBUSY\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080002,
+      "Name": "LP1/E84CommunicationsValid",
+      "Description": "State of E84 \u201cVALID\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080003,
+      "Name": "LP1/E84Complete",
+      "Description": "State of E84 \u201cCOMPLETE\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080004,
+      "Name": "LP1/E84CS0",
+      "Description": "State of E84 \u201cCS_0\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080005,
+      "Name": "LP1/E84CS1",
+      "Description": "State of E84 \u201cCS_1\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080006,
+      "Name": "LP1/E84EmergencyStop",
+      "Description": "State of E84 \u201cES\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080007,
+      "Name": "LP1/E84HandoffAvailable",
+      "Description": "State of E84 \u201cHO_AVBL\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080008,
+      "Name": "LP1/E84LoadRequest",
+      "Description": "State of E84 \u201cLoad Request\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080009,
+      "Name": "LP1/E84Ready",
+      "Description": "State of E84 \u201cREADY\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080010,
+      "Name": "LP1/E84UnloadRequest",
+      "Description": "State of E84 \u201cUnload Request\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080011,
+      "Name": "LP1/ClampStatus",
+      "Description": "Status of CLAMP on load port. Unknown if equipment allows or detects an unknown clamp status.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080012,
+      "Name": "LP1/DoorStatus",
+      "Description": "Status of Loadport door. Unknown or InBetween if equipment allows or detects an unknown/in between door status (neither \u201copen\u201d nor \u201cclosed\u201d sensor is active).",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080013,
+      "Name": "LP1/IsMapped",
+      "Description": "Boolean, TRUE if the carrier on load port has been mapped.",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080014,
+      "Name": "LP1/CarrierPresentStatus",
+      "Description": "Status of Carrier Presence indicator.  Unknown if hardware doesn\u2019t agree on whether a carrier is present or not.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080015,
+      "Name": "LP1/MaterialMap",
+      "Description": "Material map of load port. List of substrate IDs.",
+      "Format": "StringArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080016,
+      "Name": "LP1/OperationMode",
+      "Description": "Operation mode of load port ('Production', 'Maintenance', 'Disabled')",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1080017,
+      "Name": "LP1/State",
+      "Description": "Internal State Machine states for load port: 'Error', 'Clamped', 'Unclamped', 'Loading', 'Loaded', 'Unloading', 'Unloaded', 'Offline', 'Initialized', 'Docked', 'Undocked', 'Mapping', 'Mapped', 'Open', 'Closed'",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090001,
+      "Name": "LP2/E84Busy",
+      "Description": "State of E84 \u201cBUSY\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090002,
+      "Name": "LP2/E84CommunicationsValid",
+      "Description": "State of E84 \u201cVALID\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090003,
+      "Name": "LP2/E84Complete",
+      "Description": "State of E84 \u201cCOMPLETE\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090004,
+      "Name": "LP2/E84CS0",
+      "Description": "State of E84 \u201cCS_0\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090005,
+      "Name": "LP2/E84CS1",
+      "Description": "State of E84 \u201cCS_1\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090006,
+      "Name": "LP2/E84EmergencyStop",
+      "Description": "State of E84 \u201cES\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090007,
+      "Name": "LP2/E84HandoffAvailable",
+      "Description": "State of E84 \u201cHO_AVBL\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090008,
+      "Name": "LP2/E84LoadRequest",
+      "Description": "State of E84 \u201cLoad Request\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090009,
+      "Name": "LP2/E84Ready",
+      "Description": "State of E84 \u201cREADY\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090010,
+      "Name": "LP2/E84UnloadRequest",
+      "Description": "State of E84 \u201cUnload Request\u201d signal",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090011,
+      "Name": "LP2/ClampStatus",
+      "Description": "Status of CLAMP on load port. Unknown if equipment allows or detects an unknown clamp status.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090012,
+      "Name": "LP2/DoorStatus",
+      "Description": "Status of Loadport door. Unknown or InBetween if equipment allows or detects an unknown/in between door status (neither \u201copen\u201d nor \u201cclosed\u201d sensor is active).",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090013,
+      "Name": "LP2/IsMapped",
+      "Description": "Boolean, TRUE if the carrier on load port has been mapped.",
+      "Format": "BOOLEAN",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090014,
+      "Name": "LP2/CarrierPresentStatus",
+      "Description": "Status of Carrier Presence indicator.  Unknown if hardware doesn\u2019t agree on whether a carrier is present or not.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090015,
+      "Name": "LP2/MaterialMap",
+      "Description": "Material map of load port. List of substrate IDs.",
+      "Format": "StringArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090016,
+      "Name": "LP2/OperationMode",
+      "Description": "Operation mode of load port ('Production', 'Maintenance', 'Disabled')",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1090017,
+      "Name": "LP2/State",
+      "Description": "Internal State Machine states for load port: 'Error', 'Clamped', 'Unclamped', 'Loading', 'Loaded', 'Unloading', 'Unloaded', 'Offline', 'Initialized', 'Docked', 'Undocked', 'Mapping', 'Mapped', 'Open', 'Closed'",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1100001,
+      "Name": "QueueAvailableSpace",
+      "Description": "Indicates the number of jobs which the queue can accept.",
+      "Format": "U4",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1100002,
+      "Name": "QueuedCJobs",
+      "Description": "Ordered list of ControlJobs currently in the Queue.",
+      "Format": "QueuedCJobsArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1110001,
+      "Name": "CarrierLocationMatrix",
+      "Description": "A list of all carriers at/in the equipment",
+      "Format": "CarrierLocationMatrixArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1110002,
+      "Name": "LoadPortReservationStateList",
+      "Description": "Current reservation state for all load ports",
+      "Format": "LoadPortReservationStateArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1110003,
+      "Name": "PortTransferStateList",
+      "Description": "Current transfer state for all load ports",
+      "Format": "PortTransferStateArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1110004,
+      "Name": "PortAssociationStateList",
+      "Description": "Current association state for all load ports",
+      "Format": "PortAssociationStateArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1110005,
+      "Name": "PortStateInfoList",
+      "Description": "List of PortStateInfo for all load ports",
+      "Format": "PortStateInfoArray",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120001,
+      "Name": "LP1/CarrierID",
+      "Description": "Identifier for the carrier at Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120002,
+      "Name": "LP1/PortID",
+      "Description": "Identifier for Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120003,
+      "Name": "LP1/PortTransferState",
+      "Description": "The current transfer state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120004,
+      "Name": "LP1/PortAssociationState",
+      "Description": "The association state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120005,
+      "Name": "LP1/PortStateInfo",
+      "Description": "The port association state combined with the port transfer state of Loadport",
+      "Format": "PortStateInfo",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120006,
+      "Name": "LP1/LoadPortReservationState",
+      "Description": "The reservation state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120007,
+      "Name": "LP1/AccessMode",
+      "Description": "The access mode of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120008,
+      "Name": "LP1/ClampedLocation",
+      "Description": "Identifier for the clamping location of Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120009,
+      "Name": "LP1/DockedLocation",
+      "Description": "Identifier for the docking location of Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120010,
+      "Name": "LP1/MaterialID",
+      "Description": "Identifier of the material in the location (empty for none)",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1120011,
+      "Name": "LP1/LocationID",
+      "Description": "Identifier of the material location",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130001,
+      "Name": "LP2/CarrierID",
+      "Description": "Identifier for the carrier at Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130002,
+      "Name": "LP2/PortID",
+      "Description": "Identifier for Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130003,
+      "Name": "LP2/PortTransferState",
+      "Description": "The current transfer state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130004,
+      "Name": "LP2/PortAssociationState",
+      "Description": "The association state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130005,
+      "Name": "LP2/PortStateInfo",
+      "Description": "The port association state combined with the port transfer state of Loadport",
+      "Format": "PortStateInfo",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130006,
+      "Name": "LP2/LoadPortReservationState",
+      "Description": "The reservation state of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130007,
+      "Name": "LP2/AccessMode",
+      "Description": "The access mode of Loadport",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130008,
+      "Name": "LP2/ClampedLocation",
+      "Description": "Identifier for the clamping location of Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130009,
+      "Name": "LP2/DockedLocation",
+      "Description": "Identifier for the docking location of Loadport",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130010,
+      "Name": "LP2/MaterialID",
+      "Description": "Identifier of the material in the location (empty for none)",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1130011,
+      "Name": "LP2/LocationID",
+      "Description": "Identifier of the material location",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1140001,
+      "Name": "PM1/Station1/SubstLocID",
+      "Description": "Identifier of the substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1140002,
+      "Name": "PM1/Station1/SubstLocState",
+      "Description": "Substrate location state for the location.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1140003,
+      "Name": "PM1/Station1/SubstID",
+      "Description": "Substrate identifier relevant to the location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150001,
+      "Name": "TM1/Arm1/SubstLocID",
+      "Description": "Identifier of the substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150002,
+      "Name": "TM1/Arm1/SubstLocState",
+      "Description": "Substrate location state for the location.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150003,
+      "Name": "TM1/Arm1/SubstID",
+      "Description": "Substrate identifier relevant to the location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150004,
+      "Name": "TM1/Arm2/SubstLocID",
+      "Description": "Identifier of the substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150005,
+      "Name": "TM1/Arm2/SubstLocState",
+      "Description": "Substrate location state for the location.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1150006,
+      "Name": "TM1/Arm2/SubstID",
+      "Description": "Substrate identifier relevant to the location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1160001,
+      "Name": "AL/Station1/SubstLocID",
+      "Description": "Identifier of the substrate location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1160002,
+      "Name": "AL/Station1/SubstLocState",
+      "Description": "Substrate location state for the location.",
+      "Format": "U1",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1160003,
+      "Name": "AL/Station1/SubstID",
+      "Description": "Substrate identifier relevant to the location.",
+      "Format": "A",
+      "Unit": "",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170001,
+      "Name": "FFUGaugePressurePM",
+      "Description": "Measurement value pressure PM.",
+      "Format": "F8",
+      "Unit": "Pa",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170002,
+      "Name": "FFUGaugePressureEFEM1",
+      "Description": "Measurement value pressure EFEM1.",
+      "Format": "F8",
+      "Unit": "Pa",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170003,
+      "Name": "FFUGaugePressureEFEM2",
+      "Description": "Measurement value pressure EFEM2.",
+      "Format": "F8",
+      "Unit": "Pa",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170004,
+      "Name": "MainPressure",
+      "Description": "Measurement value main pressure.",
+      "Format": "F8",
+      "Unit": "bar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170005,
+      "Name": "MainVacuumEFEM",
+      "Description": "Measurement value vacuum EFEM.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170006,
+      "Name": "MainVacuumPM",
+      "Description": "Measurement value vacuum PM.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170007,
+      "Name": "Vacuum8PM1",
+      "Description": "Measurement value vacuum 8 inch chuck PM1.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170008,
+      "Name": "Vacuum12PM1",
+      "Description": "Measurement value vacuum 12 inch chuck PM1.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170009,
+      "Name": "Vacuum8PM2",
+      "Description": "Measurement value vacuum 8 inch chuck PM2.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170010,
+      "Name": "Vacuum12PM2",
+      "Description": "Measurement value vacuum 12 inch chuck PM2.",
+      "Format": "F8",
+      "Unit": "mbar",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170011,
+      "Name": "FFUFan1EFEM",
+      "Description": "Speed fan 1 EFEM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170012,
+      "Name": "FFUFan2EFEM",
+      "Description": "Speed fan 2 EFEM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170013,
+      "Name": "FFUFan3EFEM",
+      "Description": "Speed fan 3 EFEM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170014,
+      "Name": "FFUFan4EFEM",
+      "Description": "Speed fan 4 EFEM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170015,
+      "Name": "FFUFan1PM",
+      "Description": "Speed fan 1 PM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170016,
+      "Name": "FFUFan2PM",
+      "Description": "Speed fan 2 PM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170017,
+      "Name": "FFUFan3PM",
+      "Description": "Speed fan 3 PM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    },
+    {
+      "SVID": 1170018,
+      "Name": "FFUFan4PM",
+      "Description": "Speed fan 4 PM in rpm.",
+      "Format": "F8",
+      "Unit": "rpm",
+      "DefaultValue": "",
+      "LimitMin": "",
+      "LimitMax": ""
+    }
+  ]
+}

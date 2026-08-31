@@ -1,0 +1,324 @@
+name: Middleware
+
+# The middleware is the production deliverable, and until this existed nothing
+# tested it: both other workflows are simulator-scoped and path-filtered, so a
+# change to service.py, config.py, csv_store.py, journal.py, outbox.py,
+# mapper.py, job_tracker.py, gui/ or deploy/ ran zero tests and nothing ever
+# built or exercised its installer.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test suite (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        # Windows is the deployment target and the only place the Tk control
+        # panel can be exercised. Ubuntu is the fast signal and catches the
+        # POSIX path handling in resolve_data_path().
+        os: [windows-2025, ubuntu-24.04]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Compile and lint
+        run: |
+          python -m compileall -q eap_middleware gateway gui simulator simulator_gui
+          ruff check eap_middleware gateway gui simulator simulator_gui scripts tests
+
+      - name: Run test suite
+        run: python -m pytest -q tests
+
+      - name: Fail if a generated table is stale
+        # The profile's positional V[] layout and each subscription file's
+        # report VID lists are two views of one table. Edit the table without
+        # regenerating and every value in the changed report decodes into the
+        # wrong column, so any diff here is a build failure.
+        shell: bash
+        run: |
+          python -m scripts.gen_mg_subscription
+          python -m scripts.gen_davinci_full_subscription
+          python -m scripts.gen_spts_subscription
+          python -m scripts.gen_spts_module_variables
+          git diff --exit-code -- output/
+
+  quality-security:
+    name: Types, dependency audit, and SBOM
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install application and quality tools
+        run: |
+          python -m pip install --upgrade pip
+          # requirements-dev.txt pins pyright==1.1.411 and pip-audit==2.10.1.
+          python -m pip install -r requirements-dev.txt
+
+      - name: Strict type check of production code
+        run: pyright eap_middleware gateway gui simulator simulator_gui
+
+      - name: Static security review
+        run: bandit -q -ll -c pyproject.toml -r eap_middleware gateway gui simulator simulator_gui scripts
+
+      - name: Audit the exact dependency graph and create SBOM
+        run: >-
+          pip-audit --no-deps --disable-pip -r requirements.txt
+          --format cyclonedx-json --output sbom.cdx.json
+
+      - name: Upload dependency SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: middleware-sbom-${{ github.sha }}
+          path: sbom.cdx.json
+          if-no-files-found: error
+
+  scale-test:
+    name: 22-machine slow test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Run the full-scale concurrent HSMS test
+        run: python -m pytest -q -m slow tests/test_twenty_two_machines.py
+
+  installer:
+    name: Offline installer
+    runs-on: windows-2025
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Stage the deploy package
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          bash scripts/build_deploy_package.sh
+
+      - name: Verify the release manifest covers the payload
+        # install.ps1 refuses to run without a valid RELEASE_MANIFEST.sha256,
+        # so a packaging change that breaks it must fail here rather than on an
+        # air-gapped server with no way to diagnose it.
+        shell: pwsh
+        run: |
+          $pkg = Get-ChildItem deploy_out -Directory | Sort-Object Name -Descending | Select-Object -First 1
+          if (-not $pkg) { throw "no staged package under deploy_out/" }
+          $manifest = Join-Path $pkg.FullName "RELEASE_MANIFEST.sha256"
+          if (-not (Test-Path $manifest)) { throw "RELEASE_MANIFEST.sha256 missing from $($pkg.Name)" }
+          $lines = Get-Content $manifest | Where-Object { $_.Trim() }
+          if ($lines.Count -lt 2) { throw "release manifest is incomplete ($($lines.Count) entries)" }
+          foreach ($line in $lines) {
+            if ($line -notmatch '^([0-9A-Fa-f]{64})\s+\*?(.+)$') { throw "bad manifest entry: $line" }
+            $file = Join-Path $pkg.FullName ($Matches[2].Trim() -replace '/', '\')
+            if (-not (Test-Path $file)) { throw "manifest names a missing file: $($Matches[2])" }
+            $actual = (Get-FileHash -Path $file -Algorithm SHA256).Hash.ToUpperInvariant()
+            if ($actual -ne $Matches[1].ToUpperInvariant()) { throw "hash mismatch for $($Matches[2])" }
+          }
+          Write-Host "Verified $($lines.Count) manifest entries"
+
+      - name: Install Inno Setup and build the real Setup EXE
+        shell: pwsh
+        run: |
+          choco install innosetup --yes --no-progress
+          $pkg = Get-ChildItem deploy_out -Directory | Sort-Object Name -Descending | Select-Object -First 1
+          & .\packaging\installer\build_installer.ps1 `
+            -PackageDir $pkg.FullName `
+            -Version "1.0.${{ github.run_number }}" `
+            -BuildId "${{ github.sha }}"
+
+      - name: Smoke-install the compiled Setup EXE
+        # This exercises Inno's wrapper, its inner install.ps1 exit propagation,
+        # offline hashed pip install, config seeding, ACLs, and shortcuts.
+        shell: pwsh
+        run: |
+          $setup = Get-ChildItem artifacts\installer\AstarMiddleware-Setup-*.exe | Select-Object -First 1
+          if (-not $setup) { throw "compiled Setup EXE was not produced" }
+          $target = "$env:RUNNER_TEMP\SECSGEM_EAP"
+          $process = Start-Process -FilePath $setup.FullName `
+            -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/DIR=$target") `
+            -Wait -PassThru
+          if ($process.ExitCode -ne 0) {
+            throw "compiled Setup EXE failed with exit code $($process.ExitCode)"
+          }
+
+          # Re-running the same release over the existing destination is the
+          # supported in-place upgrade/repair path and must stay idempotent.
+          $upgrade = Start-Process -FilePath $setup.FullName `
+            -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/DIR=$target") `
+            -Wait -PassThru
+          if ($upgrade.ExitCode -ne 0) {
+            throw "compiled Setup EXE upgrade failed with exit code $($upgrade.ExitCode)"
+          }
+
+      - name: Prove inner-install failures propagate from Setup
+        shell: pwsh
+        run: |
+          $pkg = Get-ChildItem deploy_out -Directory | Sort-Object Name -Descending | Select-Object -First 1
+          $badPkg = Join-Path $env:RUNNER_TEMP "corrupt-package"
+          Copy-Item $pkg.FullName $badPkg -Recurse
+          Add-Content (Join-Path $badPkg "source\README.md") "intentional CI corruption"
+          & .\packaging\installer\build_installer.ps1 `
+            -PackageDir $badPkg `
+            -Version "1.0.${{ github.run_number }}" `
+            -BuildId "negative-${{ github.sha }}"
+          $badSetup = Get-ChildItem artifacts\installer\*negative-*.exe | Select-Object -First 1
+          $failed = Start-Process -FilePath $badSetup.FullName `
+            -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/DIR=$env:RUNNER_TEMP\SECSGEM_EAP_FAILURE") `
+            -Wait -PassThru
+          if ($failed.ExitCode -ne 100) {
+            throw "expected custom inner-install failure exit 100, got $($failed.ExitCode)"
+          }
+          Remove-Item $badSetup.FullName, "$($badSetup.FullName).sha256" -Force
+
+      - name: Verify the installed operator trust boundary
+        shell: pwsh
+        run: |
+          $root = "$env:RUNNER_TEMP\SECSGEM_EAP"
+          function Assert-NoUsersWrite([string]$path) {
+            $writeRights = [System.Security.AccessControl.FileSystemRights]::Write -bor `
+              [System.Security.AccessControl.FileSystemRights]::Modify -bor `
+              [System.Security.AccessControl.FileSystemRights]::FullControl
+            foreach ($ace in (Get-Acl $path).Access) {
+              try {
+                $sid = $ace.IdentityReference.Translate(
+                  [System.Security.Principal.SecurityIdentifier]
+                ).Value
+              } catch { continue }
+              if ($sid -eq "S-1-5-32-545" -and $ace.AccessControlType -eq "Allow" -and `
+                  (($ace.FileSystemRights -band $writeRights) -ne 0)) {
+                throw "BUILTIN\Users has write-capable access to $path"
+              }
+            }
+          }
+          foreach ($relative in @("app\config", "control")) {
+            $acl = (icacls (Join-Path $root $relative)) -join "`n"
+            if ($acl -notmatch 'ASTAR Operators.*\(M\)') {
+              throw "ASTAR Operators lacks Modify on $relative:`n$acl"
+            }
+          }
+          foreach ($relative in @("app\config", "control", "logs", "data", "archive", "machines")) {
+            Assert-NoUsersWrite (Join-Path $root $relative)
+          }
+
+      - name: Validate the seeded config
+        shell: pwsh
+        run: |
+          Set-Location "$env:RUNNER_TEMP\SECSGEM_EAP\app"
+          python -m eap_middleware validate-config --config config\production.yaml
+
+      - name: Packaged GUI startup smoke
+        shell: pwsh
+        run: |
+          Set-Location "$env:RUNNER_TEMP\SECSGEM_EAP\app"
+          python -c "import tkinter as tk; import gui.app; r=tk.Tk(); r.withdraw(); r.update(); r.destroy()"
+
+      - name: Windows service lifecycle, upgrade, and rollback acceptance
+        shell: pwsh
+        run: |
+          $nssmZip = Join-Path $env:RUNNER_TEMP "nssm-2.24.zip"
+          Invoke-WebRequest https://nssm.cc/release/nssm-2.24.zip -OutFile $nssmZip
+          $expected = "727d1e42275c605e0f04aba98095c38a8e1e46def453cdffce42869428aa6743"
+          $actual = (Get-FileHash $nssmZip -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actual -ne $expected) { throw "approved NSSM archive hash mismatch" }
+          $nssmDir = Join-Path $env:RUNNER_TEMP "nssm"
+          Expand-Archive $nssmZip $nssmDir
+          $nssm = Get-ChildItem $nssmDir -Recurse -Filter nssm.exe |
+            Where-Object FullName -Match 'win64' | Select-Object -First 1
+          if (-not $nssm) { throw "approved NSSM win64 executable missing" }
+
+          $root = "$env:RUNNER_TEMP\SECSGEM_EAP"
+          $marker = Join-Path $root "data\upgrade-state-marker.txt"
+          Set-Content $marker "preserve-me"
+          & (Join-Path $root "app\scripts\install_service.ps1") `
+            -NssmExe $nssm.FullName `
+            -RepoDir (Join-Path $root "app") `
+            -ConfigPath (Join-Path $root "config\production.yaml")
+          Start-Service AstarSecsGemEapMiddleware
+          (Get-Service AstarSecsGemEapMiddleware).WaitForStatus("Running", "00:00:30")
+
+          $wrapper = Get-CimInstance Win32_Service -Filter "Name='AstarSecsGemEapMiddleware'"
+          $before = Get-CimInstance Win32_Process |
+            Where-Object ParentProcessId -eq $wrapper.ProcessId |
+            Select-Object -First 1
+          if (-not $before) { throw "service child process not found" }
+          Stop-Process -Id $before.ProcessId -Force
+          Start-Sleep -Seconds 8
+          $wrapper = Get-CimInstance Win32_Service -Filter "Name='AstarSecsGemEapMiddleware'"
+          $after = Get-CimInstance Win32_Process |
+            Where-Object ParentProcessId -eq $wrapper.ProcessId |
+            Select-Object -First 1
+          if (-not $after -or $after.ProcessId -eq $before.ProcessId) {
+            throw "NSSM did not restart the terminated middleware process"
+          }
+
+          $setup = Get-ChildItem artifacts\installer\AstarMiddleware-Setup-*.exe |
+            Select-Object -First 1
+          $upgrade = Start-Process $setup.FullName `
+            -ArgumentList @("/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/DIR=$root") `
+            -Wait -PassThru
+          if ($upgrade.ExitCode -ne 0) { throw "active-service upgrade failed" }
+          if ((Get-Content $marker) -ne "preserve-me") { throw "runtime state was not preserved" }
+
+          $pkg = Get-ChildItem deploy_out -Directory |
+            Sort-Object Name -Descending | Select-Object -First 1
+          $releaseBefore = Get-Content (Join-Path $root "ACTIVE_RELEASE")
+          $env:CI = "true"
+          try {
+            & (Join-Path $pkg.FullName "upgrade.ps1") `
+              -InstallDir $root -CiFailAfterSwitch
+            throw "rollback fault injection unexpectedly succeeded"
+          } catch {
+            if ($_ -notmatch "Intentional post-switch") { throw }
+          }
+          if ((Get-Content (Join-Path $root "ACTIVE_RELEASE")) -ne $releaseBefore) {
+            throw "rollback did not preserve the active release identity"
+          }
+          if ((Get-Service AstarSecsGemEapMiddleware).Status -ne "Running") {
+            throw "rollback did not restore the running service"
+          }
+
+      - name: Upload compiled installer and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: middleware-installer-${{ github.sha }}
+          path: |
+            artifacts/installer/*.exe
+            artifacts/installer/*.sha256
+          if-no-files-found: error

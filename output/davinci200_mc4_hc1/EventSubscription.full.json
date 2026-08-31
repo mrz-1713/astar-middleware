@@ -1,0 +1,5676 @@
+{
+  "description": "DaVinci 200 MC4 HC1 FULL event subscription: every collection event the vendor spreadsheet documents. Reference only - the active EventSubscription.json is curated to the events the canonical mapper categorizes, so no 'unknown' telemetry is published.",
+  "_source": "docs/vendor/SECS-Items_MueTec DaVinci 200 MC4_HC1.xlsx",
+  "_generated_by": "scripts/gen_davinci_full_subscription.py",
+  "_manual_note": "Manual says FabLink creates standard report definitions at startup; this file defines additional runtime reports.",
+  "_events_without_reports": "An empty rptids list is deliberate: the spreadsheet lists no valid variables for that event, so it is enabled without a report and identified by its CEID alone. An empty RPTID list in S2F35 means 'delete this link'.",
+  "reports": [
+    {
+      "rptid": 1003010004,
+      "name": "OperatorCommandIssuedReport",
+      "description": "Operator issued a command while in remote control mode",
+      "dvids": [
+        2010002
+      ],
+      "band": "gem_core"
+    },
+    {
+      "rptid": 1003020001,
+      "name": "AlarmNDetectedReport",
+      "description": "An alarm was set",
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "band": "gem_core"
+    },
+    {
+      "rptid": 1003020002,
+      "name": "AlarmNClearedReport",
+      "description": "An alarm was cleared",
+      "dvids": [
+        2020001,
+        2020002,
+        2020003
+      ],
+      "band": "gem_core"
+    },
+    {
+      "rptid": 1003040001,
+      "name": "ConstantChangedReport",
+      "description": "An equipment constant was changed by the operator",
+      "dvids": [
+        2040001,
+        2040002,
+        2040003
+      ],
+      "band": "gem_core"
+    },
+    {
+      "rptid": 1003050001,
+      "name": "MaterialReceivedReport",
+      "description": "Material received at the equipment",
+      "dvids": [
+        2150002
+      ],
+      "band": "material"
+    },
+    {
+      "rptid": 1003050002,
+      "name": "MaterialRemovedReport",
+      "description": "Material removed from the equipment",
+      "dvids": [
+        2150002
+      ],
+      "band": "material"
+    },
+    {
+      "rptid": 1003060001,
+      "name": "PM1/ReceivedMaterialReport",
+      "description": "PM1 has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003060002,
+      "name": "PM1/SentMaterialReport",
+      "description": "PM1 has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003070001,
+      "name": "TM1/ReceivedMaterialReport",
+      "description": "TM Robot has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003070002,
+      "name": "TM1/SentMaterialReport",
+      "description": "TM Robot has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003080001,
+      "name": "LP1/ReceivedMaterialReport",
+      "description": "Loadport has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003080002,
+      "name": "LP1/SentMaterialReport",
+      "description": "Loadport has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003090001,
+      "name": "LP2/ReceivedMaterialReport",
+      "description": "Loadport has received a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003090002,
+      "name": "LP2/SentMaterialReport",
+      "description": "Loadport has sent a substrate",
+      "dvids": [
+        2160001,
+        2160002
+      ],
+      "band": "material_transfer"
+    },
+    {
+      "rptid": 1003100001,
+      "name": "RemoteCommandSuccessReport",
+      "description": "Remote command has been performed successfully",
+      "dvids": [
+        2050001
+      ],
+      "band": "operations"
+    },
+    {
+      "rptid": 1003100002,
+      "name": "RemoteCommandFailureReport",
+      "description": "Remote command has failed",
+      "dvids": [
+        2050001
+      ],
+      "band": "operations"
+    },
+    {
+      "rptid": 1003110001,
+      "name": "Message RecognitionReport",
+      "description": "Signals the acknowledge of receiving a terminal message by the operator",
+      "dvids": [
+        2070001
+      ],
+      "band": "operations"
+    },
+    {
+      "rptid": 1003120001,
+      "name": "PPChangeEventReport",
+      "description": "A process program was changed",
+      "dvids": [
+        2060001,
+        2060002,
+        2060003
+      ],
+      "band": "operations"
+    },
+    {
+      "rptid": 1003140001,
+      "name": "PM1/OperationModeChangedReport",
+      "description": "Operation mode of process module has changed",
+      "dvids": [
+        2010001
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140002,
+      "name": "PM1/ProcessingStartedReport",
+      "description": "Processing has started.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140003,
+      "name": "PM1/ProcessingFinishedReport",
+      "description": "Processing has successfully finished.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080005,
+        2080006,
+        2090008,
+        2090009
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140004,
+      "name": "PM1/ProcessingAbortedReport",
+      "description": "Processing was aborted.",
+      "dvids": [
+        2080002,
+        2080003,
+        2080001,
+        2080007
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140005,
+      "name": "PM1/RecipeSelectedReport",
+      "description": "Recipe has been selected",
+      "dvids": [
+        2080001
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140006,
+      "name": "PM1/RecipeSelectFailedReport",
+      "description": "Selecting the recipe has been failed.",
+      "dvids": [
+        2080001
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003140007,
+      "name": "PM1/ProcessingResultArrivedReport",
+      "description": "Processing Result has been Arrived.",
+      "dvids": [
+        2080002,
+        2080003,
+        2090012,
+        2090013,
+        2090014
+      ],
+      "band": "process_module_1"
+    },
+    {
+      "rptid": 1003150001,
+      "name": "TM1/MotionStartedReport",
+      "description": "Motion for end effector has been started",
+      "dvids": [
+        2100001,
+        2100002
+      ],
+      "band": "transfer_module"
+    },
+    {
+      "rptid": 1003150002,
+      "name": "TM1/MotionFinishedReport",
+      "description": "Motion for end effector has been finished",
+      "dvids": [
+        2100001,
+        2100002
+      ],
+      "band": "transfer_module"
+    },
+    {
+      "rptid": 1003150003,
+      "name": "TM1/OperationModeChangedReport",
+      "description": "Transfer Module Operation Mode has changed.",
+      "dvids": [
+        2010001
+      ],
+      "band": "transfer_module"
+    },
+    {
+      "rptid": 1003160002,
+      "name": "LP1/CarrierDepartedReport",
+      "description": "Carrier has departed from Loadport",
+      "dvids": [
+        2150001
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "rptid": 1003160007,
+      "name": "LP1/CarrierTagReadReport",
+      "description": "Carrier tag has been read at Loadport",
+      "dvids": [
+        2110001,
+        2110002
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "rptid": 1003160008,
+      "name": "LP1/CarrierTagWrittenReport",
+      "description": "Carrier tag has been written at Loadport",
+      "dvids": [
+        2110001,
+        2110002
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "rptid": 1003160009,
+      "name": "LP1/CarrierLocationChangedReport",
+      "description": "Same as E87 CLC",
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "rptid": 1003160037,
+      "name": "LP1/InvalidCarrierTypeReport",
+      "description": "Carrier type can not be handled from host",
+      "dvids": [
+        2150001
+      ],
+      "band": "load_port_1"
+    },
+    {
+      "rptid": 1003170002,
+      "name": "LP2/CarrierDepartedReport",
+      "description": "Carrier has departed from Loadport",
+      "dvids": [
+        2150001
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "rptid": 1003170007,
+      "name": "LP2/CarrierTagReadReport",
+      "description": "Carrier tag has been read at Loadport",
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "rptid": 1003170008,
+      "name": "LP2/CarrierTagWrittenReport",
+      "description": "Carrier tag has been written at Loadport",
+      "dvids": [
+        2120001,
+        2120002
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "rptid": 1003170009,
+      "name": "LP2/CarrierLocationChangedReport",
+      "description": "Same as E87 CLC",
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "rptid": 1003170037,
+      "name": "LP2/InvalidCarrierTypeReport",
+      "description": "Carrier type can not be handled from host",
+      "dvids": [
+        2150001
+      ],
+      "band": "load_port_2"
+    },
+    {
+      "rptid": 1003180001,
+      "name": "IDReader/SubstrateIdReadReport",
+      "description": "Substrate ID was successfully read.",
+      "dvids": [
+        2160013,
+        2160001
+      ],
+      "band": "id_reader"
+    },
+    {
+      "rptid": 1003180002,
+      "name": "IDReader/SubstrateIdReadFailedReport",
+      "description": "Substrate ID could not get read.",
+      "dvids": [
+        2160001
+      ],
+      "band": "id_reader"
+    },
+    {
+      "rptid": 1003190001,
+      "name": "NoState2QueuedPooledReport",
+      "description": "Process job has been created with state QUEUED/POOLED",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190002,
+      "name": "QueuedPooled2SettingUpReport",
+      "description": "Process job state has changed from POOLED/QUEUED to SETTING UP",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190003,
+      "name": "SettingUp2WaitingForStartReport",
+      "description": "Process job state has changed from SETTING UP to WAITING FOR START",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190004,
+      "name": "SettingUp2ProcessingReport",
+      "description": "Process job state has changed from SETTING UP to PROCESSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190005,
+      "name": "WaitingForStart2ProcessingReport",
+      "description": "Process job state has changed from WAITING FOR START to PROCESSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190006,
+      "name": "Processing2ProcessCompleteReport",
+      "description": "Process job state has changed from PROCESSING to PROCESS COMPLETE",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190007,
+      "name": "PostActive2NoStateReport",
+      "description": "Process job was in POST ACTIVE state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190008,
+      "name": "ProcessComplete2NoStateReport",
+      "description": "Process job was in PROCESS COMPLETE state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190009,
+      "name": "Stopped2NoStateReport",
+      "description": "Process job was in STOPPED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190010,
+      "name": "Aborted2NoStateReport",
+      "description": "Process job was in ABORTED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190011,
+      "name": "Executing2PausingReport",
+      "description": "Process job state has changed from EXECUTING to PAUSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190012,
+      "name": "SettingUp2PausingReport",
+      "description": "Process job state has changed from SETTING UP to PAUSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190013,
+      "name": "WaitingForStart2PausingReport",
+      "description": "Process job state has changed from WAITING FOR START to PAUSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190014,
+      "name": "Processing2PausingReport",
+      "description": "Process job state has changed from PROCESSING to PAUSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190015,
+      "name": "Pausing2PausedReport",
+      "description": "Process job state has changed from PAUSING to PAUSED",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190016,
+      "name": "Pause2ExecutingReport",
+      "description": "Process job state has changed from PAUSE to EXECUTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190017,
+      "name": "Pausing2SettingUpReport",
+      "description": "Process job state has changed from PAUSING to SETTING UP",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190018,
+      "name": "Pausing2WaitingForStartReport",
+      "description": "Process job state has changed from PAUSING to WAITING FOR START",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190019,
+      "name": "Pausing2ProcessingReport",
+      "description": "Process job state has changed from PAUSING to PROCESSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190020,
+      "name": "Paused2SettingUpReport",
+      "description": "Process job state has changed from PAUSED to SETTING UP",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190021,
+      "name": "Paused2WaitingForStartReport",
+      "description": "Process job state has changed from PAUSED to WAITING FOR START",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190022,
+      "name": "Paused2ProcessingReport",
+      "description": "Process job state has changed from PAUSED to PROCESSING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190023,
+      "name": "Executing2StoppingReport",
+      "description": "Process job state has changed from EXECUTING to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190024,
+      "name": "SettingUp2StoppingReport",
+      "description": "Process job state has changed from SETTING UP to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190025,
+      "name": "WaitingForStart2StoppingReport",
+      "description": "Process job state has changed from WAITING FOR START to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190026,
+      "name": "Processing2StoppingReport",
+      "description": "Process job state has changed from PROCESSING to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190027,
+      "name": "Pause2StoppingReport",
+      "description": "Process job state has changed from PAUSE to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190028,
+      "name": "Pausing2StoppingReport",
+      "description": "Process job state has changed from PAUSING to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190029,
+      "name": "Paused2StoppingReport",
+      "description": "Process job state has changed from PAUSED to STOPPING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190030,
+      "name": "Executing2AbortingReport",
+      "description": "Process job state has changed from EXECUTING to ABORTIN",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190031,
+      "name": "SettingUp2AbortingReport",
+      "description": "Process job state has changed from SETTING UP to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190032,
+      "name": "WaitingForStart2AbortingReport",
+      "description": "Process job state has changed from WAITING FOR START to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190033,
+      "name": "Processing2AbortingReport",
+      "description": "Process job state has changed from PROCESSING to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190034,
+      "name": "Stopping2AbortingReport",
+      "description": "Process job state has changed from STOPPING to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190035,
+      "name": "Pause2AbortingReport",
+      "description": "Process job state has changed from PAUSE to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190036,
+      "name": "Pausing2AbortingReport",
+      "description": "Process job state has changed from PAUSING to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190037,
+      "name": "Paused2AbortingReport",
+      "description": "Process job state has changed from PAUSED to ABORTING",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190038,
+      "name": "Aborting2AbortedReport",
+      "description": "Process job state has changed from ABORTING to ABORTED",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190039,
+      "name": "Stopping2StoppedReport",
+      "description": "Process job state has changed from STOPPING to STOPPED",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190040,
+      "name": "Pause2WaitingForStartReport",
+      "description": "The processing resource resumed the job and the job was being waiting for start prior to the pause",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190041,
+      "name": "Pause2ProcessingReport",
+      "description": "The processing resource resumed the job and the job was being processing prior to the pause",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190042,
+      "name": "Pause2SettingUpReport",
+      "description": "The processing resource resumed the job and the job was being setup prior to the pause",
+      "dvids": [
+        2130001,
+        2130002,
+        2130003,
+        2130004,
+        2130005,
+        2130007,
+        2130008,
+        2130009
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190043,
+      "name": "QueuedPooled2NoStateReport",
+      "description": "Process job was in POOLED/QUEUED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190044,
+      "name": "PRJobMS_CompleteReport",
+      "description": "Process job doesn\u2019t exist anymore",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190045,
+      "name": "PRJobMS_ProcessingReport",
+      "description": "Process job state has changed to PROCESSING",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190046,
+      "name": "PRJobMS_ProcessingCompleteReport",
+      "description": "Process job state has changed to PROCESS COMPLETE",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190047,
+      "name": "PRJobMS_SetupReport",
+      "description": "Process job state has changed to SETTING UP",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190048,
+      "name": "PRJobStateChangeReport",
+      "description": "The state of a process job has changed",
+      "dvids": [
+        2130001,
+        2130002
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190049,
+      "name": "WaitingForMaterialReport",
+      "description": "A process job is waiting for assigned material to proceed",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003190050,
+      "name": "PRJobMS_WaitingForStartReport",
+      "description": "Process job state has changed to WAITING FOR START",
+      "dvids": [
+        2130001
+      ],
+      "band": "process_jobs"
+    },
+    {
+      "rptid": 1003200001,
+      "name": "ControlJob:1:NoState-QueuedReport",
+      "description": "Control job has been created with state QUEUED",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200002,
+      "name": "ControlJob:10:Executing-CompletedReport",
+      "description": "Control job state has changed from EXECUTING to COMPLETED",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200003,
+      "name": "ControlJob:11:Active-CompletedReport",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200004,
+      "name": "Selected2CompletedByCJStopReport",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200005,
+      "name": "WaitingForStart2CompletedByCJStopReport",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200006,
+      "name": "Executing2CompletedByCJStopReport",
+      "description": "Control job state has changed from EXECUTING to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200007,
+      "name": "Paused2CompletedByCJStopReport",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to a stopping action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200008,
+      "name": "ControlJob:12:Active-CompletedReport",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200009,
+      "name": "Selected2CompletedByCJAbortReport",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200010,
+      "name": "WaitingForStart2CompletedByCJAbortReport",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200011,
+      "name": "Executing2CompletedByCJAbortReport",
+      "description": "Control job state has changed from EXECUTING  to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200012,
+      "name": "Paused2CompletedByCJAbortReport",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to an aborting action",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200013,
+      "name": "ControlJob:13:Completed-NoStateReport",
+      "description": "Control job was in COMPLETED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200014,
+      "name": "ControlJob:2:Queued-NoStateReport",
+      "description": "Control job was in QUEUED state and doesn\u2019t exist anymore by now",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200015,
+      "name": "ControlJob:3:Queued-SelectedReport",
+      "description": "Control job state has changed from QUEUED to SELECTED",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200016,
+      "name": "ControlJob:4:Selected-QueuedReport",
+      "description": "Control job was deselected and its state has changed from SELECTED back to QUEUED",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200017,
+      "name": "ControlJob:5:Selected-ExecutingReport",
+      "description": "Control job has been started and its state has changed from SELECTED to EXECUTING",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200018,
+      "name": "ControlJob:6:Selected-WaitingForStartReport",
+      "description": "Control job state has changed from SELECTED to WAITING FOR START",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200019,
+      "name": "ControlJob:7:WaitingForStart-ExecutingReport",
+      "description": "Control job has been started and its state has changed from WAITING FOR START to EXECUTING",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200020,
+      "name": "ControlJob:8:Executing-PausedReport",
+      "description": "Control job state has changed from EXECUTING to PAUSED",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003200021,
+      "name": "ControlJob:9:Paused-ExecutingReport",
+      "description": "Control job state has changed from PAUSED to EXECUTING",
+      "dvids": [
+        2140001
+      ],
+      "band": "control_jobs"
+    },
+    {
+      "rptid": 1003210001,
+      "name": "CarrierApproachingCompleteReport",
+      "description": "Carrier is about to approach completing",
+      "dvids": [
+        2150001
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210002,
+      "name": "CarrierClampedReport",
+      "description": "Carrier has been clamped at a load port",
+      "dvids": [
+        2150012,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210003,
+      "name": "CarrierClosedReport",
+      "description": "Carrier has been closed",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210004,
+      "name": "IDReaderAvailableReport",
+      "description": "ID reader of a load port is available",
+      "dvids": [
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210005,
+      "name": "IDReaderUnavailableReport",
+      "description": "ID reader of a load port is not available",
+      "dvids": [
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210006,
+      "name": "CarrierIDReadReport",
+      "description": "Carrier ID has been read",
+      "dvids": [
+        2150001,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210007,
+      "name": "CarrierIDReadFailReport",
+      "description": "Carrier ID reading has failed",
+      "dvids": [
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210008,
+      "name": "CarrierLocationChangeReport",
+      "description": "Carrier has changed its location",
+      "dvids": [
+        2150001,
+        2150012
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210009,
+      "name": "CarrierOpenedReport",
+      "description": "Carrier has been opened",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210010,
+      "name": "CarrierUnclampedReport",
+      "description": "Carrier has been unclamped at a load port",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210011,
+      "name": "NoState2CarrierReport",
+      "description": "Carrier has been created",
+      "dvids": [
+        2150001
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210012,
+      "name": "NoState2IDNotReadReport",
+      "description": "Carrier has been created with state ID NOT READ",
+      "dvids": [
+        2150001,
+        2150003
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210013,
+      "name": "NoState2WaitingForHostReport",
+      "description": "Carrier has been created with ID status WAITING FOR HOST",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210014,
+      "name": "NoState2IDVerificationOkReport",
+      "description": "Carrier has been created with ID status ID VERIFICATION OK",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210015,
+      "name": "NoState2IDVerificationFailedReport",
+      "description": "Carrier has been created with ID status ID VERIFICATION FAILED",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210016,
+      "name": "WaitingForHost2IDVerificationOkReport",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION OK",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210017,
+      "name": "WaitingForHost2IDVerificationFailedReport",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION FAILED",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210018,
+      "name": "IDNotRead2WaitingForHostReport",
+      "description": "Carrier ID status has changed from ID NOT READ to WAITING FOR HOST due to an unsuccessful ID reading",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210019,
+      "name": "IDNotRead2WaitingForHost_NotBypassedReport",
+      "description": "Carrier ID status has changed from IN NOT READ to WAITING FOR HOST due to not bypassing the ID reading",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210020,
+      "name": "IDNotRead2IDVerificationOkReport",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to successful equipment based ID verification",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210021,
+      "name": "IDNotRead2IDVerificationOk_BypassedReport",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to bypassing the ID reading",
+      "dvids": [
+        2150001,
+        2150003,
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210022,
+      "name": "NoState2SlotMapNotReadReport",
+      "description": "Carrier has been created with state SLOTMAP NOT READ",
+      "dvids": [
+        2150001,
+        2150004
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210023,
+      "name": "SlotMapNotRead2SlotMapVerificationOkReport",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to SLOTMAP VERIFICATION OK",
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210024,
+      "name": "SlotMapNotRead2WaitingForHostReport",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to WAITING FOR HOST",
+      "dvids": [
+        2150001,
+        2150012,
+        2150002,
+        2150013,
+        2150004,
+        2150011
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210025,
+      "name": "WaitingForHost2SlotMapVerificationOkReport",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION OK",
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210026,
+      "name": "WaitingForHost2SlotMapVerificationFailReport",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION FAI",
+      "dvids": [
+        2150001,
+        2150005,
+        2150012,
+        2150002,
+        2150004
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210027,
+      "name": "NoState2NotAccessedReport",
+      "description": "Carrier has been created with state NOT ACCESSED",
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210028,
+      "name": "NotAccessed2InAccessReport",
+      "description": "Carrier accessing status has changed from NOT ACCESSED to IN ACCESS",
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210029,
+      "name": "InAccess2CarrierCompleteReport",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER COMPLETE",
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210030,
+      "name": "InAccess2CarrierStoppedReport",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER STOPPED",
+      "dvids": [
+        2150001,
+        2150005
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210031,
+      "name": "CarrierDeletedReport",
+      "description": "Carrier doesn\u2019t exist anymore",
+      "dvids": [
+        2150001
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210032,
+      "name": "NoState2ManualOrAutoReport",
+      "description": "Load port access mode restored after system restart",
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210033,
+      "name": "NoState2ManualReport",
+      "description": "Load port access mode restored after system restart in state MANUAL",
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210034,
+      "name": "NoState2AutoReport",
+      "description": "Load port access mode restored after system restart in state AUTO",
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210035,
+      "name": "Manual2AutoReport",
+      "description": "Load port access mode has changed from MANUAL to AUTO",
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210036,
+      "name": "Auto2ManualReport",
+      "description": "Load port access mode has changed from AUTO to MANUAL",
+      "dvids": [
+        2150002,
+        2150010
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210037,
+      "name": "NoState2NotAssociatedReport",
+      "description": "Load port/carrier association state has changed to NOT ASSOCIATED initially",
+      "dvids": [
+        2150002,
+        2150007,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210038,
+      "name": "NotAssociated2AssociatedReport",
+      "description": "Load port/carrier association state has changed to from NOT ASSOCIATED to ASSOCIATED",
+      "dvids": [
+        2150001,
+        2150002,
+        2150007,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210039,
+      "name": "Associated2NotAssociatedReport",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to NOT ASSOCIATED",
+      "dvids": [
+        2150002,
+        2150007,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210040,
+      "name": "Associated2AssociatedReport",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to ASSOCIATED",
+      "dvids": [
+        2150001,
+        2150002,
+        2150007,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210041,
+      "name": "NoState2NotReservedReport",
+      "description": "Load port reservation state has changed to NOT RESERVED initially",
+      "dvids": [
+        2150002,
+        2150009
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210042,
+      "name": "NotReserved2ReservedReport",
+      "description": "Load port reservation state has changed from NOT RESERVED to RESERVED",
+      "dvids": [
+        2150001,
+        2150002,
+        2150009
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210043,
+      "name": "Reserved2NotReservedReport",
+      "description": "Load port reservation state has changed from RESERVED to NOT RESERVED",
+      "dvids": [
+        2150002,
+        2150009
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210044,
+      "name": "NoState2InServiceReport",
+      "description": "Load port transfer state has changed from no state to IN SERVICE (system reset)",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210045,
+      "name": "NoState2OutOfServiceReport",
+      "description": "Load port transfer state has changed from no state to OUT OF SERVICE (system reset)",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210046,
+      "name": "NoState2TransferBlockedReport",
+      "description": "Load port transfer state has changed from no state to TRANSFER BLOCKED (system reset)",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210047,
+      "name": "NoState2ReadyToLoadReport",
+      "description": "Load port transfer state has changed from no state to READY TO LOAD (system reset)",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210048,
+      "name": "NoState2ReadyToUnloadReport",
+      "description": "Load port transfer state has changed from no state to READY TO UNLOAD (system reset)",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210049,
+      "name": "OutOfService2InServiceReport",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to IN SERVICE",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210050,
+      "name": "OutOfService2ReadyToLoadReport",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO LOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210051,
+      "name": "OutOfService2ReadyToUnloadReport",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO UNLOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210052,
+      "name": "OutOfService2TransferBlockedReport",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to TRANSFER BLOCKED",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210053,
+      "name": "InService2OutOfServiceReport",
+      "description": "Load port transfer state has changed from IN SERVICE to OUT OF SERVICE",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210054,
+      "name": "ReadyToLoad2OutOfServiceReport",
+      "description": "Load port transfer state has changed from READY TO LOAD to OUT OF SERVICE",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210055,
+      "name": "ReadyToUnload2OutOfServiceReport",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to OUT OF SERVICE",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210056,
+      "name": "TransferBlocked2OutOfServiceReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to OUT OF SERVICE",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210057,
+      "name": "InService2TransferReadyReport",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER READY",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210058,
+      "name": "InService2TransferBlockedReport",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER BLOCKED",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210059,
+      "name": "TransferReady2ReadyToLoadReport",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO LOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210060,
+      "name": "TransferReady2ReadyToUnloadReport",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO UNLOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210061,
+      "name": "ReadyToLoad2TransferBlockedReport",
+      "description": "Load port transfer state has changed from READY TO LOAD to TRANSFER BLOCKED",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210062,
+      "name": "ReadyToUnload2TransferBlockedReport",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to TRANSFER BLOCKED",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210063,
+      "name": "TransferBlocked2ReadyToLoadReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210064,
+      "name": "TransferBlocked2ReadyToUnloadReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210065,
+      "name": "TransferBlocked2TransferReadyReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to TRANSFER READY",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210066,
+      "name": "UnknownCarrierIDReport",
+      "description": "Carrier has arrived on a load port with unavailable ID reader",
+      "dvids": [
+        2150002
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210067,
+      "name": "TransferBlocked2ReadyToLoad_FailedReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD due to an unsuccessful load action",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003210068,
+      "name": "TransferBlocked2ReadyToUnload_FailedReport",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD due to an unsuccessful unload action",
+      "dvids": [
+        2150002,
+        2150006,
+        2150008
+      ],
+      "band": "carrier"
+    },
+    {
+      "rptid": 1003220001,
+      "name": "SubstLoc_Unoccupied2OccupiedReport",
+      "description": "Substrate location state has changed from UNOCCUPIED to OCCUPIED",
+      "dvids": [
+        2160002,
+        2160029,
+        2160028
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220002,
+      "name": "SubstLoc_Occupied2UnoccupiedReport",
+      "description": "Substrate location state has changed from OCCUPIED to UNOCCUPIED",
+      "dvids": [
+        2160002,
+        2160029,
+        2160028
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220003,
+      "name": "NoState2AtSourceReport",
+      "description": "Substrate has been created at a carrier slot with transport state AT SOURCE",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220004,
+      "name": "AtSource2AtWorkReport",
+      "description": "Substrate transport state has changed from AT SOURCE to AT WORK",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220005,
+      "name": "AtWork2AtSourceReport",
+      "description": "Substrate was moved back to its source location without being processed",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220006,
+      "name": "AtWork2AtWorkReport",
+      "description": "Substrate was moved from one location to another within the equipment",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220007,
+      "name": "AtWork2AtDestinationReport",
+      "description": "Substrate transport state has changed from AT WORK to AT DESTINATION",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220010,
+      "name": "SubstRemovedFromDestinationReport",
+      "description": "Substrate was removed from the equipment while it was at its destination location",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220011,
+      "name": "SubstRemovedReport",
+      "description": "Substrate doesn\u2019t exist anymore",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220012,
+      "name": "NoState2NeedsProcessingReport",
+      "description": "Substrate has been created with processing state NEEDS PROCESSING",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220013,
+      "name": "NeedsProcessing2InProcessReport",
+      "description": "Substrate processing state has changed to IN PROCESS",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220014,
+      "name": "InProcess2ProcessingCompleteReport",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSING COMPLETE",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220015,
+      "name": "NeedsProcessing2ProcessingCompleteReport",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to PROCESSING COMPLETE",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220016,
+      "name": "InProcess2ProcessedReport",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220017,
+      "name": "InProcess2AbortedReport",
+      "description": "Substrate processing state has changed from IN PROCESS to ABORTED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220018,
+      "name": "InProcess2StoppedReport",
+      "description": "Substrate processing state has changed from IN PROCESS to STOPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220019,
+      "name": "InProcess2RejectedReport",
+      "description": "Substrate processing state has changed from IN PROCESS to REJECTED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220020,
+      "name": "InProcess2LostReport",
+      "description": "Substrate processing state has changed from IN PROCESS to LOST",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220021,
+      "name": "InProcess2SkippedReport",
+      "description": "Substrate processing state has changed from IN PROCESS to SKIPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220022,
+      "name": "NeedsProcessing2LostReport",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to LOST",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220023,
+      "name": "NeedsProcessing2SkippedReport",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to SKIPPED",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220024,
+      "name": "SubstrateObject:16:NoState-NotConfirmedReport",
+      "description": "Substrate object is created",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220025,
+      "name": "SubstrateObject:17:NotConfirmed-ConfirmedReport",
+      "description": "Substrate was successfully read and SubstID provided in the ContentMap matched the AcquiredID read by the equipment",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220026,
+      "name": "SubstrateObject:18:NotConfirmed-WaitingForHostReport",
+      "description": "Substrate Id was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220027,
+      "name": "SubstrateObject:19:NotConfirmed-WaitingForHostReport",
+      "description": "Substrate ID was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220028,
+      "name": "SubstrateObject:20:WaitingForHost-ConfirmedReport",
+      "description": "Equipment has received a ProceedWithSubstrate",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003220029,
+      "name": "SubstrateObject:21:WaitingForHost-ConfirmationFailedReport",
+      "description": "Equipment has received a CancelSubstrate",
+      "dvids": [
+        2160016,
+        2160017,
+        2160019,
+        2160018,
+        2160020,
+        2160023,
+        2160026,
+        2160015,
+        2160022,
+        2160021,
+        2160027,
+        2160024,
+        2160025
+      ],
+      "band": "substrate"
+    },
+    {
+      "rptid": 1003230001,
+      "name": "GeneralErrorReport",
+      "description": "A general error concerning an E39 object was recognized",
+      "dvids": [
+        2170001,
+        2170002
+      ],
+      "band": "e39_errors"
+    },
+    {
+      "rptid": 1003230002,
+      "name": "InvalidStateChangeReport",
+      "description": "An invalid state change for an E39 state model was recognized",
+      "dvids": [
+        2170003,
+        2170004,
+        2170005,
+        2170006,
+        2170007
+      ],
+      "band": "e39_errors"
+    }
+  ],
+  "events": [
+    {
+      "ceid": 3010001,
+      "name": "Equipment OFF-LINE",
+      "description": "Control state of the equipment has changes to OFF-LINE",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010002,
+      "name": "Control State LOCAL",
+      "description": "Control state of the equipment has changes to ONLINE / LOCAL",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010003,
+      "name": "Control State REMOTE",
+      "description": "Control state of the equipment has changes to ONLINE / REMOTE",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3010004,
+      "name": "OperatorCommandIssued",
+      "description": "Operator issued a command while in remote control mode",
+      "rptids": [
+        1003010004
+      ],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3020001,
+      "name": "AlarmNDetected",
+      "description": "An alarm was set",
+      "rptids": [
+        1003020001
+      ],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3020002,
+      "name": "AlarmNCleared",
+      "description": "An alarm was cleared",
+      "rptids": [
+        1003020002
+      ],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3030001,
+      "name": "SpoolTransmitFailure",
+      "description": "Failure while transmitting spool messages",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3030002,
+      "name": "SpoolingActivated",
+      "description": "Spooling was activated",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3030003,
+      "name": "SpoolingDeactivated",
+      "description": "Spooling was deactivated",
+      "rptids": [],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3040001,
+      "name": "ConstantChanged",
+      "description": "An equipment constant was changed by the operator",
+      "rptids": [
+        1003040001
+      ],
+      "enabled": true,
+      "band": "gem_core"
+    },
+    {
+      "ceid": 3050001,
+      "name": "MaterialReceived",
+      "description": "Material received at the equipment",
+      "rptids": [
+        1003050001
+      ],
+      "enabled": true,
+      "band": "material"
+    },
+    {
+      "ceid": 3050002,
+      "name": "MaterialRemoved",
+      "description": "Material removed from the equipment",
+      "rptids": [
+        1003050002
+      ],
+      "enabled": true,
+      "band": "material"
+    },
+    {
+      "ceid": 3060001,
+      "name": "PM1/ReceivedMaterial",
+      "description": "PM1 has received a substrate",
+      "rptids": [
+        1003060001
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3060002,
+      "name": "PM1/SentMaterial",
+      "description": "PM1 has sent a substrate",
+      "rptids": [
+        1003060002
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3070001,
+      "name": "TM1/ReceivedMaterial",
+      "description": "TM Robot has received a substrate",
+      "rptids": [
+        1003070001
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3070002,
+      "name": "TM1/SentMaterial",
+      "description": "TM Robot has sent a substrate",
+      "rptids": [
+        1003070002
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3080001,
+      "name": "LP1/ReceivedMaterial",
+      "description": "Loadport has received a substrate",
+      "rptids": [
+        1003080001
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3080002,
+      "name": "LP1/SentMaterial",
+      "description": "Loadport has sent a substrate",
+      "rptids": [
+        1003080002
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3090001,
+      "name": "LP2/ReceivedMaterial",
+      "description": "Loadport has received a substrate",
+      "rptids": [
+        1003090001
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3090002,
+      "name": "LP2/SentMaterial",
+      "description": "Loadport has sent a substrate",
+      "rptids": [
+        1003090002
+      ],
+      "enabled": true,
+      "band": "material_transfer"
+    },
+    {
+      "ceid": 3100001,
+      "name": "RemoteCommandSuccess",
+      "description": "Remote command has been performed successfully",
+      "rptids": [
+        1003100001
+      ],
+      "enabled": true,
+      "band": "operations"
+    },
+    {
+      "ceid": 3100002,
+      "name": "RemoteCommandFailure",
+      "description": "Remote command has failed",
+      "rptids": [
+        1003100002
+      ],
+      "enabled": true,
+      "band": "operations"
+    },
+    {
+      "ceid": 3110001,
+      "name": "Message Recognition",
+      "description": "Signals the acknowledge of receiving a terminal message by the operator",
+      "rptids": [
+        1003110001
+      ],
+      "enabled": true,
+      "band": "operations"
+    },
+    {
+      "ceid": 3120001,
+      "name": "PPChangeEvent",
+      "description": "A process program was changed",
+      "rptids": [
+        1003120001
+      ],
+      "enabled": true,
+      "band": "operations"
+    },
+    {
+      "ceid": 3130001,
+      "name": "ProcessStateChanged",
+      "description": "SEMI E30 process state has changed.",
+      "rptids": [],
+      "enabled": true,
+      "band": "operations"
+    },
+    {
+      "ceid": 3140001,
+      "name": "PM1/OperationModeChanged",
+      "description": "Operation mode of process module has changed",
+      "rptids": [
+        1003140001
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140002,
+      "name": "PM1/ProcessingStarted",
+      "description": "Processing has started.",
+      "rptids": [
+        1003140002
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140003,
+      "name": "PM1/ProcessingFinished",
+      "description": "Processing has successfully finished.",
+      "rptids": [
+        1003140003
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140004,
+      "name": "PM1/ProcessingAborted",
+      "description": "Processing was aborted.",
+      "rptids": [
+        1003140004
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140005,
+      "name": "PM1/RecipeSelected",
+      "description": "Recipe has been selected",
+      "rptids": [
+        1003140005
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140006,
+      "name": "PM1/RecipeSelectFailed",
+      "description": "Selecting the recipe has been failed.",
+      "rptids": [
+        1003140006
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3140007,
+      "name": "PM1/ProcessingResultArrived",
+      "description": "Processing Result has been Arrived.",
+      "rptids": [
+        1003140007
+      ],
+      "enabled": true,
+      "band": "process_module_1"
+    },
+    {
+      "ceid": 3150001,
+      "name": "TM1/MotionStarted",
+      "description": "Motion for end effector has been started",
+      "rptids": [
+        1003150001
+      ],
+      "enabled": true,
+      "band": "transfer_module"
+    },
+    {
+      "ceid": 3150002,
+      "name": "TM1/MotionFinished",
+      "description": "Motion for end effector has been finished",
+      "rptids": [
+        1003150002
+      ],
+      "enabled": true,
+      "band": "transfer_module"
+    },
+    {
+      "ceid": 3150003,
+      "name": "TM1/OperationModeChanged",
+      "description": "Transfer Module Operation Mode has changed.",
+      "rptids": [
+        1003150003
+      ],
+      "enabled": true,
+      "band": "transfer_module"
+    },
+    {
+      "ceid": 3160001,
+      "name": "LP1/CarrierArrived",
+      "description": "Carrier has arrived at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160002,
+      "name": "LP1/CarrierDeparted",
+      "description": "Carrier has departed from Loadport",
+      "rptids": [
+        1003160002
+      ],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160003,
+      "name": "LP1/CarrierMapped",
+      "description": "Carrier map completed at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160004,
+      "name": "LP1/CarrierMapStarted",
+      "description": "Carrier mapping has been started at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160005,
+      "name": "LP1/LoadComplete",
+      "description": "Done performing load at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160006,
+      "name": "LP1/UnloadComplete",
+      "description": "Done performing unload at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160007,
+      "name": "LP1/CarrierTagRead",
+      "description": "Carrier tag has been read at Loadport",
+      "rptids": [
+        1003160007
+      ],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160008,
+      "name": "LP1/CarrierTagWritten",
+      "description": "Carrier tag has been written at Loadport",
+      "rptids": [
+        1003160008
+      ],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160009,
+      "name": "LP1/CarrierLocationChanged",
+      "description": "Same as E87 CLC",
+      "rptids": [
+        1003160009
+      ],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160010,
+      "name": "LP1/MoveToDocked",
+      "description": "Carrier begin docking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160011,
+      "name": "LP1/AtDocked",
+      "description": "Carrier completed docking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160012,
+      "name": "LP1/MoveToDelivery",
+      "description": "Carrier begin undocking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160013,
+      "name": "LP1/AtDelivery",
+      "description": "Carrier completed undocking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160015,
+      "name": "LP1/E84TP1Timeout",
+      "description": "TP1 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160016,
+      "name": "LP1/E84TP2Timeout",
+      "description": "TP2 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160017,
+      "name": "LP1/E84TP3Timeout",
+      "description": "TP3 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160018,
+      "name": "LP1/E84TP4Timeout",
+      "description": "TP4 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160019,
+      "name": "LP1/E84TP5Timeout",
+      "description": "TP5 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160020,
+      "name": "LP1/E84TP6Timeout",
+      "description": "TP6 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160021,
+      "name": "LP1/E84ValidOn",
+      "description": "E84 valid is ON at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160022,
+      "name": "LP1/E84LReqSubmitted",
+      "description": "L_REQ submitted at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160023,
+      "name": "LP1/E84UReqSubmitted",
+      "description": "U_REQ submitted at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160024,
+      "name": "LP1/E84CarrierStatusError",
+      "description": "Carrier status error (Loadport status changed prior to busy ON)",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160025,
+      "name": "LP1/E87AccessModeViolation",
+      "description": "Same as E87 Access Mode Violation event but for Pod only",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160026,
+      "name": "LP1/E84LoadStarted",
+      "description": "Load started (ready ON during load) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160027,
+      "name": "LP1/E84LoadCompleted",
+      "description": "Load completed (compt OFF during load) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160028,
+      "name": "LP1/E84UnloadStarted",
+      "description": "Unload started (ready ON during unload) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160029,
+      "name": "LP1/E84UnloadCompleted",
+      "description": "Unload completed (compt OFF during unload) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160030,
+      "name": "LP1/E84TransferCompleted",
+      "description": "Transfer is complete at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160031,
+      "name": "LP1/E84LReqCompleted",
+      "description": "L_REQ completed at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160032,
+      "name": "LP1/E84UReqCompleted",
+      "description": "U_REQ completed at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160033,
+      "name": "LP1/E84WrongCS0orCS1",
+      "description": "Wrong CS_0 or CS_1 (CS change) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160034,
+      "name": "LP1/E84InputSignalLost",
+      "description": "Lost signal (input signals turned off too soon) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160035,
+      "name": "LP1/E84InputSignalUnexpected",
+      "description": "Unexpected signal (input signals turned on to soon) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160036,
+      "name": "LP1/PIOE84Failure",
+      "description": "An E84 handoff on Pod has failed",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3160037,
+      "name": "LP1/InvalidCarrierType",
+      "description": "Carrier type can not be handled from host",
+      "rptids": [
+        1003160037
+      ],
+      "enabled": true,
+      "band": "load_port_1"
+    },
+    {
+      "ceid": 3170001,
+      "name": "LP2/CarrierArrived",
+      "description": "Carrier has arrived at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170002,
+      "name": "LP2/CarrierDeparted",
+      "description": "Carrier has departed from Loadport",
+      "rptids": [
+        1003170002
+      ],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170003,
+      "name": "LP2/CarrierMapped",
+      "description": "Carrier map completed at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170004,
+      "name": "LP2/CarrierMapStarted",
+      "description": "Carrier mapping has been started at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170005,
+      "name": "LP2/LoadComplete",
+      "description": "Done performing load at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170006,
+      "name": "LP2/UnloadComplete",
+      "description": "Done performing unload at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170007,
+      "name": "LP2/CarrierTagRead",
+      "description": "Carrier tag has been read at Loadport",
+      "rptids": [
+        1003170007
+      ],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170008,
+      "name": "LP2/CarrierTagWritten",
+      "description": "Carrier tag has been written at Loadport",
+      "rptids": [
+        1003170008
+      ],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170009,
+      "name": "LP2/CarrierLocationChanged",
+      "description": "Same as E87 CLC",
+      "rptids": [
+        1003170009
+      ],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170010,
+      "name": "LP2/MoveToDocked",
+      "description": "Carrier begin docking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170011,
+      "name": "LP2/AtDocked",
+      "description": "Carrier completed docking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170012,
+      "name": "LP2/MoveToDelivery",
+      "description": "Carrier begin undocking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170013,
+      "name": "LP2/AtDelivery",
+      "description": "Carrier completed undocking at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170015,
+      "name": "LP2/E84TP1Timeout",
+      "description": "TP1 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170016,
+      "name": "LP2/E84TP2Timeout",
+      "description": "TP2 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170017,
+      "name": "LP2/E84TP3Timeout",
+      "description": "TP3 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170018,
+      "name": "LP2/E84TP4Timeout",
+      "description": "TP4 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170019,
+      "name": "LP2/E84TP5Timeout",
+      "description": "TP5 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170020,
+      "name": "LP2/E84TP6Timeout",
+      "description": "TP6 timeout at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170021,
+      "name": "LP2/E84ValidOn",
+      "description": "E84 valid is ON at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170022,
+      "name": "LP2/E84LReqSubmitted",
+      "description": "L_REQ submitted at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170023,
+      "name": "LP2/E84UReqSubmitted",
+      "description": "U_REQ submitted at Loadport",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170024,
+      "name": "LP2/E84CarrierStatusError",
+      "description": "Carrier status error (Loadport status changed prior to busy ON)",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170025,
+      "name": "LP2/E87AccessModeViolation",
+      "description": "Same as E87 Access Mode Violation event but for Pod only",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170026,
+      "name": "LP2/E84LoadStarted",
+      "description": "Load started (ready ON during load) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170027,
+      "name": "LP2/E84LoadCompleted",
+      "description": "Load completed (compt OFF during load) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170028,
+      "name": "LP2/E84UnloadStarted",
+      "description": "Unload started (ready ON during unload) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170029,
+      "name": "LP2/E84UnloadCompleted",
+      "description": "Unload completed (compt OFF during unload) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170030,
+      "name": "LP2/E84TransferCompleted",
+      "description": "Transfer is complete at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170031,
+      "name": "LP2/E84LReqCompleted",
+      "description": "L_REQ completed at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170032,
+      "name": "LP2/E84UReqCompleted",
+      "description": "U_REQ completed at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170033,
+      "name": "LP2/E84WrongCS0orCS1",
+      "description": "Wrong CS_0 or CS_1 (CS change) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170034,
+      "name": "LP2/E84InputSignalLost",
+      "description": "Lost signal (input signals turned off too soon) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170035,
+      "name": "LP2/E84InputSignalUnexpected",
+      "description": "Unexpected signal (input signals turned on to soon) at Pod",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170036,
+      "name": "LP2/PIOE84Failure",
+      "description": "An E84 handoff on Pod has failed",
+      "rptids": [],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3170037,
+      "name": "LP2/InvalidCarrierType",
+      "description": "Carrier type can not be handled from host",
+      "rptids": [
+        1003170037
+      ],
+      "enabled": true,
+      "band": "load_port_2"
+    },
+    {
+      "ceid": 3180001,
+      "name": "IDReader/SubstrateIdRead",
+      "description": "Substrate ID was successfully read.",
+      "rptids": [
+        1003180001
+      ],
+      "enabled": true,
+      "band": "id_reader"
+    },
+    {
+      "ceid": 3180002,
+      "name": "IDReader/SubstrateIdReadFailed",
+      "description": "Substrate ID could not get read.",
+      "rptids": [
+        1003180002
+      ],
+      "enabled": true,
+      "band": "id_reader"
+    },
+    {
+      "ceid": 3190001,
+      "name": "NoState2QueuedPooled",
+      "description": "Process job has been created with state QUEUED/POOLED",
+      "rptids": [
+        1003190001
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190002,
+      "name": "QueuedPooled2SettingUp",
+      "description": "Process job state has changed from POOLED/QUEUED to SETTING UP",
+      "rptids": [
+        1003190002
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190003,
+      "name": "SettingUp2WaitingForStart",
+      "description": "Process job state has changed from SETTING UP to WAITING FOR START",
+      "rptids": [
+        1003190003
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190004,
+      "name": "SettingUp2Processing",
+      "description": "Process job state has changed from SETTING UP to PROCESSING",
+      "rptids": [
+        1003190004
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190005,
+      "name": "WaitingForStart2Processing",
+      "description": "Process job state has changed from WAITING FOR START to PROCESSING",
+      "rptids": [
+        1003190005
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190006,
+      "name": "Processing2ProcessComplete",
+      "description": "Process job state has changed from PROCESSING to PROCESS COMPLETE",
+      "rptids": [
+        1003190006
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190007,
+      "name": "PostActive2NoState",
+      "description": "Process job was in POST ACTIVE state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003190007
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190008,
+      "name": "ProcessComplete2NoState",
+      "description": "Process job was in PROCESS COMPLETE state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003190008
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190009,
+      "name": "Stopped2NoState",
+      "description": "Process job was in STOPPED state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003190009
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190010,
+      "name": "Aborted2NoState",
+      "description": "Process job was in ABORTED state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003190010
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190011,
+      "name": "Executing2Pausing",
+      "description": "Process job state has changed from EXECUTING to PAUSING",
+      "rptids": [
+        1003190011
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190012,
+      "name": "SettingUp2Pausing",
+      "description": "Process job state has changed from SETTING UP to PAUSING",
+      "rptids": [
+        1003190012
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190013,
+      "name": "WaitingForStart2Pausing",
+      "description": "Process job state has changed from WAITING FOR START to PAUSING",
+      "rptids": [
+        1003190013
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190014,
+      "name": "Processing2Pausing",
+      "description": "Process job state has changed from PROCESSING to PAUSING",
+      "rptids": [
+        1003190014
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190015,
+      "name": "Pausing2Paused",
+      "description": "Process job state has changed from PAUSING to PAUSED",
+      "rptids": [
+        1003190015
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190016,
+      "name": "Pause2Executing",
+      "description": "Process job state has changed from PAUSE to EXECUTING",
+      "rptids": [
+        1003190016
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190017,
+      "name": "Pausing2SettingUp",
+      "description": "Process job state has changed from PAUSING to SETTING UP",
+      "rptids": [
+        1003190017
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190018,
+      "name": "Pausing2WaitingForStart",
+      "description": "Process job state has changed from PAUSING to WAITING FOR START",
+      "rptids": [
+        1003190018
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190019,
+      "name": "Pausing2Processing",
+      "description": "Process job state has changed from PAUSING to PROCESSING",
+      "rptids": [
+        1003190019
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190020,
+      "name": "Paused2SettingUp",
+      "description": "Process job state has changed from PAUSED to SETTING UP",
+      "rptids": [
+        1003190020
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190021,
+      "name": "Paused2WaitingForStart",
+      "description": "Process job state has changed from PAUSED to WAITING FOR START",
+      "rptids": [
+        1003190021
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190022,
+      "name": "Paused2Processing",
+      "description": "Process job state has changed from PAUSED to PROCESSING",
+      "rptids": [
+        1003190022
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190023,
+      "name": "Executing2Stopping",
+      "description": "Process job state has changed from EXECUTING to STOPPING",
+      "rptids": [
+        1003190023
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190024,
+      "name": "SettingUp2Stopping",
+      "description": "Process job state has changed from SETTING UP to STOPPING",
+      "rptids": [
+        1003190024
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190025,
+      "name": "WaitingForStart2Stopping",
+      "description": "Process job state has changed from WAITING FOR START to STOPPING",
+      "rptids": [
+        1003190025
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190026,
+      "name": "Processing2Stopping",
+      "description": "Process job state has changed from PROCESSING to STOPPING",
+      "rptids": [
+        1003190026
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190027,
+      "name": "Pause2Stopping",
+      "description": "Process job state has changed from PAUSE to STOPPING",
+      "rptids": [
+        1003190027
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190028,
+      "name": "Pausing2Stopping",
+      "description": "Process job state has changed from PAUSING to STOPPING",
+      "rptids": [
+        1003190028
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190029,
+      "name": "Paused2Stopping",
+      "description": "Process job state has changed from PAUSED to STOPPING",
+      "rptids": [
+        1003190029
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190030,
+      "name": "Executing2Aborting",
+      "description": "Process job state has changed from EXECUTING to ABORTIN",
+      "rptids": [
+        1003190030
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190031,
+      "name": "SettingUp2Aborting",
+      "description": "Process job state has changed from SETTING UP to ABORTING",
+      "rptids": [
+        1003190031
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190032,
+      "name": "WaitingForStart2Aborting",
+      "description": "Process job state has changed from WAITING FOR START to ABORTING",
+      "rptids": [
+        1003190032
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190033,
+      "name": "Processing2Aborting",
+      "description": "Process job state has changed from PROCESSING to ABORTING",
+      "rptids": [
+        1003190033
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190034,
+      "name": "Stopping2Aborting",
+      "description": "Process job state has changed from STOPPING to ABORTING",
+      "rptids": [
+        1003190034
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190035,
+      "name": "Pause2Aborting",
+      "description": "Process job state has changed from PAUSE to ABORTING",
+      "rptids": [
+        1003190035
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190036,
+      "name": "Pausing2Aborting",
+      "description": "Process job state has changed from PAUSING to ABORTING",
+      "rptids": [
+        1003190036
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190037,
+      "name": "Paused2Aborting",
+      "description": "Process job state has changed from PAUSED to ABORTING",
+      "rptids": [
+        1003190037
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190038,
+      "name": "Aborting2Aborted",
+      "description": "Process job state has changed from ABORTING to ABORTED",
+      "rptids": [
+        1003190038
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190039,
+      "name": "Stopping2Stopped",
+      "description": "Process job state has changed from STOPPING to STOPPED",
+      "rptids": [
+        1003190039
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190040,
+      "name": "Pause2WaitingForStart",
+      "description": "The processing resource resumed the job and the job was being waiting for start prior to the pause",
+      "rptids": [
+        1003190040
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190041,
+      "name": "Pause2Processing",
+      "description": "The processing resource resumed the job and the job was being processing prior to the pause",
+      "rptids": [
+        1003190041
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190042,
+      "name": "Pause2SettingUp",
+      "description": "The processing resource resumed the job and the job was being setup prior to the pause",
+      "rptids": [
+        1003190042
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190043,
+      "name": "QueuedPooled2NoState",
+      "description": "Process job was in POOLED/QUEUED state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003190043
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190044,
+      "name": "PRJobMS_Complete",
+      "description": "Process job doesn\u2019t exist anymore",
+      "rptids": [
+        1003190044
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190045,
+      "name": "PRJobMS_Processing",
+      "description": "Process job state has changed to PROCESSING",
+      "rptids": [
+        1003190045
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190046,
+      "name": "PRJobMS_ProcessingComplete",
+      "description": "Process job state has changed to PROCESS COMPLETE",
+      "rptids": [
+        1003190046
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190047,
+      "name": "PRJobMS_Setup",
+      "description": "Process job state has changed to SETTING UP",
+      "rptids": [
+        1003190047
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190048,
+      "name": "PRJobStateChange",
+      "description": "The state of a process job has changed",
+      "rptids": [
+        1003190048
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190049,
+      "name": "WaitingForMaterial",
+      "description": "A process job is waiting for assigned material to proceed",
+      "rptids": [
+        1003190049
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3190050,
+      "name": "PRJobMS_WaitingForStart",
+      "description": "Process job state has changed to WAITING FOR START",
+      "rptids": [
+        1003190050
+      ],
+      "enabled": true,
+      "band": "process_jobs"
+    },
+    {
+      "ceid": 3200001,
+      "name": "ControlJob:1:NoState-Queued",
+      "description": "Control job has been created with state QUEUED",
+      "rptids": [
+        1003200001
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200002,
+      "name": "ControlJob:10:Executing-Completed",
+      "description": "Control job state has changed from EXECUTING to COMPLETED",
+      "rptids": [
+        1003200002
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200003,
+      "name": "ControlJob:11:Active-Completed",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to a stopping action",
+      "rptids": [
+        1003200003
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200004,
+      "name": "Selected2CompletedByCJStop",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to a stopping action",
+      "rptids": [
+        1003200004
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200005,
+      "name": "WaitingForStart2CompletedByCJStop",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to a stopping action",
+      "rptids": [
+        1003200005
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200006,
+      "name": "Executing2CompletedByCJStop",
+      "description": "Control job state has changed from EXECUTING to COMPLETED due to a stopping action",
+      "rptids": [
+        1003200006
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200007,
+      "name": "Paused2CompletedByCJStop",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to a stopping action",
+      "rptids": [
+        1003200007
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200008,
+      "name": "ControlJob:12:Active-Completed",
+      "description": "Control job state has changed from ACTIVE to COMPLETED due to an aborting action",
+      "rptids": [
+        1003200008
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200009,
+      "name": "Selected2CompletedByCJAbort",
+      "description": "Control job state has changed from SELECTED to COMPLETED due to an aborting action",
+      "rptids": [
+        1003200009
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200010,
+      "name": "WaitingForStart2CompletedByCJAbort",
+      "description": "Control job state has changed from WAITING FOR START to COMPLETED due to an aborting action",
+      "rptids": [
+        1003200010
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200011,
+      "name": "Executing2CompletedByCJAbort",
+      "description": "Control job state has changed from EXECUTING  to COMPLETED due to an aborting action",
+      "rptids": [
+        1003200011
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200012,
+      "name": "Paused2CompletedByCJAbort",
+      "description": "Control job state has changed from PAUSED to COMPLETED due to an aborting action",
+      "rptids": [
+        1003200012
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200013,
+      "name": "ControlJob:13:Completed-NoState",
+      "description": "Control job was in COMPLETED state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003200013
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200014,
+      "name": "ControlJob:2:Queued-NoState",
+      "description": "Control job was in QUEUED state and doesn\u2019t exist anymore by now",
+      "rptids": [
+        1003200014
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200015,
+      "name": "ControlJob:3:Queued-Selected",
+      "description": "Control job state has changed from QUEUED to SELECTED",
+      "rptids": [
+        1003200015
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200016,
+      "name": "ControlJob:4:Selected-Queued",
+      "description": "Control job was deselected and its state has changed from SELECTED back to QUEUED",
+      "rptids": [
+        1003200016
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200017,
+      "name": "ControlJob:5:Selected-Executing",
+      "description": "Control job has been started and its state has changed from SELECTED to EXECUTING",
+      "rptids": [
+        1003200017
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200018,
+      "name": "ControlJob:6:Selected-WaitingForStart",
+      "description": "Control job state has changed from SELECTED to WAITING FOR START",
+      "rptids": [
+        1003200018
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200019,
+      "name": "ControlJob:7:WaitingForStart-Executing",
+      "description": "Control job has been started and its state has changed from WAITING FOR START to EXECUTING",
+      "rptids": [
+        1003200019
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200020,
+      "name": "ControlJob:8:Executing-Paused",
+      "description": "Control job state has changed from EXECUTING to PAUSED",
+      "rptids": [
+        1003200020
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3200021,
+      "name": "ControlJob:9:Paused-Executing",
+      "description": "Control job state has changed from PAUSED to EXECUTING",
+      "rptids": [
+        1003200021
+      ],
+      "enabled": true,
+      "band": "control_jobs"
+    },
+    {
+      "ceid": 3210001,
+      "name": "CarrierApproachingComplete",
+      "description": "Carrier is about to approach completing",
+      "rptids": [
+        1003210001
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210002,
+      "name": "CarrierClamped",
+      "description": "Carrier has been clamped at a load port",
+      "rptids": [
+        1003210002
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210003,
+      "name": "CarrierClosed",
+      "description": "Carrier has been closed",
+      "rptids": [
+        1003210003
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210004,
+      "name": "IDReaderAvailable",
+      "description": "ID reader of a load port is available",
+      "rptids": [
+        1003210004
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210005,
+      "name": "IDReaderUnavailable",
+      "description": "ID reader of a load port is not available",
+      "rptids": [
+        1003210005
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210006,
+      "name": "CarrierIDRead",
+      "description": "Carrier ID has been read",
+      "rptids": [
+        1003210006
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210007,
+      "name": "CarrierIDReadFail",
+      "description": "Carrier ID reading has failed",
+      "rptids": [
+        1003210007
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210008,
+      "name": "CarrierLocationChange",
+      "description": "Carrier has changed its location",
+      "rptids": [
+        1003210008
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210009,
+      "name": "CarrierOpened",
+      "description": "Carrier has been opened",
+      "rptids": [
+        1003210009
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210010,
+      "name": "CarrierUnclamped",
+      "description": "Carrier has been unclamped at a load port",
+      "rptids": [
+        1003210010
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210011,
+      "name": "NoState2Carrier",
+      "description": "Carrier has been created",
+      "rptids": [
+        1003210011
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210012,
+      "name": "NoState2IDNotRead",
+      "description": "Carrier has been created with state ID NOT READ",
+      "rptids": [
+        1003210012
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210013,
+      "name": "NoState2WaitingForHost",
+      "description": "Carrier has been created with ID status WAITING FOR HOST",
+      "rptids": [
+        1003210013
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210014,
+      "name": "NoState2IDVerificationOk",
+      "description": "Carrier has been created with ID status ID VERIFICATION OK",
+      "rptids": [
+        1003210014
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210015,
+      "name": "NoState2IDVerificationFailed",
+      "description": "Carrier has been created with ID status ID VERIFICATION FAILED",
+      "rptids": [
+        1003210015
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210016,
+      "name": "WaitingForHost2IDVerificationOk",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION OK",
+      "rptids": [
+        1003210016
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210017,
+      "name": "WaitingForHost2IDVerificationFailed",
+      "description": "Carrier ID status has changed from WAITING FOR HOST to ID VERIFICATION FAILED",
+      "rptids": [
+        1003210017
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210018,
+      "name": "IDNotRead2WaitingForHost",
+      "description": "Carrier ID status has changed from ID NOT READ to WAITING FOR HOST due to an unsuccessful ID reading",
+      "rptids": [
+        1003210018
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210019,
+      "name": "IDNotRead2WaitingForHost_NotBypassed",
+      "description": "Carrier ID status has changed from IN NOT READ to WAITING FOR HOST due to not bypassing the ID reading",
+      "rptids": [
+        1003210019
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210020,
+      "name": "IDNotRead2IDVerificationOk",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to successful equipment based ID verification",
+      "rptids": [
+        1003210020
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210021,
+      "name": "IDNotRead2IDVerificationOk_Bypassed",
+      "description": "Carrier ID status has changed from ID NOT READ to ID VERIFICATION OK due to bypassing the ID reading",
+      "rptids": [
+        1003210021
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210022,
+      "name": "NoState2SlotMapNotRead",
+      "description": "Carrier has been created with state SLOTMAP NOT READ",
+      "rptids": [
+        1003210022
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210023,
+      "name": "SlotMapNotRead2SlotMapVerificationOk",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to SLOTMAP VERIFICATION OK",
+      "rptids": [
+        1003210023
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210024,
+      "name": "SlotMapNotRead2WaitingForHost",
+      "description": "Carrier slotmap status has changed from SLOTMAP NOT READ to WAITING FOR HOST",
+      "rptids": [
+        1003210024
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210025,
+      "name": "WaitingForHost2SlotMapVerificationOk",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION OK",
+      "rptids": [
+        1003210025
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210026,
+      "name": "WaitingForHost2SlotMapVerificationFail",
+      "description": "Carrier slotmap status has changed from WAITING FOR HOST to SLOTMAP VERIFICATION FAI",
+      "rptids": [
+        1003210026
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210027,
+      "name": "NoState2NotAccessed",
+      "description": "Carrier has been created with state NOT ACCESSED",
+      "rptids": [
+        1003210027
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210028,
+      "name": "NotAccessed2InAccess",
+      "description": "Carrier accessing status has changed from NOT ACCESSED to IN ACCESS",
+      "rptids": [
+        1003210028
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210029,
+      "name": "InAccess2CarrierComplete",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER COMPLETE",
+      "rptids": [
+        1003210029
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210030,
+      "name": "InAccess2CarrierStopped",
+      "description": "Carrier accessing status has changed from IN ACCESS to CARRIER STOPPED",
+      "rptids": [
+        1003210030
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210031,
+      "name": "CarrierDeleted",
+      "description": "Carrier doesn\u2019t exist anymore",
+      "rptids": [
+        1003210031
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210032,
+      "name": "NoState2ManualOrAuto",
+      "description": "Load port access mode restored after system restart",
+      "rptids": [
+        1003210032
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210033,
+      "name": "NoState2Manual",
+      "description": "Load port access mode restored after system restart in state MANUAL",
+      "rptids": [
+        1003210033
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210034,
+      "name": "NoState2Auto",
+      "description": "Load port access mode restored after system restart in state AUTO",
+      "rptids": [
+        1003210034
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210035,
+      "name": "Manual2Auto",
+      "description": "Load port access mode has changed from MANUAL to AUTO",
+      "rptids": [
+        1003210035
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210036,
+      "name": "Auto2Manual",
+      "description": "Load port access mode has changed from AUTO to MANUAL",
+      "rptids": [
+        1003210036
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210037,
+      "name": "NoState2NotAssociated",
+      "description": "Load port/carrier association state has changed to NOT ASSOCIATED initially",
+      "rptids": [
+        1003210037
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210038,
+      "name": "NotAssociated2Associated",
+      "description": "Load port/carrier association state has changed to from NOT ASSOCIATED to ASSOCIATED",
+      "rptids": [
+        1003210038
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210039,
+      "name": "Associated2NotAssociated",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to NOT ASSOCIATED",
+      "rptids": [
+        1003210039
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210040,
+      "name": "Associated2Associated",
+      "description": "Load port/carrier association state has changed from ASSOCIATED to ASSOCIATED",
+      "rptids": [
+        1003210040
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210041,
+      "name": "NoState2NotReserved",
+      "description": "Load port reservation state has changed to NOT RESERVED initially",
+      "rptids": [
+        1003210041
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210042,
+      "name": "NotReserved2Reserved",
+      "description": "Load port reservation state has changed from NOT RESERVED to RESERVED",
+      "rptids": [
+        1003210042
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210043,
+      "name": "Reserved2NotReserved",
+      "description": "Load port reservation state has changed from RESERVED to NOT RESERVED",
+      "rptids": [
+        1003210043
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210044,
+      "name": "NoState2InService",
+      "description": "Load port transfer state has changed from no state to IN SERVICE (system reset)",
+      "rptids": [
+        1003210044
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210045,
+      "name": "NoState2OutOfService",
+      "description": "Load port transfer state has changed from no state to OUT OF SERVICE (system reset)",
+      "rptids": [
+        1003210045
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210046,
+      "name": "NoState2TransferBlocked",
+      "description": "Load port transfer state has changed from no state to TRANSFER BLOCKED (system reset)",
+      "rptids": [
+        1003210046
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210047,
+      "name": "NoState2ReadyToLoad",
+      "description": "Load port transfer state has changed from no state to READY TO LOAD (system reset)",
+      "rptids": [
+        1003210047
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210048,
+      "name": "NoState2ReadyToUnload",
+      "description": "Load port transfer state has changed from no state to READY TO UNLOAD (system reset)",
+      "rptids": [
+        1003210048
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210049,
+      "name": "OutOfService2InService",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to IN SERVICE",
+      "rptids": [
+        1003210049
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210050,
+      "name": "OutOfService2ReadyToLoad",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO LOAD",
+      "rptids": [
+        1003210050
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210051,
+      "name": "OutOfService2ReadyToUnload",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to READY TO UNLOAD",
+      "rptids": [
+        1003210051
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210052,
+      "name": "OutOfService2TransferBlocked",
+      "description": "Load port transfer state has changed from OUT OF SERVICE to TRANSFER BLOCKED",
+      "rptids": [
+        1003210052
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210053,
+      "name": "InService2OutOfService",
+      "description": "Load port transfer state has changed from IN SERVICE to OUT OF SERVICE",
+      "rptids": [
+        1003210053
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210054,
+      "name": "ReadyToLoad2OutOfService",
+      "description": "Load port transfer state has changed from READY TO LOAD to OUT OF SERVICE",
+      "rptids": [
+        1003210054
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210055,
+      "name": "ReadyToUnload2OutOfService",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to OUT OF SERVICE",
+      "rptids": [
+        1003210055
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210056,
+      "name": "TransferBlocked2OutOfService",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to OUT OF SERVICE",
+      "rptids": [
+        1003210056
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210057,
+      "name": "InService2TransferReady",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER READY",
+      "rptids": [
+        1003210057
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210058,
+      "name": "InService2TransferBlocked",
+      "description": "Load port transfer state has changed from IN SERVICE to TRANSFER BLOCKED",
+      "rptids": [
+        1003210058
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210059,
+      "name": "TransferReady2ReadyToLoad",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO LOAD",
+      "rptids": [
+        1003210059
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210060,
+      "name": "TransferReady2ReadyToUnload",
+      "description": "Load port transfer state has changed from TRANSFER READY to READY TO UNLOAD",
+      "rptids": [
+        1003210060
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210061,
+      "name": "ReadyToLoad2TransferBlocked",
+      "description": "Load port transfer state has changed from READY TO LOAD to TRANSFER BLOCKED",
+      "rptids": [
+        1003210061
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210062,
+      "name": "ReadyToUnload2TransferBlocked",
+      "description": "Load port transfer state has changed from READY TO UNLOAD to TRANSFER BLOCKED",
+      "rptids": [
+        1003210062
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210063,
+      "name": "TransferBlocked2ReadyToLoad",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD",
+      "rptids": [
+        1003210063
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210064,
+      "name": "TransferBlocked2ReadyToUnload",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD",
+      "rptids": [
+        1003210064
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210065,
+      "name": "TransferBlocked2TransferReady",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to TRANSFER READY",
+      "rptids": [
+        1003210065
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210066,
+      "name": "UnknownCarrierID",
+      "description": "Carrier has arrived on a load port with unavailable ID reader",
+      "rptids": [
+        1003210066
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210067,
+      "name": "TransferBlocked2ReadyToLoad_Failed",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO LOAD due to an unsuccessful load action",
+      "rptids": [
+        1003210067
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3210068,
+      "name": "TransferBlocked2ReadyToUnload_Failed",
+      "description": "Load port transfer state has changed from TRANSFER BLOCKED to READY TO UNLOAD due to an unsuccessful unload action",
+      "rptids": [
+        1003210068
+      ],
+      "enabled": true,
+      "band": "carrier"
+    },
+    {
+      "ceid": 3220001,
+      "name": "SubstLoc_Unoccupied2Occupied",
+      "description": "Substrate location state has changed from UNOCCUPIED to OCCUPIED",
+      "rptids": [
+        1003220001
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220002,
+      "name": "SubstLoc_Occupied2Unoccupied",
+      "description": "Substrate location state has changed from OCCUPIED to UNOCCUPIED",
+      "rptids": [
+        1003220002
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220003,
+      "name": "NoState2AtSource",
+      "description": "Substrate has been created at a carrier slot with transport state AT SOURCE",
+      "rptids": [
+        1003220003
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220004,
+      "name": "AtSource2AtWork",
+      "description": "Substrate transport state has changed from AT SOURCE to AT WORK",
+      "rptids": [
+        1003220004
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220005,
+      "name": "AtWork2AtSource",
+      "description": "Substrate was moved back to its source location without being processed",
+      "rptids": [
+        1003220005
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220006,
+      "name": "AtWork2AtWork",
+      "description": "Substrate was moved from one location to another within the equipment",
+      "rptids": [
+        1003220006
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220007,
+      "name": "AtWork2AtDestination",
+      "description": "Substrate transport state has changed from AT WORK to AT DESTINATION",
+      "rptids": [
+        1003220007
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220008,
+      "name": "AtDestination2AtWork",
+      "description": "Substrate transport state has changed from AT DESTINATION to AT WORK",
+      "rptids": [],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220009,
+      "name": "AtDestination2AtSource",
+      "description": "Substrate transport state has changed from AT DESTINATION to AT SOURCE",
+      "rptids": [],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220010,
+      "name": "SubstRemovedFromDestination",
+      "description": "Substrate was removed from the equipment while it was at its destination location",
+      "rptids": [
+        1003220010
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220011,
+      "name": "SubstRemoved",
+      "description": "Substrate doesn\u2019t exist anymore",
+      "rptids": [
+        1003220011
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220012,
+      "name": "NoState2NeedsProcessing",
+      "description": "Substrate has been created with processing state NEEDS PROCESSING",
+      "rptids": [
+        1003220012
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220013,
+      "name": "NeedsProcessing2InProcess",
+      "description": "Substrate processing state has changed to IN PROCESS",
+      "rptids": [
+        1003220013
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220014,
+      "name": "InProcess2ProcessingComplete",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSING COMPLETE",
+      "rptids": [
+        1003220014
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220015,
+      "name": "NeedsProcessing2ProcessingComplete",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to PROCESSING COMPLETE",
+      "rptids": [
+        1003220015
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220016,
+      "name": "InProcess2Processed",
+      "description": "Substrate processing state has changed from IN PROCESS to PROCESSED",
+      "rptids": [
+        1003220016
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220017,
+      "name": "InProcess2Aborted",
+      "description": "Substrate processing state has changed from IN PROCESS to ABORTED",
+      "rptids": [
+        1003220017
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220018,
+      "name": "InProcess2Stopped",
+      "description": "Substrate processing state has changed from IN PROCESS to STOPPED",
+      "rptids": [
+        1003220018
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220019,
+      "name": "InProcess2Rejected",
+      "description": "Substrate processing state has changed from IN PROCESS to REJECTED",
+      "rptids": [
+        1003220019
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220020,
+      "name": "InProcess2Lost",
+      "description": "Substrate processing state has changed from IN PROCESS to LOST",
+      "rptids": [
+        1003220020
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220021,
+      "name": "InProcess2Skipped",
+      "description": "Substrate processing state has changed from IN PROCESS to SKIPPED",
+      "rptids": [
+        1003220021
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220022,
+      "name": "NeedsProcessing2Lost",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to LOST",
+      "rptids": [
+        1003220022
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220023,
+      "name": "NeedsProcessing2Skipped",
+      "description": "Substrate processing state has changed from NEEDS PROCESSING to SKIPPED",
+      "rptids": [
+        1003220023
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220024,
+      "name": "SubstrateObject:16:NoState-NotConfirmed",
+      "description": "Substrate object is created",
+      "rptids": [
+        1003220024
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220025,
+      "name": "SubstrateObject:17:NotConfirmed-Confirmed",
+      "description": "Substrate was successfully read and SubstID provided in the ContentMap matched the AcquiredID read by the equipment",
+      "rptids": [
+        1003220025
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220026,
+      "name": "SubstrateObject:18:NotConfirmed-WaitingForHost",
+      "description": "Substrate Id was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "rptids": [
+        1003220026
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220027,
+      "name": "SubstrateObject:19:NotConfirmed-WaitingForHost",
+      "description": "Substrate ID was successfully read but the acquired ID is different from the one the equipment used to instantiate the substrate object",
+      "rptids": [
+        1003220027
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220028,
+      "name": "SubstrateObject:20:WaitingForHost-Confirmed",
+      "description": "Equipment has received a ProceedWithSubstrate",
+      "rptids": [
+        1003220028
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220029,
+      "name": "SubstrateObject:21:WaitingForHost-ConfirmationFailed",
+      "description": "Equipment has received a CancelSubstrate",
+      "rptids": [
+        1003220029
+      ],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220030,
+      "name": "SubstrateIDReaderAvailable",
+      "description": "Informs that a substrate ID reader becomes available.",
+      "rptids": [],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220031,
+      "name": "SubstrateIDReaderUnavailable",
+      "description": "Informs that a substrate ID reader becomes unavailable.",
+      "rptids": [],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3220032,
+      "name": "InProcess2NeedsProcessing",
+      "description": "Substrate processing state has changed from IN PROCESS to NEEDS PROCESSING",
+      "rptids": [],
+      "enabled": true,
+      "band": "substrate"
+    },
+    {
+      "ceid": 3230001,
+      "name": "GeneralError",
+      "description": "A general error concerning an E39 object was recognized",
+      "rptids": [
+        1003230001
+      ],
+      "enabled": true,
+      "band": "e39_errors"
+    },
+    {
+      "ceid": 3230002,
+      "name": "InvalidStateChange",
+      "description": "An invalid state change for an E39 state model was recognized",
+      "rptids": [
+        1003230002
+      ],
+      "enabled": true,
+      "band": "e39_errors"
+    }
+  ],
+  "dvid_names": {
+    "2010001": "OperationMode",
+    "2010002": "OperatorCommand",
+    "2020001": "AlarmID",
+    "2020002": "AlarmCode",
+    "2020003": "AlarmText",
+    "2030001": "LimitVariable",
+    "2030002": "EventLimit",
+    "2030003": "TransitionType",
+    "2040001": "ECID",
+    "2040002": "CurrentValueOfLastChangedEC",
+    "2040003": "PreviousValueOfLastChangedEC",
+    "2050001": "RemoteCommandName",
+    "2060001": "PPChangeName",
+    "2060002": "PPChangeState",
+    "2060003": "PPChangeOwner",
+    "2070001": "TID",
+    "2080001": "RecipeName",
+    "2080002": "WaferID",
+    "2080003": "LotID",
+    "2080005": "ResultFile",
+    "2080006": "ResultPath",
+    "2080007": "AbortReason",
+    "2090008": "PathOfImages",
+    "2090009": "TestResults",
+    "2090012": "SlotID",
+    "2090013": "UnitFoupID",
+    "2090014": "Results",
+    "2090015": "SubstrateID",
+    "2100001": "EndEffector",
+    "2100002": "Action",
+    "2110001": "CarrierTag",
+    "2110002": "PageNumber",
+    "2120001": "CarrierTag",
+    "2120002": "PageNumber",
+    "2130001": "PRJobID",
+    "2130002": "PRJobState",
+    "2130003": "PRProcessStart",
+    "2130004": "PRRecipeMethod",
+    "2130005": "RecVariableList",
+    "2130007": "PRMtlNameList",
+    "2130008": "PRMtlType",
+    "2130009": "RecID",
+    "2130010": "PRPauseEvent",
+    "2140001": "CtrlJobID",
+    "2140002": "CtrlJobState",
+    "2140003": "CarrierInputSpec",
+    "2140004": "MtrlOutSpec",
+    "2140005": "CtrlJobPauseEvent",
+    "2140006": "ProcessingCtrlSpec",
+    "2140007": "ProcessOrderMgmt",
+    "2140008": "PRJobStatusList",
+    "2140009": "CtrlJobStartMethod",
+    "2150001": "CarrierID",
+    "2150002": "PortID",
+    "2150003": "CarrierIDStatus",
+    "2150004": "SlotMapStatus",
+    "2150005": "CarrierAccessingStatus",
+    "2150006": "PortTransferState",
+    "2150007": "PortAssociationState",
+    "2150008": "PortStateInfo",
+    "2150009": "LoadPortReservationState",
+    "2150010": "AccessMode",
+    "2150011": "SlotMap",
+    "2150012": "LocationID",
+    "2150013": "Reason",
+    "2160001": "SubstID",
+    "2160002": "SubstLocID",
+    "2160003": "SubstIDStatus",
+    "2160004": "SubstSubstLocID",
+    "2160005": "SubstSource",
+    "2160006": "SubstDestination",
+    "2160007": "SubstHistory",
+    "2160008": "SubstState",
+    "2160009": "SubstProcState",
+    "2160010": "SubstMtrlStatus",
+    "2160011": "SubstType",
+    "2160012": "SubstUsage",
+    "2160013": "AcquiredID",
+    "2160014": "SubstLotID",
+    "2160015": "SubstIDList",
+    "2160016": "SubstIDStatusList",
+    "2160017": "SubstSubstLocIDList",
+    "2160018": "SubstSourceList",
+    "2160019": "SubstDestinationList",
+    "2160020": "SubstHistoryList",
+    "2160021": "SubstStateList",
+    "2160022": "SubstProcStateList",
+    "2160023": "SubstMtrlStatusList",
+    "2160024": "SubstTypeList",
+    "2160025": "SubstUsageList",
+    "2160026": "AcquiredIDList",
+    "2160027": "SubstLotIDList",
+    "2160028": "SubstLocState",
+    "2160029": "SubstLocSubstID",
+    "2160030": "SubstrateState",
+    "2170001": "ErrorCode",
+    "2170002": "ErrorText",
+    "2170003": "ObjID",
+    "2170004": "ObjType",
+    "2170005": "ModelName",
+    "2170006": "FromState",
+    "2170007": "ToState"
+  },
+  "event_names": {
+    "3010001": "Equipment OFF-LINE",
+    "3010002": "Control State LOCAL",
+    "3010003": "Control State REMOTE",
+    "3010004": "OperatorCommandIssued",
+    "3020001": "AlarmNDetected",
+    "3020002": "AlarmNCleared",
+    "3030001": "SpoolTransmitFailure",
+    "3030002": "SpoolingActivated",
+    "3030003": "SpoolingDeactivated",
+    "3040001": "ConstantChanged",
+    "3050001": "MaterialReceived",
+    "3050002": "MaterialRemoved",
+    "3060001": "PM1/ReceivedMaterial",
+    "3060002": "PM1/SentMaterial",
+    "3070001": "TM1/ReceivedMaterial",
+    "3070002": "TM1/SentMaterial",
+    "3080001": "LP1/ReceivedMaterial",
+    "3080002": "LP1/SentMaterial",
+    "3090001": "LP2/ReceivedMaterial",
+    "3090002": "LP2/SentMaterial",
+    "3100001": "RemoteCommandSuccess",
+    "3100002": "RemoteCommandFailure",
+    "3110001": "Message Recognition",
+    "3120001": "PPChangeEvent",
+    "3130001": "ProcessStateChanged",
+    "3140001": "PM1/OperationModeChanged",
+    "3140002": "PM1/ProcessingStarted",
+    "3140003": "PM1/ProcessingFinished",
+    "3140004": "PM1/ProcessingAborted",
+    "3140005": "PM1/RecipeSelected",
+    "3140006": "PM1/RecipeSelectFailed",
+    "3140007": "PM1/ProcessingResultArrived",
+    "3150001": "TM1/MotionStarted",
+    "3150002": "TM1/MotionFinished",
+    "3150003": "TM1/OperationModeChanged",
+    "3160001": "LP1/CarrierArrived",
+    "3160002": "LP1/CarrierDeparted",
+    "3160003": "LP1/CarrierMapped",
+    "3160004": "LP1/CarrierMapStarted",
+    "3160005": "LP1/LoadComplete",
+    "3160006": "LP1/UnloadComplete",
+    "3160007": "LP1/CarrierTagRead",
+    "3160008": "LP1/CarrierTagWritten",
+    "3160009": "LP1/CarrierLocationChanged",
+    "3160010": "LP1/MoveToDocked",
+    "3160011": "LP1/AtDocked",
+    "3160012": "LP1/MoveToDelivery",
+    "3160013": "LP1/AtDelivery",
+    "3160015": "LP1/E84TP1Timeout",
+    "3160016": "LP1/E84TP2Timeout",
+    "3160017": "LP1/E84TP3Timeout",
+    "3160018": "LP1/E84TP4Timeout",
+    "3160019": "LP1/E84TP5Timeout",
+    "3160020": "LP1/E84TP6Timeout",
+    "3160021": "LP1/E84ValidOn",
+    "3160022": "LP1/E84LReqSubmitted",
+    "3160023": "LP1/E84UReqSubmitted",
+    "3160024": "LP1/E84CarrierStatusError",
+    "3160025": "LP1/E87AccessModeViolation",
+    "3160026": "LP1/E84LoadStarted",
+    "3160027": "LP1/E84LoadCompleted",
+    "3160028": "LP1/E84UnloadStarted",
+    "3160029": "LP1/E84UnloadCompleted",
+    "3160030": "LP1/E84TransferCompleted",
+    "3160031": "LP1/E84LReqCompleted",
+    "3160032": "LP1/E84UReqCompleted",
+    "3160033": "LP1/E84WrongCS0orCS1",
+    "3160034": "LP1/E84InputSignalLost",
+    "3160035": "LP1/E84InputSignalUnexpected",
+    "3160036": "LP1/PIOE84Failure",
+    "3160037": "LP1/InvalidCarrierType",
+    "3170001": "LP2/CarrierArrived",
+    "3170002": "LP2/CarrierDeparted",
+    "3170003": "LP2/CarrierMapped",
+    "3170004": "LP2/CarrierMapStarted",
+    "3170005": "LP2/LoadComplete",
+    "3170006": "LP2/UnloadComplete",
+    "3170007": "LP2/CarrierTagRead",
+    "3170008": "LP2/CarrierTagWritten",
+    "3170009": "LP2/CarrierLocationChanged",
+    "3170010": "LP2/MoveToDocked",
+    "3170011": "LP2/AtDocked",
+    "3170012": "LP2/MoveToDelivery",
+    "3170013": "LP2/AtDelivery",
+    "3170015": "LP2/E84TP1Timeout",
+    "3170016": "LP2/E84TP2Timeout",
+    "3170017": "LP2/E84TP3Timeout",
+    "3170018": "LP2/E84TP4Timeout",
+    "3170019": "LP2/E84TP5Timeout",
+    "3170020": "LP2/E84TP6Timeout",
+    "3170021": "LP2/E84ValidOn",
+    "3170022": "LP2/E84LReqSubmitted",
+    "3170023": "LP2/E84UReqSubmitted",
+    "3170024": "LP2/E84CarrierStatusError",
+    "3170025": "LP2/E87AccessModeViolation",
+    "3170026": "LP2/E84LoadStarted",
+    "3170027": "LP2/E84LoadCompleted",
+    "3170028": "LP2/E84UnloadStarted",
+    "3170029": "LP2/E84UnloadCompleted",
+    "3170030": "LP2/E84TransferCompleted",
+    "3170031": "LP2/E84LReqCompleted",
+    "3170032": "LP2/E84UReqCompleted",
+    "3170033": "LP2/E84WrongCS0orCS1",
+    "3170034": "LP2/E84InputSignalLost",
+    "3170035": "LP2/E84InputSignalUnexpected",
+    "3170036": "LP2/PIOE84Failure",
+    "3170037": "LP2/InvalidCarrierType",
+    "3180001": "IDReader/SubstrateIdRead",
+    "3180002": "IDReader/SubstrateIdReadFailed",
+    "3190001": "NoState2QueuedPooled",
+    "3190002": "QueuedPooled2SettingUp",
+    "3190003": "SettingUp2WaitingForStart",
+    "3190004": "SettingUp2Processing",
+    "3190005": "WaitingForStart2Processing",
+    "3190006": "Processing2ProcessComplete",
+    "3190007": "PostActive2NoState",
+    "3190008": "ProcessComplete2NoState",
+    "3190009": "Stopped2NoState",
+    "3190010": "Aborted2NoState",
+    "3190011": "Executing2Pausing",
+    "3190012": "SettingUp2Pausing",
+    "3190013": "WaitingForStart2Pausing",
+    "3190014": "Processing2Pausing",
+    "3190015": "Pausing2Paused",
+    "3190016": "Pause2Executing",
+    "3190017": "Pausing2SettingUp",
+    "3190018": "Pausing2WaitingForStart",
+    "3190019": "Pausing2Processing",
+    "3190020": "Paused2SettingUp",
+    "3190021": "Paused2WaitingForStart",
+    "3190022": "Paused2Processing",
+    "3190023": "Executing2Stopping",
+    "3190024": "SettingUp2Stopping",
+    "3190025": "WaitingForStart2Stopping",
+    "3190026": "Processing2Stopping",
+    "3190027": "Pause2Stopping",
+    "3190028": "Pausing2Stopping",
+    "3190029": "Paused2Stopping",
+    "3190030": "Executing2Aborting",
+    "3190031": "SettingUp2Aborting",
+    "3190032": "WaitingForStart2Aborting",
+    "3190033": "Processing2Aborting",
+    "3190034": "Stopping2Aborting",
+    "3190035": "Pause2Aborting",
+    "3190036": "Pausing2Aborting",
+    "3190037": "Paused2Aborting",
+    "3190038": "Aborting2Aborted",
+    "3190039": "Stopping2Stopped",
+    "3190040": "Pause2WaitingForStart",
+    "3190041": "Pause2Processing",
+    "3190042": "Pause2SettingUp",
+    "3190043": "QueuedPooled2NoState",
+    "3190044": "PRJobMS_Complete",
+    "3190045": "PRJobMS_Processing",
+    "3190046": "PRJobMS_ProcessingComplete",
+    "3190047": "PRJobMS_Setup",
+    "3190048": "PRJobStateChange",
+    "3190049": "WaitingForMaterial",
+    "3190050": "PRJobMS_WaitingForStart",
+    "3200001": "ControlJob:1:NoState-Queued",
+    "3200002": "ControlJob:10:Executing-Completed",
+    "3200003": "ControlJob:11:Active-Completed",
+    "3200004": "Selected2CompletedByCJStop",
+    "3200005": "WaitingForStart2CompletedByCJStop",
+    "3200006": "Executing2CompletedByCJStop",
+    "3200007": "Paused2CompletedByCJStop",
+    "3200008": "ControlJob:12:Active-Completed",
+    "3200009": "Selected2CompletedByCJAbort",
+    "3200010": "WaitingForStart2CompletedByCJAbort",
+    "3200011": "Executing2CompletedByCJAbort",
+    "3200012": "Paused2CompletedByCJAbort",
+    "3200013": "ControlJob:13:Completed-NoState",
+    "3200014": "ControlJob:2:Queued-NoState",
+    "3200015": "ControlJob:3:Queued-Selected",
+    "3200016": "ControlJob:4:Selected-Queued",
+    "3200017": "ControlJob:5:Selected-Executing",
+    "3200018": "ControlJob:6:Selected-WaitingForStart",
+    "3200019": "ControlJob:7:WaitingForStart-Executing",
+    "3200020": "ControlJob:8:Executing-Paused",
+    "3200021": "ControlJob:9:Paused-Executing",
+    "3210001": "CarrierApproachingComplete",
+    "3210002": "CarrierClamped",
+    "3210003": "CarrierClosed",
+    "3210004": "IDReaderAvailable",
+    "3210005": "IDReaderUnavailable",
+    "3210006": "CarrierIDRead",
+    "3210007": "CarrierIDReadFail",
+    "3210008": "CarrierLocationChange",
+    "3210009": "CarrierOpened",
+    "3210010": "CarrierUnclamped",
+    "3210011": "NoState2Carrier",
+    "3210012": "NoState2IDNotRead",
+    "3210013": "NoState2WaitingForHost",
+    "3210014": "NoState2IDVerificationOk",
+    "3210015": "NoState2IDVerificationFailed",
+    "3210016": "WaitingForHost2IDVerificationOk",
+    "3210017": "WaitingForHost2IDVerificationFailed",
+    "3210018": "IDNotRead2WaitingForHost",
+    "3210019": "IDNotRead2WaitingForHost_NotBypassed",
+    "3210020": "IDNotRead2IDVerificationOk",
+    "3210021": "IDNotRead2IDVerificationOk_Bypassed",
+    "3210022": "NoState2SlotMapNotRead",
+    "3210023": "SlotMapNotRead2SlotMapVerificationOk",
+    "3210024": "SlotMapNotRead2WaitingForHost",
+    "3210025": "WaitingForHost2SlotMapVerificationOk",
+    "3210026": "WaitingForHost2SlotMapVerificationFail",
+    "3210027": "NoState2NotAccessed",
+    "3210028": "NotAccessed2InAccess",
+    "3210029": "InAccess2CarrierComplete",
+    "3210030": "InAccess2CarrierStopped",
+    "3210031": "CarrierDeleted",
+    "3210032": "NoState2ManualOrAuto",
+    "3210033": "NoState2Manual",
+    "3210034": "NoState2Auto",
+    "3210035": "Manual2Auto",
+    "3210036": "Auto2Manual",
+    "3210037": "NoState2NotAssociated",
+    "3210038": "NotAssociated2Associated",
+    "3210039": "Associated2NotAssociated",
+    "3210040": "Associated2Associated",
+    "3210041": "NoState2NotReserved",
+    "3210042": "NotReserved2Reserved",
+    "3210043": "Reserved2NotReserved",
+    "3210044": "NoState2InService",
+    "3210045": "NoState2OutOfService",
+    "3210046": "NoState2TransferBlocked",
+    "3210047": "NoState2ReadyToLoad",
+    "3210048": "NoState2ReadyToUnload",
+    "3210049": "OutOfService2InService",
+    "3210050": "OutOfService2ReadyToLoad",
+    "3210051": "OutOfService2ReadyToUnload",
+    "3210052": "OutOfService2TransferBlocked",
+    "3210053": "InService2OutOfService",
+    "3210054": "ReadyToLoad2OutOfService",
+    "3210055": "ReadyToUnload2OutOfService",
+    "3210056": "TransferBlocked2OutOfService",
+    "3210057": "InService2TransferReady",
+    "3210058": "InService2TransferBlocked",
+    "3210059": "TransferReady2ReadyToLoad",
+    "3210060": "TransferReady2ReadyToUnload",
+    "3210061": "ReadyToLoad2TransferBlocked",
+    "3210062": "ReadyToUnload2TransferBlocked",
+    "3210063": "TransferBlocked2ReadyToLoad",
+    "3210064": "TransferBlocked2ReadyToUnload",
+    "3210065": "TransferBlocked2TransferReady",
+    "3210066": "UnknownCarrierID",
+    "3210067": "TransferBlocked2ReadyToLoad_Failed",
+    "3210068": "TransferBlocked2ReadyToUnload_Failed",
+    "3220001": "SubstLoc_Unoccupied2Occupied",
+    "3220002": "SubstLoc_Occupied2Unoccupied",
+    "3220003": "NoState2AtSource",
+    "3220004": "AtSource2AtWork",
+    "3220005": "AtWork2AtSource",
+    "3220006": "AtWork2AtWork",
+    "3220007": "AtWork2AtDestination",
+    "3220008": "AtDestination2AtWork",
+    "3220009": "AtDestination2AtSource",
+    "3220010": "SubstRemovedFromDestination",
+    "3220011": "SubstRemoved",
+    "3220012": "NoState2NeedsProcessing",
+    "3220013": "NeedsProcessing2InProcess",
+    "3220014": "InProcess2ProcessingComplete",
+    "3220015": "NeedsProcessing2ProcessingComplete",
+    "3220016": "InProcess2Processed",
+    "3220017": "InProcess2Aborted",
+    "3220018": "InProcess2Stopped",
+    "3220019": "InProcess2Rejected",
+    "3220020": "InProcess2Lost",
+    "3220021": "InProcess2Skipped",
+    "3220022": "NeedsProcessing2Lost",
+    "3220023": "NeedsProcessing2Skipped",
+    "3220024": "SubstrateObject:16:NoState-NotConfirmed",
+    "3220025": "SubstrateObject:17:NotConfirmed-Confirmed",
+    "3220026": "SubstrateObject:18:NotConfirmed-WaitingForHost",
+    "3220027": "SubstrateObject:19:NotConfirmed-WaitingForHost",
+    "3220028": "SubstrateObject:20:WaitingForHost-Confirmed",
+    "3220029": "SubstrateObject:21:WaitingForHost-ConfirmationFailed",
+    "3220030": "SubstrateIDReaderAvailable",
+    "3220031": "SubstrateIDReaderUnavailable",
+    "3220032": "InProcess2NeedsProcessing",
+    "3230001": "GeneralError",
+    "3230002": "InvalidStateChange"
+  }
+}

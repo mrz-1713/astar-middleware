@@ -1,0 +1,55 @@
+# Default configuration for the ASTAR SECS/GEM simulator.
+#
+# Two settings decide which side of the link this process is, and they are
+# independent of each other:
+#
+#   connection.role  equipment -> this process pretends to be the tool
+#                    host      -> this process pretends to be the EAP/host
+#
+#   connection.mode  passive   -> this process listens; the peer dials in
+#                    active    -> this process dials out to connection.address
+#
+# All four combinations are valid. The control panel (AstarSimulatorGui.exe)
+# edits this file and shows, live, what the machine at the other end must be
+# set to. Edit by hand only if you are comfortable with both settings.
+
+connection:
+  role: equipment
+  mode: passive
+  # passive -> which local NIC to listen on (loopback is the safe default)
+  # active  -> the peer's IP address; 0.0.0.0 is rejected
+  address: 127.0.0.1
+  # Required for 0.0.0.0, a LAN address, or a non-loopback hostname. Enable
+  # only on an isolated lab network with the intended firewall rule.
+  allow_external_bind: false
+  port: 5051
+  device_id: 0
+
+simulation:
+  # Decides which vendor's CEIDs, SVIDs and report layout are used. Applies
+  # to both roles: as a host, this is what gets subscribed to.
+  profile: davinci_200_mc4_hc1
+  tool_id: SIM_01
+  wafer_count: 3
+  event_interval_sec: 0.5
+  repeat_lots: true
+  emit_alarm: true
+
+# Only read when connection.role is host. Remove this section (or leave it
+# as-is) for an equipment; the loader rejects it if the role is equipment.
+# host:
+#   request_online: true
+#   enable_alarms: true
+#   drain_spool: false
+#   read_identity: true
+
+recovery:
+  initial_retry_sec: 1
+  maximum_retry_sec: 30
+  maximum_restart_attempts: 0
+
+logging:
+  level: INFO
+  directory: logs
+  maximum_size_mb: 10
+  backup_count: 5

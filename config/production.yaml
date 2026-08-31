@@ -1,0 +1,293 @@
+# Public production template — copy values from your private environment.
+# Never commit live tokens, machine IPs, or network-share coordinates.
+# Full option reference: docs/OPERATIONS.md
+
+linkstuffs:
+  enabled: false
+  host: "mqtt.example.invalid"
+  port: 8883
+  access_token: ""
+  qos: 1
+  tls: true
+  allow_insecure: false
+  client_id: "astar-eap-middleware"
+
+linkstuffs_http:
+  enabled: false
+  # Origin only. The publisher appends /api/v1/<device-token>/telemetry
+  # itself, so a full endpoint URL pasted here produces a doubled path and
+  # every publish 404s.
+  #
+  # Must be the https:// origin. The device token is part of the URL path, so
+  # a plaintext origin puts a write credential on the wire in clear; and if
+  # the server redirects http->https, urllib re-issues the POST as a GET with
+  # the body dropped, the POST-only telemetry endpoint answers 405, and the
+  # publisher reads any 4xx as permanent. Config load rejects http:// unless
+  # allow_insecure is explicitly enabled for an approved lab-only test.
+  base_url: "https://astar-monitoring.linkstuffs.com"
+  # A device is NOT auto-created on the HTTPS transport, and an absent token
+  # makes the publisher drop events silently while CSV files keep being
+  # written - which reads like a Linkstuffs-side fault. Create the device and
+  # issue its token BEFORE install. See docs/LINKSTUFFS_SETUP.md.
+  device_tokens:
+    SPTS_fxP_OMEGA_01: ""
+    DAVINCI200_MC4_HC1_01: ""
+    PTIQ_01: ""
+    NEXGEN_MG_01: ""
+  timeout_sec: 10
+  retry_count: 3
+  retry_delay_sec: 1
+  verify_tls: true
+  allow_insecure: false
+
+legacy_api:
+  enabled: false
+  url: ""
+  # Test/lab only. Production endpoints must use HTTPS.
+  allow_insecure: false
+  encrypted: true
+  # New peers must use authenticated AES-256-GCM. Select legacy_ctr_v1 only
+  # while migrating an existing n8n/PHP peer that requires the old contract.
+  encryption_mode: "aes_256_gcm_v2"
+  encryption_key_b64: ""
+  first_key: ""
+  second_key: ""
+  first_key_b64: ""
+  second_key_b64: ""
+  timeout_sec: 30
+  retry_count: 3
+  retry_delay_sec: 1
+  send_tool_events:
+    - "Lot_Start"
+    - "Lot_End"
+  token_id: ""
+
+paths:
+  install_dir: "C:/SECSGEM_EAP"
+  log_dir: "C:/SECSGEM_EAP/logs"
+  data_dir: "C:/SECSGEM_EAP/data"
+  # Deliberately separate from queues/journals: operators can submit control
+  # commands without receiving write access to durable operational evidence.
+  control_dir: "C:/SECSGEM_EAP/control"
+  archive_dir: "C:/SECSGEM_EAP/archive"
+  outbox_db: "C:/SECSGEM_EAP/data/outbox.sqlite3"
+  legacy_api_outbox_db: "C:/SECSGEM_EAP/data/legacy_api_outbox.sqlite3"
+  http_outbox_db: "C:/SECSGEM_EAP/data/linkstuffs_http_outbox.sqlite3"
+  # Must be listed explicitly: its default is a hardcoded C:/SECSGEM_EAP path,
+  # so moving data_dir alone left it pointing at the old location and the
+  # service failed to start with sqlite3's "unable to open database file".
+  ingress_journal_db: "C:/SECSGEM_EAP/data/ingress_journal.sqlite3"
+
+logging:
+  level: "INFO"
+  max_size_mb: 20
+  backup_count: 10
+
+outbox_retention_days: 30
+reconnect_interval_sec: 10
+health_interval_sec: 30
+# Equipment-specific commissioning input. A byte-identical retransmission
+# crossing a reconnect is deduplicated only inside this bounded window.
+cross_generation_retransmit_window_sec: 120
+
+storage_safety:
+  enabled: true
+  sample_interval_sec: 5
+  debounce_samples: 2
+  warning_free_bytes: 5368709120   # 5 GiB
+  critical_free_bytes: 2147483648  # 2 GiB; must exceed measured safe-stop need
+  recovery_free_bytes: 6442450944  # 6 GiB; hysteresis above warning
+  warning_free_percent: 10
+  critical_free_percent: 5
+  recovery_free_percent: 12
+
+# Documentation-only TEST-NET addresses are intentional. Replace them with
+# controlled equipment-network addresses before enabling a machine.
+machines:
+  - endpoint_id: "TOOL_01"
+    display_name: "SPTS_fxP_OMEGA_01"
+    machine_profile: "spts_fxp_omega"
+    host: "192.0.2.31"
+    port: 5000
+    secs_device_id: 0
+    hsms_mode: "active"
+    # ON because the SPTS fxP spools (Omega GEM compliance table p.9
+    # "Spooling: Yes"; §9 Spooling; ECID 4010 SpoolEnabled). On a spooling tool
+    # the only thing that empties the spool is an S6F23 from the host, so with
+    # this OFF every event the tool buffered during a host outage stays on the
+    # equipment - and a tool that will not send while a backlog exists then
+    # spools everything after it too, which is how one stranded event silences
+    # a healthy link indefinitely.
+    #
+    # Safe on a tool that is not spooling: it answers RSDA=2 and the call is a
+    # no-op. The drain runs *after* the subscription is rebuilt, so anything
+    # retransmitted lands on live report definitions. See docs/OPERATIONS.md.
+    drain_spool_on_connect: true
+    # HSMS-SS protocol timers (SEMI E37, seconds, 1-120). Omitted on purpose:
+    # each machine_profile already carries what its own vendor manual states,
+    # so a tool left at its factory settings needs nothing here.
+    #   spts_fxp_omega       t3 30  t5 5   t6 10  t7 5   t8 6   (Omega Table 3)
+    #   davinci_200_mc4_hc1  t3 45  t5 10  t6 5   t7 10  t8 5   (HIM 4.3.1.2)
+    #   nexgen_mg_series     manual states none; the shipped default is used
+    #   ptiq_secsgem         manual states none; the shipped default is used
+    # Set this block only when the tool's own SECS/GEM screen has been retuned,
+    # and then match it exactly: whichever side has the shorter timer gives up
+    # first, and the link drops with nothing in either log to explain it.
+    # hsms_timers: {t3: 30, t5: 5, t6: 10, t7: 5, t8: 6}
+    enabled: false
+    runtime_mode: "real"
+    offline_test_mode: false
+    storage:
+      log_dir: "C:/SECSGEM_EAP/logs/SPTS_fxP_OMEGA_01"
+      simulator_log_dir: "C:/SECSGEM_EAP/logs/SPTS_fxP_OMEGA_01/simulator"
+      local_csv_path: "C:/SECSGEM_EAP/data/csv_in/SPTS_fxP_OMEGA_01"
+      network_csv_path: ""
+      admin_config_path: "C:/SECSGEM_EAP/machines/SPTS_fxP_OMEGA_01/config"
+    simulator:
+      implementation: "profile"  # profile | davinci_advanced | nexgen_advanced
+      mdln: "SPTS fxP Omega"
+      softrev: "SIM 1.0.0"
+      alarm_id: 0
+      alarm_text: ""
+      wafer_count: 3
+      event_interval_sec: 0.5
+      repeat_lots: true
+      emit_alarm: true
+      ceid_overrides: {}
+      svid_values: {}
+      event_definitions: {}  # Inline reports/events/DVID metadata; GUI-editable YAML mapping.
+
+  - endpoint_id: "TOOL_02"
+    display_name: "DAVINCI200_MC4_HC1_01"
+    machine_profile: "davinci_200_mc4_hc1"
+    host: "192.0.2.32"
+    port: 5000
+    secs_device_id: 0
+    hsms_mode: "active"
+    enabled: false
+    runtime_mode: "real"
+    offline_test_mode: false
+    enable_alarms: false
+    request_online: false
+    # ON for the same reason as the SPTS block above. The DaVinci spools: both
+    # the Software Operation Manual (§9.6.2 Host Interface Manual Operation)
+    # and the Maintenance Manual (§3.1.2) show "Spooling State" and "Spool
+    # Full" on its Host Interface panel. See docs/OPERATIONS.md.
+    drain_spool_on_connect: true
+    storage:
+      log_dir: "C:/SECSGEM_EAP/logs/DAVINCI200_MC4_HC1_01"
+      simulator_log_dir: "C:/SECSGEM_EAP/logs/DAVINCI200_MC4_HC1_01/simulator"
+      local_csv_path: "C:/SECSGEM_EAP/data/csv_in/DAVINCI200_MC4_HC1_01"
+      network_csv_path: ""
+      admin_config_path: "C:/SECSGEM_EAP/machines/DAVINCI200_MC4_HC1_01/config"
+    simulator:
+      implementation: "profile"
+      mdln: "DaVinci200"
+      softrev: "DaVinci200 Version 4.9.3"
+      alarm_id: 0
+      alarm_text: ""
+      wafer_count: 3
+      event_interval_sec: 0.5
+      repeat_lots: true
+      emit_alarm: true
+      ceid_overrides: {}
+      svid_values: {}
+      event_definitions: {}
+
+  - endpoint_id: "TOOL_03"
+    display_name: "PTIQ_01"
+    machine_profile: "ptiq_secsgem"
+    host: "192.0.2.33"
+    port: 5000
+    secs_device_id: 0
+    hsms_mode: "active"
+    # Left OFF (the inherited default) deliberately: unlike the other three,
+    # this tool has no vendor manual in docs/vendor/, so there is no evidence
+    # either way about whether it spools. Turn it on if its own SECS/GEM screen
+    # shows spooling enabled - the drain is a no-op (RSDA=2) if it does not.
+    drain_spool_on_connect: false
+    enabled: false
+    runtime_mode: "real"
+    offline_test_mode: false
+    event_subscription_path: "config/EventSubscription.json"
+    storage:
+      log_dir: "C:/SECSGEM_EAP/logs/PTIQ_01"
+      simulator_log_dir: "C:/SECSGEM_EAP/logs/PTIQ_01/simulator"
+      local_csv_path: "C:/SECSGEM_EAP/data/csv_in/PTIQ_01"
+      network_csv_path: ""
+      admin_config_path: "C:/SECSGEM_EAP/machines/PTIQ_01/config"
+    simulator:
+      implementation: "profile"
+      mdln: "PTIQ SECS/GEM"
+      softrev: "SIM 1.0.0"
+      alarm_id: 0
+      alarm_text: ""
+      wafer_count: 3
+      event_interval_sec: 0.5
+      repeat_lots: true
+      emit_alarm: true
+      ceid_overrides: {}
+      svid_values: {}
+      event_definitions: {}
+
+  # NexGen Wafersystems MG Series (MG21 / MG22 / MG22-300).
+  #
+  # The MG manual cites SEMI E37 but never states a TCP port, device/session
+  # ID or HSMS role, so port/secs_device_id/hsms_mode below are GUESSES that
+  # match the other three tools. Correct them on site from the tool's own
+  # SECS/GEM configuration screen - all three are configuration, so a wrong
+  # guess never needs a rebuild.
+  #
+  # request_online is ON for this tool, unlike the others. Per the manual's
+  # section 3.2 an OFF-LINE MG discards every host primary except those
+  # establishing communications or requesting ON-LINE, so without S1F17 you
+  # get a green connect and a permanently empty feed. S1F17 does not take
+  # REMOTE control and cannot override an operator-selected EQUIPMENT
+  # OFF-LINE; it is the only state-changing message the middleware sends.
+  - endpoint_id: "TOOL_04"
+    display_name: "NEXGEN_MG_01"
+    machine_profile: "nexgen_mg_series"
+    host: "192.0.2.34"
+    port: 5000
+    secs_device_id: 0
+    hsms_mode: "active"
+    enabled: false
+    runtime_mode: "real"
+    offline_test_mode: false
+    request_online: true
+    enable_alarms: true
+    # The MG documents spooling as unsupported, so there is nothing to drain.
+    drain_spool_on_connect: false
+    # Clear the tool's existing report definitions, links and event enables
+    # before subscribing (S2F37/S2F35/S2F33 with zero-length lists - the SEMI
+    # E5 delete-all forms, and steps 2-4 of the MG manual's own lot-start
+    # sequence, §9.1 p.170).
+    #
+    # Turn this ON when commissioning a tool that has previously talked to a
+    # different host: its report definitions and CEID links survive on the
+    # equipment, and a CEID still linked to a report this middleware then
+    # redefines delivers a payload against a layout the mapper no longer
+    # expects, while CEIDs the previous host enabled keep arriving as
+    # `unknown`. On a tool that has only ever talked to this middleware it is
+    # a no-op. Left OFF by default because it changes a message sequence a
+    # commissioned tool has already accepted.
+    reset_subscription_on_connect: false
+    storage:
+      log_dir: "C:/SECSGEM_EAP/logs/NEXGEN_MG_01"
+      simulator_log_dir: "C:/SECSGEM_EAP/logs/NEXGEN_MG_01/simulator"
+      local_csv_path: "C:/SECSGEM_EAP/data/csv_in/NEXGEN_MG_01"
+      network_csv_path: ""
+      admin_config_path: "C:/SECSGEM_EAP/machines/NEXGEN_MG_01/config"
+    simulator:
+      implementation: "profile"
+      mdln: "MG Series"
+      softrev: "NWS MG 1.1.18"
+      alarm_id: 0
+      alarm_text: ""
+      wafer_count: 3
+      event_interval_sec: 0.5
+      repeat_lots: true
+      emit_alarm: true
+      ceid_overrides: {}
+      svid_values: {}
+      event_definitions: {}
