@@ -89,7 +89,10 @@ function New-StagedPackage {
     Copy-Item (Join-Path $RepoRoot "deploy\README_DEPLOY.txt")   $stage -Force
     Copy-Item (Join-Path $RepoRoot "deploy\SETUP_CHECKLIST.txt") $stage -Force
     Copy-Item (Join-Path $RepoRoot "deploy\PYTHON_VERSION.txt")  $stage -Force
-    Copy-Item (Join-Path $RepoRoot "docs\QUICKSTART_WIN11.md")   (Join-Path $stage "QUICKSTART.md") -Force
+    $quickstart = Join-Path $RepoRoot "docs\QUICKSTART_WIN11.md"
+    if (Test-Path $quickstart) {
+        Copy-Item $quickstart (Join-Path $stage "QUICKSTART.md") -Force
+    }
 
     Copy-Item (Join-Path $RepoRoot "deploy\wheels") (Join-Path $stage "wheels") -Recurse -Force
     $wheels = @(Get-ChildItem (Join-Path $stage "wheels") -Filter "*.whl")

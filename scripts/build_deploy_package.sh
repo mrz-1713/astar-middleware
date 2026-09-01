@@ -127,10 +127,15 @@ cp "${REPO_DIR}/deploy/install.ps1"        "${STAGE_DIR}/install.ps1"
 cp "${REPO_DIR}/deploy/upgrade.ps1"        "${STAGE_DIR}/upgrade.ps1"
 cp "${REPO_DIR}/deploy/README_DEPLOY.txt"  "${STAGE_DIR}/README_DEPLOY.txt"
 cp "${REPO_DIR}/deploy/SETUP_CHECKLIST.txt" "${STAGE_DIR}/SETUP_CHECKLIST.txt"
-# Ship the Windows 11 quickstart at the package root so the operator sees it
-# immediately on extraction (also kept under source/docs for reference).
-cp "${REPO_DIR}/docs/QUICKSTART_WIN11.md"  "${STAGE_DIR}/QUICKSTART.md"
-ok "Deploy assets staged (SETUP.bat + install.ps1 + QUICKSTART.md)"
+# Ship the Windows 11 quickstart when this optional document is present. The
+# package remains usable when documentation is intentionally trimmed from a
+# checkout.
+if [[ -f "${REPO_DIR}/docs/QUICKSTART_WIN11.md" ]]; then
+    cp "${REPO_DIR}/docs/QUICKSTART_WIN11.md" "${STAGE_DIR}/QUICKSTART.md"
+    ok "Deploy assets staged (SETUP.bat + install.ps1 + QUICKSTART.md)"
+else
+    ok "Deploy assets staged (SETUP.bat + install.ps1; optional QUICKSTART.md absent)"
+fi
 
 # Wheels + bundled Python. By default REUSE the pre-vetted, version-matched
 # wheels and offline Python installer already in deploy/ (truly offline, no
