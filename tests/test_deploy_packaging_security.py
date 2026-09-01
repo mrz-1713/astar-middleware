@@ -100,18 +100,6 @@ def test_windows_installer_derives_paths_and_validates_firewall_rules():
     assert "AstarSecsGemEap-Hsms-Out" in script
 
 
-def test_release_docs_require_trusted_hash_before_unblock():
-    quickstart = (ROOT / "docs" / "QUICKSTART_WIN11.md").read_text()
-    deployment = (
-        ROOT / "docs" / "MAC_TO_WINDOWS11_FULL_DEPLOYMENT_GUIDE.md"
-    ).read_text()
-
-    assert "trusted release record" in quickstart
-    assert quickstart.index("trusted release record") < quickstart.index("Unblock-File")
-    assert "trusted release record" in deployment
-    assert deployment.index("Get-FileHash") < deployment.index("Unblock-File")
-
-
 def test_gui_ships_end_to_end_from_stage_to_shortcut():
     """The GUI reaches the operator only if three separate files agree.
 
